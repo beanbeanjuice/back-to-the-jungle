@@ -4,7 +4,7 @@ This is where the summary/information will be regarding group meetings.
 ---
 
 ## Meeting \#1 - Initial Meeting
-* **Date**: April 17, 2023
+* **Date**: May 17, 2023
 * **Time**: 7:30 PM
 
 ### Goals
