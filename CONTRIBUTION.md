@@ -14,26 +14,31 @@ Right now, we have two major branches. The `master` and `integration` branches.
 In order to contribute, we need to be able to make our own branches. This is how we do it.
 
 1) Clone the repository.
-```BASH
-git clone https://github.com/beanbeanjuice/ecs189L-back-to-the-jungle.git
-```
+  ```BASH
+  git clone https://github.com/beanbeanjuice/ecs189L-back-to-the-jungle.git
+  ```
 
 2) Move into the cloned directory.
-```BASH
-cd ecs189L-back-to-the-jungle
-```
+  ```BASH
+  cd ecs189L-back-to-the-jungle
+  ```
 
 3) Switch to the `integration` branch.
-```BASH
-git switch integration
-```
+  ```BASH
+  git switch integration
+  ```
 
-4) Navigate to [issues](https://github.com/beanbeanjuice/ecs189L-back-to-the-jungle/issues). If the thing you want to add is not specified in the [issues](https://github.com/beanbeanjuice/ecs189L-back-to-the-jungle/issues) yet, please add it.
+4) If you were already in the `integration` branch, do the following code to make sure you are up to date with the latest features.
+  ```BASH
+  git pull
+  ```
 
-5) Choose the issue you want to complete. There should be a number right next to the name of the issue. While in the `integration` branch, use that number, and the description of the issue to create a new branch. For example, this is what would be done below.
-```BASH
-git checkout -b 3-implement-some-function
-```
+5) Navigate to [issues](https://github.com/beanbeanjuice/ecs189L-back-to-the-jungle/issues). If the thing you want to add is not specified in the [issues](https://github.com/beanbeanjuice/ecs189L-back-to-the-jungle/issues) yet, please add it.
+
+6) Choose the issue you want to complete. There should be a number right next to the name of the issue. While in the `integration` branch, use that number, and the description of the issue to create a new branch. For example, this is what would be done below.
+  ```BASH
+  git checkout -b 3-implement-some-function
+  ```
 
 ## Pushing and Pull Requests
 Now that you have implemented changes on your local branch. This is how you create a pull request and push into origin.
