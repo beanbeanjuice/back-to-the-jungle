@@ -1747,7 +1747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 0.2
   acceleration: 0.01
-  jumpVelocity: 14
+  jumpVelocity: 7
 --- !u!1 &2129139301
 GameObject:
   m_ObjectHideFlags: 0

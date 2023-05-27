@@ -20,13 +20,16 @@ namespace Player
 
         private void Update()
         {
-            if (Input.GetButton("Jump"))  // TODO: Left click as well?
-            {
-                _rb.velocity = new Vector3(0, jumpVelocity, 0);
-            }
+            CheckInput();
 
             // Cancels and Rotation
             this.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+
+        private void CheckInput()
+        {
+            if (Input.GetButton("Jump")) // TODO: Left click as well?
+                _rb.AddForce(new Vector2(0, jumpVelocity), ForceMode2D.Impulse);
         }
 
         void LateUpdate()
