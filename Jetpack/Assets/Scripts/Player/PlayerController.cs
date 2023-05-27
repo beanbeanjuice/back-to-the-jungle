@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Player
@@ -15,12 +16,12 @@ namespace Player
         void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
-
         }
 
         private void Update()
         {
             CheckInput();
+            SetPlayerVelocity();
 
             // Cancels and Rotation
             this.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -30,6 +31,13 @@ namespace Player
         {
             if (Input.GetButton("Jump")) // TODO: Left click as well?
                 _rb.AddForce(new Vector2(0, jumpVelocity), ForceMode2D.Impulse);
+        }
+
+        private void SetPlayerVelocity()
+        {
+            float yVelocity = this._rb.velocity.y;
+            this.velocity += this.acceleration * Time.deltaTime;
+            this._rb.velocity = new Vector2(this.velocity, yVelocity);
         }
 
         void LateUpdate()
