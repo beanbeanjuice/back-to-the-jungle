@@ -10,8 +10,8 @@ Fixes #(issue)
 
 ## Type of Change
 
-- [ ] Bug Fix (Small Non-Code Breaking Issue)
-- [ ] Bug Fix (Critical Code Breaking Issue)
+- [ ] Bugfix (Small Non-Code Breaking Issue)
+- [ ] Bugfix (Critical Code Breaking Issue)
 - [ ] Feature (Something New Added to the Code)
 - [ ] Improvement (Improving An Existing Section of Code)
 - [ ] Artwork/Sprite Update
