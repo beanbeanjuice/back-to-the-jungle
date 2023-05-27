@@ -12,6 +12,7 @@ Fixes #(issue)
 - [ ] Bug Fix (Critical Code Breaking Issue)
 - [ ] Feature (Something New Added to the Code)
 - [ ] Improvement (Improving An Existing Section of Code)
+- [ ] Artwork/Sprite Update
 - [ ] Documentation Update
 
 ---
@@ -19,6 +20,7 @@ Fixes #(issue)
 ## Changes
 
 - [ ] Internal Code
+- [ ] Artwork/Sprites
 - [ ] Documentation
 - [ ] Other: _____
 
