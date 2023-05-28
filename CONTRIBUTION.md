@@ -9,6 +9,11 @@ Right now, we have two major branches. The `master` and `integration` branches.
   * This is where we will keep the release version of our code. Everything here is where the code is pretty much final. By keeping this separate from where we are actually pushing our code, it can help us avoid issues where we push unsafe/unstable code into a branch that used to be working.
 * `integration`
   * This is where we will mainly be branching off of. We should all be branching off of this branch and working on our specific needed implementations.
+* Below is an example of how branches should work. No pushes should, *or can*, be done to the `integration` or `master` branches. Everything should be done through separate branches and pull requests.
+
+<p align="center">
+  <img src="./github_images/branches.png"  width="50%" height="50%">
+</p>
 
 ### Cloning
 In order to contribute, we need to be able to make our own branches. This is how we do it.
@@ -68,7 +73,7 @@ Make sure to add the appropriate comments to your code. Additionally, for any pu
 
 In Rider, by typing `///` right above a function, it should auto-fill most of the XML information for you.
 
-![Fast Triple Slash](https://github.com/beanbeanjuice/ecs189L-back-to-the-jungle/blob/master/github_images/XML_guide.gif)
+![Fast Triple Slash](/github_images/XML_guide.gif)
 
 Here is an example of how one may fill out a comment below.
 
