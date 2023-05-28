@@ -22,7 +22,7 @@ namespace Player
             CheckInput();
             SetPlayerVelocity();
 
-            // Cancels and Rotation
+            // Cancels the rotation of the sprite.
             this.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
