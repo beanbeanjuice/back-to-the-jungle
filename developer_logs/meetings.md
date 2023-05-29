@@ -21,17 +21,23 @@ Essentially, we chose an [initial timeline](https://docs.google.com/spreadsheets
 
 ---
 
-## Meeting \#2 - Initial Status Check
+## Meeting \#2 - Status Check
 * **Date**: May 28, 2023
 * **Time**: 6:00 PM
 
 ### Goals
-- [ ] See how up to date everyone is with their code.
-- [ ] See what new additions/changes we need to make.
-- [ ] Ask and answer questions regarding how the github branching works.
-- [ ] Possibly give tutorial on how to make branch/create pull request.
-- [ ] Show everyone how to review code.
+- [x] See how up to date everyone is with their code.
+- [x] See what new additions/changes we need to make.
+- [x] Ask and answer questions regarding how the github branching works.
+- [x] Possibly give tutorial on how to make branch/create pull request.
+- [x] Show everyone how to review code on GitHub.
+- [x] Talk about the `in progress` tag for GitHub issues.
 
 ### Notes
+We caught up on everyone's code. I think here we need to split up some tasks into smaller tasks so that we can all work concurrently and not have to have a lot of waiting time in between working on things.
+
+Some additional obstacles we are thinking about adding are spider webs, giant animals, etc. We think there may be 2 sprites for each obstacle type. We had some discussions about power-ups, and we think that because of the time constraint, we may only be able to work on one.
+
+Overall, we think if we don't have at least a *very* basic game done by Wednesday, May 31 with only a gameplay scene then we should start worrying. Our progress is a bit slower than we want, but still moving forward.
 
 ---
