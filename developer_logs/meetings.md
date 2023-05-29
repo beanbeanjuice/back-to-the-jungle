@@ -20,3 +20,18 @@ This is where the summary/information will be regarding group meetings.
 Essentially, we chose an [initial timeline](https://docs.google.com/spreadsheets/d/1daxQZKiFalyhVolWCPxCEILbFaG9LCLo/edit#gid=666678670) and our [roles](https://docs.google.com/document/d/1pc5WVrcgre8pAvwpoAeO3d9nlYAn165I7ZNwHvZhgVk/edit#). Things are not 100% set in stone yet, but we at least have a basic plan with a list of prerequisites.
 
 ---
+
+## Meeting \#2 - Initial Status Check
+* **Date**: May 28, 2023
+* **Time**: 6:00 PM
+
+### Goals
+- [ ] See how up to date everyone is with their code.
+- [ ] See what new additions/changes we need to make.
+- [ ] Ask and answer questions regarding how the github branching works.
+- [ ] Possibly give tutorial on how to make branch/create pull request.
+- [ ] Show everyone how to review code.
+
+### Notes
+
+---
