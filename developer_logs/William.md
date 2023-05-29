@@ -1,5 +1,7 @@
 # Log File
 
+William: [![wakatime](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle.svg)](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle)
+
 ---
 
 ## May 27, 2023
@@ -15,3 +17,4 @@
 
 ## May 29, 2023
 * Created notes for team meeting.
+* Updated the `README.md` so that it has the given template from class.
