@@ -1,5 +1,9 @@
 ﻿namespace Fish
 {
+
+    /// <summary>
+    /// An enum that contains all the possible types of fish colors.
+    /// </summary>
     public enum FishType
     {
         RED,
@@ -11,4 +15,5 @@
         BLUE,
         BEIGE
     }
+
 }

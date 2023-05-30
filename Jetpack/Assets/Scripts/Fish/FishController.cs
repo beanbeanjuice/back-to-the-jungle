@@ -2,6 +2,10 @@ using UnityEngine;
 
 namespace Fish
 {
+
+    /// <summary>
+    /// Controls the type and attributes of the fish object.
+    /// </summary>
     public class FishController : MonoBehaviour
     {
         [SerializeField] private FishType type;
@@ -26,4 +30,5 @@ namespace Fish
         }
 
     }
+
 }

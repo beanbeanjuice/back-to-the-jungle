@@ -12,4 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2ca8fa676f4330a6b889f517701958, type: 3}
   m_Name: FishTypes
   m_EditorClassIdentifier: 
-  fishTypes: []
+  fishTypes:
+  - type: 0
+    sprite: {fileID: 21300000, guid: b01ca9dfac4d44faa93c043ef5bf6d21, type: 3}
+  - type: 1
+    sprite: {fileID: 21300000, guid: 02ba72b03221748588198b727a499c80, type: 3}
+  - type: 2
+    sprite: {fileID: 21300000, guid: 88b7dafb1d9e04d1d8fa4ba947358c70, type: 3}
+  - type: 3
+    sprite: {fileID: 21300000, guid: db7b528bd823347e99bcc81a311086f3, type: 3}
+  - type: 4
+    sprite: {fileID: 21300000, guid: 3d33d2f94a20e4bde97b0885073382ef, type: 3}
+  - type: 5
+    sprite: {fileID: 21300000, guid: 1e81cbe54d0bc4aeb9f404c1c981acbd, type: 3}
+  - type: 6
+    sprite: {fileID: 21300000, guid: 3868d63b76b8f4a968be655ca44fec06, type: 3}
+  - type: 7
+    sprite: {fileID: 21300000, guid: 39b7fd4f42cfc4b4b9a8e79aa520d006, type: 3}
