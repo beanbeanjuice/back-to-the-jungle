@@ -27,5 +27,14 @@ namespace Fish
             this.type = newType;
             this._spriteRenderer.sprite = this.fishBindings.GetFishSprite(this.type);
         }
+
+        /// <summary>
+        /// Get the type of the current fish.
+        /// </summary>
+        /// <returns>The current fish type.</returns>
+        public FishType GetFishType()
+        {
+            return this.type;
+        }
     }
 }

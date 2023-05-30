@@ -1,3 +1,4 @@
+using Fish;
 using UnityEngine;
 
 namespace Player
@@ -20,7 +21,7 @@ namespace Player
             if (other.gameObject.CompareTag("Fish"))
             {
                 Destroy(other.gameObject);
-                this._pc.UpdateScore();
+                this._pc.UpdateScore(other.GetComponent<FishController>().GetFishType());
             }
         }
     }

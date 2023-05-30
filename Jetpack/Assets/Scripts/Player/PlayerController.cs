@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Fish;
+using UnityEngine;
 
 namespace Player
 {
@@ -33,8 +34,9 @@ namespace Player
         /// <summary>
         /// Update the player's score.
         /// </summary>
-        public void UpdateScore()
+        public void UpdateScore(FishType type)
         {
+            Debug.Log($"Type: {type}");  // TODO: Remove in production.
             this._score++;
         }
 
