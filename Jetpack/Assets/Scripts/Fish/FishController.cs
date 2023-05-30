@@ -13,7 +13,7 @@ namespace Fish
 
         private SpriteRenderer _spriteRenderer;
 
-        private void Start()
+        private void Awake()
         {
             this._spriteRenderer = GetComponent<SpriteRenderer>();
             ChangeType(this.type);
