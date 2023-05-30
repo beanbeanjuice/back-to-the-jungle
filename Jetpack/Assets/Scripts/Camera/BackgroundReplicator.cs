@@ -2,30 +2,27 @@ using UnityEngine;
 
 public class BackgroundReplicator : MonoBehaviour
 {
-    public GameObject cam;
-    //public float parallaxEffect;
-    private float length, startpos;
+    public GameObject camera;
+    private float length, startPosition;
 
     void Start()
     {
-        startpos = transform.position.x;
+        startPosition = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
     void Update()
     {
-        
-        float temp = cam.transform.position.x; // * (1 - parallaxEffect);
-        // float distance = (cam.transform.position.x * parallaxEffect);
-        transform.position = new Vector3(startpos, transform.position.y, transform.position.z);
+        float temp = camera.transform.position.x; 
+        transform.position = new Vector3(startPosition, transform.position.y, transform.position.z);
 
-        if (temp > startpos + length)
+        if (temp > startPosition + length)
         {
-            startpos += length;
+            startPosition += length;
         }
-        else if(temp < startpos - length) 
+        else if(temp < startPosition - length) 
         {
-            startpos -= length;
+            startPosition -= length;
         }
     }
 }
