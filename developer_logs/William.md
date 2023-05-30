@@ -12,14 +12,11 @@ William: [![wakatime](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-ba
 ## May 28, 2023
 * Created log files for each of the members. Hopefully this can help everyone keep track of everything and give themselves notes/what they are currently thinking.
 * I renamed the `SampleScene` to `Gameplay` to be more consistent as well as make sure everything will not cause issues in the future.
-
----
-
-## May 29, 2023
-* Created notes for team meeting.
 * Updated the `README.md` so that it has the given template from class.
 
 ---
 
 ## May 29, 2023
+* Created notes for team meeting.
 * I worked on putting the fish sprite into a `prefab`. Additionally, I also created a factory so that the fish can be spawned much more easily.
+* I added collision detection for the player and the fish.
