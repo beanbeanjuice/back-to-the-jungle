@@ -19,3 +19,4 @@ William: [![wakatime](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-ba
 ## May 29, 2023
 * Created notes for team meeting.
 * I worked on putting the fish sprite into a `prefab`. Additionally, I also created a factory so that the fish can be spawned much more easily.
+* I added collision detection for the player and the fish.
