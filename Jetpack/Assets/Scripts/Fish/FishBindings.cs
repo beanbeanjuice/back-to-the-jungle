@@ -10,7 +10,6 @@ namespace Fish
     [CreateAssetMenu]
     public class FishBindings : ScriptableObject
     {
-
         [System.Serializable]
         private class FishTypeEntry
         {
