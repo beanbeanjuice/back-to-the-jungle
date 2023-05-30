@@ -1,8 +1,10 @@
 ﻿using System;
 
+/// <summary>
+/// A general helper class used for common functions.
+/// </summary>
 public class Helper
 {
-
     /// <summary>
     /// Generate a random integer.
     /// </summary>

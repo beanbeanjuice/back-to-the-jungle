@@ -3,7 +3,7 @@
 namespace Fish
 {
     /// <summary>
-    ///
+    /// A class containing the fish specifications.
     /// </summary>
     public class FishSpec
     {
