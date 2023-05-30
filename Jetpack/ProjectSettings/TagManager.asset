@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Fish
+  - GroundManager
   layers:
   - Default
   - TransparentFX
