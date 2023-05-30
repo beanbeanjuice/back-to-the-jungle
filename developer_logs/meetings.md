@@ -28,7 +28,7 @@ Essentially, we chose an [initial timeline](https://docs.google.com/spreadsheets
 ### 2 - Goals
 - [x] See how up to date everyone is with their code.
 - [x] See what new additions/changes we need to make.
-- [x] Ask and answer questions regarding how the github branching works.
+- [x] Ask and answer questions regarding how the GitHub branching works.
 - [x] Possibly give tutorial on how to make branch/create pull request.
 - [x] Show everyone how to review code on GitHub.
 - [x] Talk about the `in progress` tag for GitHub issues.
