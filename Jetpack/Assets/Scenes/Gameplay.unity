@@ -1087,7 +1087,7 @@ GameObject:
   - component: {fileID: 2129139302}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: GroundManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5955,5 +5955,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4467653773519526792, guid: 1f6a9f8f4f01d3041acc34ba2c9a4e21, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1955793622}
   m_SourcePrefab: {fileID: 100100000, guid: 1f6a9f8f4f01d3041acc34ba2c9a4e21, type: 3}
