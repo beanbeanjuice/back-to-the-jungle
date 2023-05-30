@@ -51,3 +51,4 @@ Fixes #(issue)
 - [ ] The pull request is properly merging into the correct branch.
 - [ ] All existing local code has been pushed to the GitHub repository.
 - [ ] Another person has reviewed and approved the code.
+- [ ] I will remember to close the issue this pull request solves if this pull request does not automatically close the issue.
