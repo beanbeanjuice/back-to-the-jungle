@@ -10,3 +10,9 @@
 * Incorporated gameplay background (jungle background) into gameplay scene.
 
 * Created a vine prefab with 5 different sprites as one of the main obstacles in the game. Vines were inspired by source, but made myself on pixelartmaker.
+
+---
+## May 30, 2023
+* Created and completed artwork for pause menu, including coins logo, distance logo, tablet display logo, and pause logo. Also completed continue button, and 2 variations of mainMenu button. These were all inspired by credited sources but made myself on pixelartmaker.
+
+* Reused coins, distance, menu, and tablet sprites for the Game Over menu. Created a new back button along with variations of play again button designs according to initial UI design.
