@@ -159,6 +159,7 @@ MonoBehaviour:
   maxY: 4.5
   minDelay: 5
   maxDelay: 15
+  fishPatterns: {fileID: 11400000, guid: f81b928ca2d5c7446bd29621dc776a4b, type: 2}
 --- !u!4 &26040797
 Transform:
   m_ObjectHideFlags: 0

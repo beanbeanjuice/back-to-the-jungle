@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Fish.Pattern;
 using Player;
 using UnityEngine;
 
@@ -19,17 +20,15 @@ namespace Fish
         [SerializeField] private float maxY;
         [SerializeField] private float minDelay;
         [SerializeField] private float maxDelay;
-
-        private FishPatterns _fishPatterns;
+        [SerializeField] private FishPatterns fishPatterns;
         private int _numPatterns;
 
         private float _delay;
         private float _delayTimer;
 
-        public void Start()
+        public void Awake()
         {
-            this._fishPatterns = new FishPatterns();
-            this._numPatterns = this._fishPatterns.GetPatterns().Count;
+            this._numPatterns = this.fishPatterns.GetPatterns().Length;
         }
 
         /// <summary>
@@ -38,9 +37,8 @@ namespace Fish
         /// <param name="initialFishSpec">The given fish spec.</param>
         public void Build(FishSpec initialFishSpec)
         {
-            Vector3 initialLocation = initialFishSpec.GetLocation();
             // TODO: Choose an appropriate pattern based on initial fish X and Y.
-            FishPatterns.FishPattern pattern = this._fishPatterns.GetPatterns()[Helper.GetRandomInteger(0, this._numPatterns)];
+            FishPattern pattern = this.fishPatterns.GetPatterns()[Helper.GetRandomInteger(0, this._numPatterns)];
 
             foreach (FishSpec fishSpec in PopulateFishSpecs(initialFishSpec, pattern))
             {
@@ -62,17 +60,16 @@ namespace Fish
             }
         }
 
-        private List<FishSpec> PopulateFishSpecs(FishSpec initialSpec, FishPatterns.FishPattern pattern)
+        private List<FishSpec> PopulateFishSpecs(FishSpec initialSpec, FishPattern pattern)
         {
             List<FishSpec> fishes = new List<FishSpec>();
-            Vector3 currentLocation = initialSpec.GetLocation();
+            Vector3 initialLocation = initialSpec.GetLocation();
             fishes.Add(initialSpec);
 
-            for (int i = 0; i < pattern.GetFishCount()-1; i++)
+            for (int i = 0; i < pattern.GetFishCount(); i++)
             {
                 FishSpec spec = GenerateRandomFish();
-                currentLocation += pattern.GetLocationOffset();
-                spec.SetLocation(currentLocation);
+                spec.SetLocation(initialLocation + (Vector3)pattern.GetLocationOffsets()[i]);
                 fishes.Add(spec);
             }
 
