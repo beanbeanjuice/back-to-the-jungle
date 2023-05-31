@@ -2349,4 +2349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b4cbf4f87294a03b1769d213007a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundPrefabs: {fileID: 0}
+  groundPrefab: {fileID: 4200704048477226158}
+  spawnDistance: 94.53
+  player: {fileID: 0}

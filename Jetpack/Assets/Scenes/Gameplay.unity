@@ -653,6 +653,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundPrefab: {fileID: 1955793617}
+  spawnDistance: 94.53
+  player: {fileID: 1975473065}
 --- !u!1 &1975473065
 GameObject:
   m_ObjectHideFlags: 0
