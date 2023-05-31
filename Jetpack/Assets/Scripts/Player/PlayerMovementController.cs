@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Player
 {
+    /// <summary>
+    /// A class used solely for player movement.
+    /// </summary>
     public class PlayerMovementController : MonoBehaviour
     {
         [SerializeField] private float velocity;
@@ -44,17 +47,11 @@ namespace Player
                  * we do not do this, there will be some minor jumping that occurs.
                  */
                 if (this._touchingGround)
-                {
                     this._rb.velocity = new Vector2(0, this.groundJumpVelocity);
-                }
                 else if (this._touchingCeiling)
-                {
                     RemoveUpwardsVelocity(this.transform.position);
-                }
                 else
-                {
                     this._rb.AddForce(new Vector2(0, this.jumpVelocity), ForceMode2D.Impulse);
-                }
             }
         }
 
@@ -82,11 +79,6 @@ namespace Player
             {
                 this._touchingCeiling = false;
             }
-        }
-
-        public float GetMaxY()
-        {
-            return this.maxYValue;
         }
 
         private void RemoveUpwardsVelocity(Vector3 position)

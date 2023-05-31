@@ -26,7 +26,7 @@ namespace Fish
         private float _delay;
         private float _delayTimer;
 
-        public void Awake()
+        private void Awake()
         {
             this._numPatterns = this.fishPatterns.GetPatterns().Length;
         }

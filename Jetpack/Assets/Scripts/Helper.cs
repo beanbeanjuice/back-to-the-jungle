@@ -3,10 +3,10 @@
 /// <summary>
 /// A general helper class used for common functions.
 /// </summary>
-public class Helper
+public static class Helper
 {
     /// <summary>
-    /// Generate a random integer.
+    /// Generate a pseudo-random integer.
     /// </summary>
     /// <param name="minimum">The minimum number. (Inclusive)</param>
     /// <param name="maximum">The maximum number. (Exclusive)</param>
@@ -17,6 +17,12 @@ public class Helper
         return random.Next(minimum, maximum);
     }
 
+    /// <summary>
+    /// Get a pseudo-random double.
+    /// </summary>
+    /// <param name="minimum">The minimum number.</param>
+    /// <param name="maximum">The maximum number.</param>
+    /// <returns></returns>
     public static double GetRandomDouble(double minimum, double maximum)
     {
         Random random = new Random();
