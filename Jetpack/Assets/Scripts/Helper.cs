@@ -16,4 +16,10 @@ public class Helper
         Random random = new Random();
         return random.Next(minimum, maximum);
     }
+
+    public static double GetRandomDouble(double minimum, double maximum)
+    {
+        Random random = new Random();
+        return random.NextDouble() * (maximum - minimum) + minimum;
+    }
 }

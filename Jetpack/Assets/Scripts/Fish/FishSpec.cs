@@ -8,14 +8,14 @@ namespace Fish
     public class FishSpec
     {
         private readonly FishType _type;
-        private readonly Vector2 _location;
+        private Vector3 _location;
 
         /// <summary>
         /// Create a FishSpec object.
         /// </summary>
         /// <param name="type">The type of the fish.</param>
         /// <param name="location">The location the fish should spawn.</param>
-        public FishSpec(FishType type, Vector2 location)
+        public FishSpec(FishType type, Vector3 location)
         {
             this._type = type;
             this._location = location;
@@ -34,9 +34,14 @@ namespace Fish
         /// Get the fish spawn location.
         /// </summary>
         /// <returns>The spawn location.</returns>
-        public Vector2 GetLocation()
+        public Vector3 GetLocation()
         {
             return this._location;
+        }
+
+        public void SetLocation(Vector3 location)
+        {
+            this._location = location;
         }
     }
 }

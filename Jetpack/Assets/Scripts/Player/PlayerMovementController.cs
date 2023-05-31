@@ -84,6 +84,11 @@ namespace Player
             }
         }
 
+        public float GetMaxY()
+        {
+            return this.maxYValue;
+        }
+
         private void RemoveUpwardsVelocity(Vector3 position)
         {
             this.gameObject.transform.position = new Vector3(position.x, this.maxYValue, position.z);

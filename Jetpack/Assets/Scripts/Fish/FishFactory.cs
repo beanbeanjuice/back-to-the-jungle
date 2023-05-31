@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using Player;
 using UnityEngine;
 
 namespace Fish
@@ -11,15 +13,67 @@ namespace Fish
     public class FishFactory : MonoBehaviour
     {
         [SerializeField] private GameObject fishPrefab;
+        [SerializeField] private GameObject player;
+        [SerializeField] private float minXFromPlayer;
+        [SerializeField] private float maxXFromPlayer;
+        [SerializeField] private float minY;
+        [SerializeField] private float maxY;
+        [SerializeField] private float delay;
+
+        private FishPatterns _fishPatterns;
+        private int _numPatterns;
+
+        private bool hasGenerated = false;
+
+        public void Start()
+        {
+            this._fishPatterns = new FishPatterns();
+            this._numPatterns = this._fishPatterns.GetPatterns().Count;
+        }
 
         /// <summary>
         /// Build and spawn the fish in.
         /// </summary>
-        /// <param name="fishSpec">The given fish spec.</param>
-        public void Build(FishSpec fishSpec)
+        /// <param name="initialFishSpec">The given fish spec.</param>
+        public void Build(FishSpec initialFishSpec)
         {
-            GameObject fish = Instantiate(this.fishPrefab, fishSpec.GetLocation(), Quaternion.identity);
-            fish.GetComponent<FishController>().ChangeType(fishSpec.GetFishType());
+            Vector3 initialLocation = initialFishSpec.GetLocation();
+            // TODO: Choose an appropriate pattern based on initial fish X and Y.
+            FishPatterns.FishPattern pattern = this._fishPatterns.GetPatterns()[Helper.GetRandomInteger(0, this._numPatterns)];
+
+            foreach (FishSpec fishSpec in PopulateFishSpecs(initialFishSpec, pattern))
+            {
+                GameObject fish = Instantiate(this.fishPrefab, fishSpec.GetLocation(), Quaternion.identity);
+                fish.GetComponent<FishController>().ChangeType(fishSpec.GetFishType());
+            }
+
+        }
+
+        private void Update()
+        {
+            if (!this.hasGenerated)
+            {
+                FishSpec spec = GenerateRandomFish();
+                Build(spec);
+                this.hasGenerated = true;
+            }
+        }
+
+        private List<FishSpec> PopulateFishSpecs(FishSpec initialSpec, FishPatterns.FishPattern pattern)
+        {
+            List<FishSpec> fishes = new List<FishSpec>();
+            Vector3 currentLocation = initialSpec.GetLocation();
+            fishes.Add(initialSpec);
+
+            for (int i = 0; i < pattern.GetFishCount()-1; i++)
+            {
+                FishSpec spec = GenerateRandomFish();
+                currentLocation += pattern.GetLocationOffset();
+                spec.SetLocation(currentLocation);
+                fishes.Add(spec);
+            }
+
+            return fishes;
         }
 
         /// <summary>
@@ -52,8 +106,10 @@ namespace Fish
         /// <returns>A pseudo-random fish spec.</returns>
         public FishSpec GenerateRandomFish(FishType type)
         {
-            // TODO: Generate random location for the fish according to game logic.
-            Vector2 location = new Vector2(0, 0);
+            float fishX = (float)Helper.GetRandomDouble(this.minXFromPlayer, this.maxXFromPlayer) + this.player.transform.position.x;
+            float fishY = (float)Helper.GetRandomDouble(this.minY, this.maxY);
+
+            Vector3 location = new Vector3(fishX, fishY, this.fishPrefab.transform.position.z);
             return new FishSpec(type, location);
         }
     }
