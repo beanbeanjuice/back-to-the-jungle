@@ -57,9 +57,14 @@ namespace Player
 
         private void SetPlayerXVelocity()
         {
-            float yVelocity = this._rb.velocity.y;  // Grab old y velocity.
-            this.velocity += this.acceleration * Time.deltaTime;  // Update new velocity.
-            this._rb.velocity = new Vector2(this.velocity, yVelocity);  // Set new velocity.
+            /*
+             * First, we want to grab the old y velocity, then
+             * update the y velocity, then set the RigidBody's
+             * y velocity to the updated y velocity.
+             */
+            float yVelocity = this._rb.velocity.y;
+            this.velocity += this.acceleration * Time.deltaTime;
+            this._rb.velocity = new Vector2(this.velocity, yVelocity);
         }
 
         private void CeilingCheck()
