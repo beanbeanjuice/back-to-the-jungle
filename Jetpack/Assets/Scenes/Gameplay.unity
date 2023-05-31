@@ -154,11 +154,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 2188222279618484596, guid: 53447dbfba47ae14aa38ca89a676b259, type: 3}
   player: {fileID: 1975473065}
-  minXFromPlayer: 10
-  maxXFromPlayer: 15
-  minY: -2.5
-  maxY: 4
-  delay: 0
+  xDistanceFromPlayer: 20
+  minY: -3.5
+  maxY: 4.5
+  minDelay: 5
+  maxDelay: 15
 --- !u!4 &26040797
 Transform:
   m_ObjectHideFlags: 0

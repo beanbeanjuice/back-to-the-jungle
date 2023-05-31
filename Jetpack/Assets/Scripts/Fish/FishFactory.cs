@@ -14,16 +14,17 @@ namespace Fish
     {
         [SerializeField] private GameObject fishPrefab;
         [SerializeField] private GameObject player;
-        [SerializeField] private float minXFromPlayer;
-        [SerializeField] private float maxXFromPlayer;
+        [SerializeField] private float xDistanceFromPlayer;
         [SerializeField] private float minY;
         [SerializeField] private float maxY;
-        [SerializeField] private float delay;
+        [SerializeField] private float minDelay;
+        [SerializeField] private float maxDelay;
 
         private FishPatterns _fishPatterns;
         private int _numPatterns;
 
-        private bool hasGenerated = false;
+        private float _delay;
+        private float _delayTimer;
 
         public void Start()
         {
@@ -51,11 +52,13 @@ namespace Fish
 
         private void Update()
         {
-            if (!this.hasGenerated)
+            this._delayTimer += Time.deltaTime;
+
+            if (this._delayTimer >= this._delay)
             {
-                FishSpec spec = GenerateRandomFish();
-                Build(spec);
-                this.hasGenerated = true;
+                Build(GenerateRandomFish());
+                this._delayTimer = 0;
+                this._delay = (float)Helper.GetRandomDouble(this.minDelay, this.maxDelay);
             }
         }
 
@@ -106,7 +109,7 @@ namespace Fish
         /// <returns>A pseudo-random fish spec.</returns>
         public FishSpec GenerateRandomFish(FishType type)
         {
-            float fishX = (float)Helper.GetRandomDouble(this.minXFromPlayer, this.maxXFromPlayer) + this.player.transform.position.x;
+            float fishX = this.xDistanceFromPlayer + this.player.transform.position.x;
             float fishY = (float)Helper.GetRandomDouble(this.minY, this.maxY);
 
             Vector3 location = new Vector3(fishX, fishY, this.fishPrefab.transform.position.z);
