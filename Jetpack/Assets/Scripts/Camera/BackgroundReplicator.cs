@@ -6,23 +6,23 @@ using UnityEngine;
 /// </summary>
 public class BackgroundReplicator : MonoBehaviour
 {
-    [SerializedField] private GameObject cam;
-    private float length;
-    private float startPosition;
+    [SerializeField] private GameObject cam;
+    private float _length;
+    private float _startPosition;
 
     private void Start()
     {
-        startPosition = transform.position.x;
-        length = GetComponent<SpriteRenderer>().bounds.size.x;
+        this._startPosition = transform.position.x;
+        this._length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
     private void Update()
     {
         float temp = cam.transform.position.x;
-        transform.position = new Vector3(startPosition, transform.position.y, transform.position.z);
+        transform.position = new Vector3(_startPosition, transform.position.y, transform.position.z);
 
         // If camera position exceeds bounds, add background.
-        if (temp > startPosition + length)
-            startPosition += length;
+        if (temp > this._startPosition + this._length)
+            this._startPosition += this._length;
     }
 }
