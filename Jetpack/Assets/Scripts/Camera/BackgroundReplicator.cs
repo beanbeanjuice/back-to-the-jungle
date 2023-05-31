@@ -2,10 +2,10 @@ using UnityEngine;
 
 namespace Camera
 {
-/// <summary>
-/// BackgroundReplicator moves the background once camera position passes its bounds,
-/// replicating it for an endless scroll effect.
-/// </summary>
+    /// <summary>
+    /// BackgroundReplicator moves the background once camera position passes its bounds,
+    /// replicating it for an endless scroll effect.
+    /// </summary>
     public class BackgroundReplicator : MonoBehaviour
     {
         [SerializeField] private GameObject cam;
