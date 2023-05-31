@@ -18,7 +18,7 @@ public class BackgroundReplicator : MonoBehaviour
 
     void Update()
     {
-        float temp = cam.transform.position.x; 
+        float temp = cam.transform.position.x;
         transform.position = new Vector3(startPosition, transform.position.y, transform.position.z);
 
         // If camera position exceeds bounds, add background.
