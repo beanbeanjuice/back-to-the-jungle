@@ -6,17 +6,17 @@ using UnityEngine;
 /// </summary>
 public class BackgroundReplicator : MonoBehaviour
 {
-    public GameObject cam;
+    [SerializedField] private GameObject cam;
     private float length;
     private float startPosition;
 
-    void Start()
+    private void Start()
     {
         startPosition = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
-    void Update()
+    private void Update()
     {
         float temp = cam.transform.position.x;
         transform.position = new Vector3(startPosition, transform.position.y, transform.position.z);
