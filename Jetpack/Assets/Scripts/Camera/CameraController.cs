@@ -7,7 +7,7 @@ namespace Camera
         [SerializeField] private GameObject player;
         [SerializeField] private float xOffset;
 
-        void LateUpdate()
+        private void LateUpdate()
         {
             Vector2 playerPosition = this.player.transform.position;
             Vector3 cameraPosition = this.transform.position;
