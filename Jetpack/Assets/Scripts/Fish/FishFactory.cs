@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using Fish.Patterns;
 using UnityEngine;
 
@@ -34,11 +35,11 @@ namespace Fish
         /// Build and spawn the fish in.
         /// </summary>
         /// <param name="initialFishSpec">The given fish spec.</param>
-        public void Build(FishSpec initialFishSpec)
+        private void Build(FishSpec initialFishSpec)
         {
-            // TODO: Choose an appropriate pattern based on initial fish X and Y.
             FishPattern pattern = this.fishPatterns.GetPatterns()[Helper.GetRandomInteger(0, this._numPatterns)];
 
+            // Spawn all of the fish specs into the scene.
             foreach (FishSpec fishSpec in PopulateFishSpecs(initialFishSpec, pattern))
             {
                 GameObject fish = Instantiate(this.fishPrefab, fishSpec.GetLocation(), Quaternion.identity);
@@ -51,12 +52,11 @@ namespace Fish
         {
             this._delayTimer += Time.deltaTime;
 
-            if (this._delayTimer >= this._delay)
-            {
-                Build(GenerateRandomFish());
-                this._delayTimer = 0;
-                this._delay = (float)Helper.GetRandomDouble(this.minDelay, this.maxDelay);
-            }
+            if (!(this._delayTimer >= this._delay)) return;
+
+            Build(GenerateRandomFish());
+            this._delayTimer = 0;
+            this._delay = (float)Helper.GetRandomDouble(this.minDelay, this.maxDelay);
         }
 
         private List<FishSpec> PopulateFishSpecs(FishSpec initialSpec, FishPattern pattern)
@@ -74,20 +74,18 @@ namespace Fish
 
             if (CheckFishSpecs(fishes)) return fishes;
 
+            /*
+             * If the fish specs are not allowed, we need to completely regenerate them.
+             * However, we don't change the pattern. This is so that a single pattern
+             * won't just not show up because of its shape.
+             */
             FishSpec newSpec = GenerateRandomFish();
-            return PopulateFishSpecs(newSpec, pattern);
+            return PopulateFishSpecs(newSpec, pattern);  // TODO: Possibly improve this. Recursive call.
         }
 
-        private bool CheckFishSpecs(List<FishSpec> specs)
+        private bool CheckFishSpecs(IEnumerable<FishSpec> specs)
         {
-            foreach (FishSpec spec in specs)
-            {
-                if (spec.GetLocation().y > this.maxY || spec.GetLocation().y < this.minY)
-                {
-                    return false;
-                }
-            }
-            return true;
+            return specs.All(spec => !(spec.GetLocation().y > this.maxY) && !(spec.GetLocation().y < this.minY));
         }
 
         /// <summary>

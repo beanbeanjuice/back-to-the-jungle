@@ -39,6 +39,10 @@ namespace Fish
             return this._location;
         }
 
+        /// <summary>
+        /// Set this fish spec to a new location.
+        /// </summary>
+        /// <param name="location">The new location.</param>
         public void SetLocation(Vector3 location)
         {
             this._location = location;
