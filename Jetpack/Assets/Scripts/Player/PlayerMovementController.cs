@@ -2,17 +2,22 @@ using UnityEngine;
 
 namespace Player
 {
+    /// <summary>
+    /// A class used solely for player movement.
+    /// </summary>
     public class PlayerMovementController : MonoBehaviour
     {
         [SerializeField] private float velocity;
         [SerializeField] private float acceleration;
         [SerializeField] private float jumpVelocity;
         [SerializeField] private float groundJumpVelocity;
+        [SerializeField] private float maxYValue;
 
         private Rigidbody2D _rb;
         private bool _touchingGround;
+        private bool _touchingCeiling;
 
-        void Start()
+        private void Start()
         {
             this._rb = GetComponent<Rigidbody2D>();
         }
@@ -20,7 +25,8 @@ namespace Player
         private void Update()
         {
             CheckInput();
-            SetPlayerVelocity();
+            CeilingCheck();
+            SetPlayerXVelocity();
 
             // Cancels the rotation of the sprite.
             this.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -35,19 +41,55 @@ namespace Player
                  * to the player so that the jump feels instantaneous. This is so that the
                  * player's velocity does not start at 0 when they jump, but instead starts
                  * at some predetermined value.
+                 *
+                 * Additionally, if the player is touching the ceiling AND holding the jump
+                 * button, then we want to keep their position at the top of the screen. If
+                 * we do not do this, there will be some minor jumping that occurs.
                  */
                 if (this._touchingGround)
                     this._rb.velocity = new Vector2(0, this.groundJumpVelocity);
+                else if (this._touchingCeiling)
+                    RemoveUpwardsVelocity(this.transform.position);
                 else
                     this._rb.AddForce(new Vector2(0, this.jumpVelocity), ForceMode2D.Impulse);
             }
         }
 
-        private void SetPlayerVelocity()
+        private void SetPlayerXVelocity()
         {
-            float yVelocity = this._rb.velocity.y;  // Grab old y velocity.
-            this.velocity += this.acceleration * Time.deltaTime;  // Update new velocity.
-            this._rb.velocity = new Vector2(this.velocity, yVelocity);  // Set new velocity.
+            /*
+             * First, we want to grab the old y velocity, then
+             * update the y velocity, then set the RigidBody's
+             * y velocity to the updated y velocity.
+             */
+            float yVelocity = this._rb.velocity.y;
+            this.velocity += this.acceleration * Time.deltaTime;
+            this._rb.velocity = new Vector2(this.velocity, yVelocity);
+        }
+
+        private void CeilingCheck()
+        {
+            Vector3 position = this.transform.position;
+
+            /*
+             * If the player is touching the ceiling, we want there to be no "upwards" inertia
+             * or force. Therefore, the upwards velocity should be 0.
+             */
+            if (position.y >= this.maxYValue)
+            {
+                RemoveUpwardsVelocity(position);
+                this._touchingCeiling = true;
+            }
+            else
+            {
+                this._touchingCeiling = false;
+            }
+        }
+
+        private void RemoveUpwardsVelocity(Vector3 position)
+        {
+            this.gameObject.transform.position = new Vector3(position.x, this.maxYValue, position.z);
+            this._rb.velocity = new Vector2(0, 0);
         }
 
         private void OnCollisionEnter2D(Collision2D other)

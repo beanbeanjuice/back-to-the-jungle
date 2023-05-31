@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using Fish.Patterns;
 using UnityEngine;
 
 namespace Fish
@@ -11,15 +14,78 @@ namespace Fish
     public class FishFactory : MonoBehaviour
     {
         [SerializeField] private GameObject fishPrefab;
+        [SerializeField] private GameObject player;
+        [SerializeField] private float xDistanceFromPlayer;
+        [SerializeField] private float minY;
+        [SerializeField] private float maxY;
+        [SerializeField] private float minDelay;
+        [SerializeField] private float maxDelay;
+        [SerializeField] private FishPatterns fishPatterns;
+        private int _numPatterns;
+
+        private float _delay;
+        private float _delayTimer;
+
+        private void Awake()
+        {
+            this._numPatterns = this.fishPatterns.GetPatterns().Length;
+        }
 
         /// <summary>
         /// Build and spawn the fish in.
         /// </summary>
-        /// <param name="fishSpec">The given fish spec.</param>
-        public void Build(FishSpec fishSpec)
+        /// <param name="initialFishSpec">The given fish spec.</param>
+        private void Build(FishSpec initialFishSpec)
         {
-            GameObject fish = Instantiate(this.fishPrefab, fishSpec.GetLocation(), Quaternion.identity);
-            fish.GetComponent<FishController>().ChangeType(fishSpec.GetFishType());
+            FishPattern pattern = this.fishPatterns.GetPatterns()[Helper.GetRandomInteger(0, this._numPatterns)];
+
+            // Spawn all of the fish specs into the scene.
+            foreach (FishSpec fishSpec in PopulateFishSpecs(initialFishSpec, pattern))
+            {
+                GameObject fish = Instantiate(this.fishPrefab, fishSpec.GetLocation(), Quaternion.identity);
+                fish.GetComponent<FishController>().ChangeType(fishSpec.GetFishType());
+            }
+
+        }
+
+        private void Update()
+        {
+            this._delayTimer += Time.deltaTime;
+
+            if (!(this._delayTimer >= this._delay)) return;
+
+            Build(GenerateRandomFish());
+            this._delayTimer = 0;
+            this._delay = (float)Helper.GetRandomDouble(this.minDelay, this.maxDelay);
+        }
+
+        private List<FishSpec> PopulateFishSpecs(FishSpec initialSpec, FishPattern pattern)
+        {
+            List<FishSpec> fishes = new List<FishSpec>();
+            Vector3 initialLocation = initialSpec.GetLocation();
+            fishes.Add(initialSpec);
+
+            for (int i = 0; i < pattern.GetFishCount(); i++)
+            {
+                FishSpec spec = GenerateRandomFish();
+                spec.SetLocation(initialLocation + (Vector3)pattern.GetLocationOffsets()[i]);
+                fishes.Add(spec);
+            }
+
+            if (CheckFishSpecs(fishes)) return fishes;
+
+            /*
+             * If the fish specs are not allowed, we need to completely regenerate them.
+             * However, we don't change the pattern. This is so that a single pattern
+             * won't just not show up because of its shape.
+             */
+            FishSpec newSpec = GenerateRandomFish();
+            return PopulateFishSpecs(newSpec, pattern);  // TODO: Possibly improve this. Recursive call.
+        }
+
+        private bool CheckFishSpecs(IEnumerable<FishSpec> specs)
+        {
+            return specs.All(spec => !(spec.GetLocation().y > this.maxY) && !(spec.GetLocation().y < this.minY));
         }
 
         /// <summary>
@@ -52,8 +118,10 @@ namespace Fish
         /// <returns>A pseudo-random fish spec.</returns>
         public FishSpec GenerateRandomFish(FishType type)
         {
-            // TODO: Generate random location for the fish according to game logic.
-            Vector2 location = new Vector2(0, 0);
+            float fishX = this.xDistanceFromPlayer + this.player.transform.position.x;
+            float fishY = (float)Helper.GetRandomDouble(this.minY, this.maxY);
+
+            Vector3 location = new Vector3(fishX, fishY, this.fishPrefab.transform.position.z);
             return new FishSpec(type, location);
         }
     }
