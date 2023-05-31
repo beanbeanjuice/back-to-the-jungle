@@ -715,6 +715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1633240007}
   - component: {fileID: 1633240006}
+  - component: {fileID: 1633240008}
   m_Layer: 7
   m_Name: Mount
   m_TagString: Player
