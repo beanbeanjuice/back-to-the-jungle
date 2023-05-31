@@ -18,7 +18,7 @@ public class LoopingGround : MonoBehaviour
     private void Update()
     {
         float playerPosition = player.transform.position.x;
-
+        Debug.Log((this.lastSpawnPosition + this.spawnDistance) / 2);
         if (playerPosition > (this.lastSpawnPosition + this.spawnDistance) / 2)
         {
             SpawnGround();
