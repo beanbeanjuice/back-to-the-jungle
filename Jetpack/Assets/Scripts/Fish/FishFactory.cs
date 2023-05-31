@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using Fish.Pattern;
-using Player;
+using Fish.Patterns;
 using UnityEngine;
 
 namespace Fish
@@ -73,7 +72,22 @@ namespace Fish
                 fishes.Add(spec);
             }
 
-            return fishes;
+            if (CheckFishSpecs(fishes)) return fishes;
+
+            FishSpec newSpec = GenerateRandomFish();
+            return PopulateFishSpecs(newSpec, pattern);
+        }
+
+        private bool CheckFishSpecs(List<FishSpec> specs)
+        {
+            foreach (FishSpec spec in specs)
+            {
+                if (spec.GetLocation().y > this.maxY || spec.GetLocation().y < this.minY)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         /// <summary>

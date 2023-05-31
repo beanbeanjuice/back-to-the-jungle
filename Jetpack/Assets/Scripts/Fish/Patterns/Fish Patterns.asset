@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishPatterns:
   - {fileID: 11400000, guid: c2d23e86efb04054d9ace3091ba56628, type: 2}
-  normalizeOffset: 1
+  - {fileID: 11400000, guid: fb9121ed3942a4d4bafcbeef426994ad, type: 2}
+  - {fileID: 11400000, guid: 69bdd278aee311841852f914ecc8e2c4, type: 2}

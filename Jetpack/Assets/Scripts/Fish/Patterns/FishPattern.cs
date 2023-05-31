@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Fish.Pattern
+namespace Fish.Patterns
 {
     [CreateAssetMenu]
     public class FishPattern : ScriptableObject
