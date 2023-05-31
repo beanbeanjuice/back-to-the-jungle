@@ -9,6 +9,7 @@ namespace Fish
     {
         [SerializeField] private FishType type;
         [SerializeField] private FishBindings fishBindings;
+        [SerializeField] private float deletionTime;
 
         private SpriteRenderer _spriteRenderer;
 
@@ -16,6 +17,13 @@ namespace Fish
         {
             this._spriteRenderer = GetComponent<SpriteRenderer>();
             ChangeType(this.type);
+
+            /*
+             * We need to destroy the fish after a certain amount of time
+             * so that there aren't hundreds of random game objects that
+             * are impossible to collect once the player passes them.
+             */
+            Destroy(this.gameObject, this.deletionTime);
         }
 
         /// <summary>

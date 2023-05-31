@@ -153,6 +153,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishPrefab: {fileID: 2188222279618484596, guid: 53447dbfba47ae14aa38ca89a676b259, type: 3}
+  player: {fileID: 1975473065}
+  xDistanceFromPlayer: 20
+  minY: -3.5
+  maxY: 4.5
+  minDelay: 5
+  maxDelay: 15
+  fishPatterns: {fileID: 11400000, guid: f81b928ca2d5c7446bd29621dc776a4b, type: 2}
 --- !u!4 &26040797
 Transform:
   m_ObjectHideFlags: 0
@@ -319,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1975473065}
-  xOffset: 5
+  xOffset: 7.5
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,9 +989,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975473065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.03, y: 0.71, z: 0.31}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -9.89, y: -3.09, z: 0.31}
+  m_LocalScale: {x: 0.26, y: 0.26, z: 0.26}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1633240007}
   m_Father: {fileID: 0}
@@ -1051,6 +1058,7 @@ MonoBehaviour:
   acceleration: 0.01
   jumpVelocity: 7
   groundJumpVelocity: 3
+  maxYValue: 4.5
 --- !u!114 &1975473071
 MonoBehaviour:
   m_ObjectHideFlags: 0
