@@ -12,7 +12,6 @@ namespace Mount
         private Animator _anim;
         private readonly static int Flying = Animator.StringToHash("flying");
         private readonly static int Walking = Animator.StringToHash("touching_ground");
-        private bool _touchingGround;
 
         private void Start()
         {
@@ -28,14 +27,12 @@ namespace Mount
 
         private void UpdateState()
         {
-            if (Input.GetButton("Jump"))
-            {
-                /*
-                 * If the player is flying upwards, we want to change the mount animation
-                 * to flying instead of gliding. Otherwise, the player glides.
-                */
+            /*
+             * If the player is flying upwards, we want to change the mount animation
+             * to flying instead of gliding. Otherwise, the player glides.
+            */
+            if (Input.GetButton("Jump")) 
                 this._anim.SetBool(Flying, true);
-            }
             else
                 this._anim.SetBool(Flying, false);
 
@@ -43,8 +40,7 @@ namespace Mount
              * Walk animation will only play when player is detected touching the ground, so
              * we check if player is touching ground and set the appropriate animation conditions.
             */
-            this._touchingGround = this._parentController.GetGroundState();
-            if (this._touchingGround)
+            if (this._parentController.GetGroundState())
                 this._anim.SetBool(Walking, true);
             else
                 this._anim.SetBool(Walking, false);
