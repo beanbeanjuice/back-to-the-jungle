@@ -8,22 +8,24 @@ namespace Mount
     /// </summary>
     public class MountAnimationController : MonoBehaviour
     {
-        [SerializeField] private GameObject parent;
         private PlayerMovementController _parentController;
         private Animator _anim;
+        private readonly static int Flying = Animator.StringToHash("flying");
+        private readonly static int Walking = Animator.StringToHash("touching_ground");
         private bool _touchingGround;
 
         private void Start()
         {
             this._anim = GetComponent<Animator>();
-            this._parentController = this.parent.GetComponent<PlayerMovementController>();
+            this._parentController = this.gameObject.transform.parent.gameObject
+                .GetComponent<PlayerMovementController>();
         }
 
         private void Update()
         {
             UpdateState();
         }
-        
+
         private void UpdateState()
         {
             if (Input.GetButton("Jump"))
@@ -32,21 +34,20 @@ namespace Mount
                  * If the player is flying upwards, we want to change the mount animation
                  * to flying instead of gliding. Otherwise, the player glides.
                  */ 
-                 this._anim.SetBool("flying", true);
+                 this._anim.SetBool(Flying, true);
             }
             else
-                this._anim.SetBool("flying", false);
+                this._anim.SetBool(Flying, false);
 
             /* If player is not actively flying, then is either gliding or walking on the ground.
              * Walk animation will only play when player is detected touching the ground, so
              * we check if player is touching ground and set the appropriate animation conditions.
              */
             this._touchingGround = this._parentController.GetGroundState();
-            Debug.Log(this._touchingGround);
             if (this._touchingGround)
-                this._anim.SetBool("touching_ground", true);
+                this._anim.SetBool(Walking, true);
             else
-                this._anim.SetBool("touching_ground", false);
+                this._anim.SetBool(Walking, false);
         }
     }
 }
