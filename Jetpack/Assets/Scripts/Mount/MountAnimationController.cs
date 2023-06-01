@@ -31,19 +31,13 @@ namespace Mount
              * If the player is flying upwards, we want to change the mount animation
              * to flying instead of gliding. Otherwise, the player glides.
             */
-            if (Input.GetButton("Jump"))
-                this._anim.SetBool(Flying, true);
-            else
-                this._anim.SetBool(Flying, false);
+            this._anim.SetBool(Flying, Input.GetButton("Jump"));
 
             /* If player is not actively flying, then is either gliding or walking on the ground.
              * Walk animation will only play when player is detected touching the ground, so
              * we check if player is touching ground and set the appropriate animation conditions.
             */
-            if (this._parentController.GetGroundState())
-                this._anim.SetBool(Walking, true);
-            else
-                this._anim.SetBool(Walking, false);
+            this._anim.SetBool(Walking, this._parentController.GetGroundState());
         }
     }
 }
