@@ -539,14 +539,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809249261}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4b4cbf4f87294a03b1769d213007a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   groundPrefab: {fileID: 809249261}
-  spawnDistance: 24.53
+  grid: {fileID: 2129139301}
+  spawnDistance: 44.5
   player: {fileID: 1975473065}
+  secondsBeforeDelete: 20
 --- !u!1 &1180942707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,6 +1115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2129139303}
   - component: {fileID: 2129139302}
+  - component: {fileID: 2129139304}
   m_Layer: 0
   m_Name: Grid
   m_TagString: GroundManager
@@ -1148,6 +1151,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2129139304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129139301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b4cbf4f87294a03b1769d213007a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundPrefab: {fileID: 809249261}
+  grid: {fileID: 2129139301}
+  spawnDistance: 30
+  player: {fileID: 1975473065}
+  secondsBeforeDelete: 15
 --- !u!1001 &2568282804423756079
 PrefabInstance:
   m_ObjectHideFlags: 0
