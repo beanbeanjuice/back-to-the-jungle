@@ -31,7 +31,7 @@ namespace Mount
              * If the player is flying upwards, we want to change the mount animation
              * to flying instead of gliding. Otherwise, the player glides.
             */
-            if (Input.GetButton("Jump")) 
+            if (Input.GetButton("Jump"))
                 this._anim.SetBool(Flying, true);
             else
                 this._anim.SetBool(Flying, false);
