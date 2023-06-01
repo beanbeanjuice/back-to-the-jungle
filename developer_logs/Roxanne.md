@@ -16,3 +16,10 @@
 * Created and completed artwork for pause menu, including coins logo, distance logo, tablet display logo, and pause logo. Also completed continue button, and 2 variations of mainMenu button. These were all inspired by credited sources but made myself on pixelartmaker.
 
 * Reused coins, distance, menu, and tablet sprites for the Game Over menu. Created a new back button along with variations of play again button designs according to initial UI design.
+
+---
+## May 31, 2023
+* Created flying and walking pterodactyl sprites, made on pixelartmaker.
+
+* Created animations with these sprites, one for flying when there is user input to accelerate upwards, one for gliding when there is no user input for gliding downwards, one short landing animation, and one walking animation.
+As for these animations, I created `MountAnimationController.cs` to change the conditionals of whether the player (attached to the mount) was in the air or on the ground in order to animate the respective animations, only on the Mount object itself.
