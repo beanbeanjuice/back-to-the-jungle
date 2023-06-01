@@ -1,41 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+    /// <summary>
+    /// Looping Ground. This class is used for generating
+    /// and spawning ground in.
+    /// </summary>
 
 public class LoopingGround : MonoBehaviour
 {
-    [SerializeField] private GameObject groundPrefab;
+    [SerializeField] public GameObject currentGround;
+    [SerializeField] public GameObject nextGround;
     [SerializeField] private GameObject grid;
     [SerializeField] private float spawnDistance; // ground length
     [SerializeField] private GameObject player;
-    [SerializeField] private float secondsBeforeDelete;
-
-    private float lastSpawnPosition;
+    private float _endOfGround;
+    private bool _onCurrent = true;
 
     private void Start()
     {
-        this.lastSpawnPosition = groundPrefab.transform.position.x; // -15.7, -9.89
-
+        this._endOfGround = this.currentGround.transform.position.x + this.spawnDistance;
     }
 
     private void Update()
     {
-        float playerPosition = player.transform.position.x;
-        if (playerPosition > (this.lastSpawnPosition + this.spawnDistance) / 2)
+        float playerPosition = this.player.transform.position.x;
+        if (playerPosition > this._endOfGround)
         {
-            SpawnGround();
-            this.lastSpawnPosition += this.spawnDistance;
-
+            SwitchGround();
         }
-        // Destroy(this.gameObject, this.secondsBeforeDelete);
-
     }
-
-    private void SpawnGround()
+    private void SwitchGround()
     {
-        GameObject newGround = Instantiate(groundPrefab, this.groundPrefab.transform);
-        newGround.transform.SetParent(this.grid.transform);
-        newGround.transform.localScale = new Vector3(0.4488856f, 0.6523f, 0);
-        newGround.transform.position = new Vector3(this.lastSpawnPosition + this.spawnDistance, -2.73f, 60.0f);
+        if (this._onCurrent)
+        {
+            this._endOfGround = this.nextGround.transform.position.x + this.spawnDistance;
+            this.currentGround.transform.position = new Vector3(this._endOfGround, -2.73f, 60.0f);
+            this._onCurrent = false;
+        }
+        else
+        {
+            this._endOfGround = this.currentGround.transform.position.x + this.spawnDistance;
+            this.nextGround.transform.position = new Vector3(this._endOfGround, -2.73f, 60.0f);
+            this._onCurrent = true;
+        }
     }
 }
