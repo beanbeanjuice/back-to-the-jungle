@@ -438,6 +438,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &809249261 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4467653773519526792, guid: 1f6a9f8f4f01d3041acc34ba2c9a4e21, type: 3}
+  m_PrefabInstance: {fileID: 2568282804423756079}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &988426353
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +532,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5664446522545182263, guid: 1f6a9f8f4f01d3041acc34ba2c9a4e21, type: 3}
   m_PrefabInstance: {fileID: 2568282804423756079}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1167319754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809249261}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b4cbf4f87294a03b1769d213007a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundPrefab: {fileID: 809249261}
+  grid: {fileID: 2129139301}
+  spawnDistance: 44.5
+  player: {fileID: 1975473065}
+  secondsBeforeDelete: 20
 --- !u!1 &1180942707
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,9 +1115,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2129139303}
   - component: {fileID: 2129139302}
+  - component: {fileID: 2129139304}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: GroundManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1128,6 +1151,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2129139304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129139301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b4cbf4f87294a03b1769d213007a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundPrefab: {fileID: 809249261}
+  grid: {fileID: 2129139301}
+  spawnDistance: 30
+  player: {fileID: 1975473065}
+  secondsBeforeDelete: 15
 --- !u!1001 &2568282804423756079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5963,5 +6003,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4467653773519526792, guid: 1f6a9f8f4f01d3041acc34ba2c9a4e21, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1167319754}
   m_SourcePrefab: {fileID: 100100000, guid: 1f6a9f8f4f01d3041acc34ba2c9a4e21, type: 3}
