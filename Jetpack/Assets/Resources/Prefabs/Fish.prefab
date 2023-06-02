@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1398519567
-  m_SortingLayer: -2
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b01ca9dfac4d44faa93c043ef5bf6d21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -146,3 +146,4 @@ MonoBehaviour:
   type: 0
   fishBindings: {fileID: 11400000, guid: 659e8d9db3bc5de4aae49bf066290d8f, type: 2}
   deletionTime: 15
+  collectedSoundEffect: {fileID: 0}

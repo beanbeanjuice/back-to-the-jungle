@@ -9,6 +9,8 @@ namespace Player
     /// </summary>
     public class PlayerCollisionController : MonoBehaviour
     {
+        [SerializeField] private AudioSource collectionSoundEffect;
+
         private PlayerController _pc;
 
         private void Start()
@@ -20,8 +22,9 @@ namespace Player
         {
             if (other.gameObject.CompareTag("Fish"))
             {
-                Destroy(other.gameObject);
+                this.collectionSoundEffect.Play();
                 this._pc.UpdateScore(other.GetComponent<FishController>().GetFishType());
+                Destroy(other.gameObject);
             }
         }
     }
