@@ -41,5 +41,6 @@ The audio for the fish collection was chosen because it was the first thing that
 ## June 2, 2023
 * Despite my meticulous creating of the GitHub issues, some of my team mates had never had experience with creating PRs and using the `issues` function on GitHub, and hence I have completely removed it. We will not have to worry a lot more about what work can be worked on, and what won't cause a merge conflict.
 * I created collision detections with birds.
+* I created collision detections with vines.
 
 ---
