@@ -175,6 +175,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &415498251 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2886276431946801697, guid: 2ca6d4272adb4944db176ea08f739eae, type: 3}
+  m_PrefabInstance: {fileID: 8833988391758679870}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6302,6 +6307,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 648865911833094325, guid: 2ca6d4272adb4944db176ea08f739eae, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7071527113645546177, guid: 2ca6d4272adb4944db176ea08f739eae, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6350,6 +6359,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7906975071204070669, guid: 2ca6d4272adb4944db176ea08f739eae, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 415498251}
     - target: {fileID: 8819095057015350296, guid: 2ca6d4272adb4944db176ea08f739eae, type: 3}
       propertyPath: m_Name
       value: LevelLoader
