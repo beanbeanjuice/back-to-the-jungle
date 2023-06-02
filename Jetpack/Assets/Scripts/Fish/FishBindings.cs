@@ -5,6 +5,7 @@ namespace Fish
 {
     /// <summary>
     /// A class containing the possible bindings of the fish.
+    /// <remarks>Coded by William</remarks>
     /// </summary>
     [CreateAssetMenu]
     public class FishBindings : ScriptableObject

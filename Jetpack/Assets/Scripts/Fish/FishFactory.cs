@@ -10,6 +10,7 @@ namespace Fish
     /// <summary>
     /// The fish factory. This class is used for generating
     /// and spawning fish in.
+    /// <remarks>Coded by William</remarks>
     /// </summary>
     public class FishFactory : MonoBehaviour
     {

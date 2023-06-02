@@ -4,6 +4,7 @@ namespace Player
 {
     /// <summary>
     /// A class used solely for player movement.
+    /// <remarks>Coded by William</remarks>
     /// </summary>
     public class PlayerMovementController : MonoBehaviour
     {

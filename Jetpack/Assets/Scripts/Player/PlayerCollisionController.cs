@@ -6,6 +6,7 @@ namespace Player
     /// <summary>
     /// A class used solely for collisions with enemies/game objects
     /// other than the floor.
+    /// <remarks>Coded by William</remarks>
     /// </summary>
     public class PlayerCollisionController : MonoBehaviour
     {
