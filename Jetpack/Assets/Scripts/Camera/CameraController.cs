@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Camera
 {
+    /// <summary>
+    /// A class used to control the player camera.
+    /// </summary>
     public class CameraController : MonoBehaviour
     {
         [SerializeField] private GameObject player;
