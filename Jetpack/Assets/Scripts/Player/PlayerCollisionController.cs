@@ -9,6 +9,8 @@ namespace Player
     /// </summary>
     public class PlayerCollisionController : MonoBehaviour
     {
+        [SerializeField] private AudioSource collectionSoundEffect;
+
         private PlayerController _pc;
 
         private void Start()
@@ -18,10 +20,17 @@ namespace Player
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.CompareTag("Fish"))
+            switch (other.tag)
             {
-                Destroy(other.gameObject);
-                this._pc.UpdateScore(other.GetComponent<FishController>().GetFishType());
+                case "Fish":
+                    this.collectionSoundEffect.Play();
+                    this._pc.UpdateScore(other.GetComponent<FishController>().GetFishType());
+                    Destroy(other.gameObject);
+                    break;
+                case "Bird":
+                    // TODO: Implement death/game over.
+                    Destroy(other.gameObject);
+                    break;
             }
         }
     }
