@@ -175,6 +175,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &104029266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4467653773519526792, guid: 1f6a9f8f4f01d3041acc34ba2c9a4e21, type: 3}
+  m_PrefabInstance: {fileID: 1450108387}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &415498251 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2886276431946801697, guid: 2ca6d4272adb4944db176ea08f739eae, type: 3}
@@ -5958,6 +5963,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1812434472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4467653773519526792, guid: 1f6a9f8f4f01d3041acc34ba2c9a4e21, type: 3}
+  m_PrefabInstance: {fileID: 2568282804423756079}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1975473065
 GameObject:
   m_ObjectHideFlags: 0
@@ -6269,6 +6279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2129139303}
   - component: {fileID: 2129139302}
+  - component: {fileID: 2129139304}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -6305,6 +6316,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2129139304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129139301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b4cbf4f87294a03b1769d213007a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentGround: {fileID: 1812434472}
+  nextGround: {fileID: 104029266}
+  grid: {fileID: 2129139301}
+  spawnDistance: 44.5
+  player: {fileID: 1975473065}
 --- !u!1001 &2568282804423756079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11083,7 +11111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4467653773519526792, guid: 1f6a9f8f4f01d3041acc34ba2c9a4e21, type: 3}
       propertyPath: m_Name
-      value: Ground
+      value: CurrentGround
       objectReference: {fileID: 0}
     - target: {fileID: 5664446522545182263, guid: 1f6a9f8f4f01d3041acc34ba2c9a4e21, type: 3}
       propertyPath: m_RootOrder
