@@ -102,5 +102,14 @@ namespace Player
             if (other.collider.CompareTag("Ground")) this._touchingGround = false;
         }
 
+        /// <summary>
+        /// Getter to get ground state to update mount animation in MountAnimationController.
+        /// </summary>
+        /// <returns>A boolean indicator of if player is touching ground.</returns>
+        public bool GetGroundState()
+        {
+            return this._touchingGround;
+        }
+
     }
 }
