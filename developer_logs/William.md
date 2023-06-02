@@ -35,3 +35,11 @@ Essentially, we create our own "fish pattern" assets which we attach to the `Fis
 ## June 1, 2023
 * I added some basic background music and fish collection audio. These, of course, can be changed later as I suspect with the fish collection noise. For the background music, I chose a song that is catchy and from an artist I am familiar with, and honestly think it fits the feel of the game well.
 The audio for the fish collection was chosen because it was the first thing that popped up in my mind. There seems to be random issues with framerate now because of the audio, so I messed with some of the decompression settings, and hopefully that fixes it.
+
+---
+
+## June 2, 2023
+* Despite my meticulous creating of the GitHub issues, some of my team mates had never had experience with creating PRs and using the `issues` function on GitHub, and hence I have completely removed it. We will not have to worry a lot more about what work can be worked on, and what won't cause a merge conflict.
+* I created collision detections with birds.
+
+---

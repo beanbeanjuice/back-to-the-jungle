@@ -20,11 +20,17 @@ namespace Player
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.CompareTag("Fish"))
+            switch (other.tag)
             {
-                this.collectionSoundEffect.Play();
-                this._pc.UpdateScore(other.GetComponent<FishController>().GetFishType());
-                Destroy(other.gameObject);
+                case "Fish":
+                    this.collectionSoundEffect.Play();
+                    this._pc.UpdateScore(other.GetComponent<FishController>().GetFishType());
+                    Destroy(other.gameObject);
+                    break;
+                case "Bird":
+                    // TODO: Implement death/game over.
+                    Destroy(other.gameObject);
+                    break;
             }
         }
     }
