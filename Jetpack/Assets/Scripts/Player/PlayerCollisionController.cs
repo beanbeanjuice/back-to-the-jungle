@@ -26,6 +26,12 @@ namespace Player
                 this._pc.UpdateScore(other.GetComponent<FishController>().GetFishType());
                 Destroy(other.gameObject);
             }
+
+            else if (other.gameObject.CompareTag("Bird"))
+            {
+                // TODO: Implement death/game over.
+                Destroy(other.gameObject);
+            }
         }
     }
 }
