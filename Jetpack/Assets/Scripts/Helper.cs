@@ -2,7 +2,7 @@
 
 /// <summary>
 /// A general helper class used for common functions.
-/// <remarks>Coded by William</remarks>
+/// <remarks>Coded by William.</remarks>
 /// </summary>
 public static class Helper
 {
