@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 741037257345627716}
   - component: {fileID: -6368203827326210691}
   m_Layer: 0
-  m_Name: Vine
+  m_Name: Vine0
   m_TagString: Vine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
