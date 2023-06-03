@@ -10,6 +10,7 @@ namespace Player
     public class PlayerCollisionController : MonoBehaviour
     {
         [SerializeField] private AudioSource collectionSoundEffect;
+        [SerializeField] private AudioSource endGameMusic;
 
         private PlayerController _pc;
 
@@ -30,6 +31,10 @@ namespace Player
                 case "Bird":
                     // TODO: Implement death/game over.
                     Destroy(other.gameObject);
+                    break;
+                case "Vine":
+                    this.endGameMusic.Play();
+                    this._pc.EndGame();
                     break;
             }
         }

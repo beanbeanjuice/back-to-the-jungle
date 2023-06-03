@@ -10,7 +10,7 @@ public class VineFactory : MonoBehaviour
     [SerializeField] private GameObject[] vinePrefabs;
     [SerializeField] private GameObject player;
     [SerializeField] private float threshold;
-    [SerializeField] private float secondsAfterDelete;
+    [SerializeField] private float secondsBeforeDelete;
     [SerializeField] private float minScale;
     [SerializeField] private float maxScale;
     [SerializeField] private int numOfVines;
@@ -61,7 +61,7 @@ public class VineFactory : MonoBehaviour
         vine.transform.position = new Vector3(this._lastSpawnLocation, positionY, this.player.transform.position.z);
         vine.transform.localScale = new Vector3(this._scale, this._scale, 0.0f);
 
-        Destroy(vine, this.secondsAfterDelete);
+        Destroy(vine, this.secondsBeforeDelete);
     }
 }
 

@@ -39,6 +39,15 @@ namespace Player
             Debug.Log($"Type: {type}");  // TODO: Remove in production.
             this._score++;
         }
+        /// <summary>
+        /// End Game and GetScore
+        /// </summary>
+        public void EndGame()
+        {
+            // change this later to a screen that goes high score scene
+            Debug.Log("Game has ended\nThank you for playing\n" + "Score: " + this.GetScore());
+            // UnityEditor.EditorApplication.isPlaying = false;
+        }
 
         /// <summary>
         /// Get the player's current score.
