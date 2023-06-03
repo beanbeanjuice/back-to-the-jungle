@@ -43,5 +43,6 @@ The audio for the fish collection was chosen because it was the first thing that
 * I created collision detections with birds.
 * I created the bird movement controller. Some more can be done here, but I think that is up to the Game Logic team, or for a separate GitHub issue.
 * I created collision detections with vines.
+* There was an error due to how `LoopingGround.cs` was setup that would cause the player to switch to a `Gliding` state when the ground is moved. This has now been fixed, and the `PlayerMovementController` now uses a `Physics2D.BoxCast` to check if it is touching the ground.
 
 ---

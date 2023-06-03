@@ -5,6 +5,7 @@ namespace Camera
     /// <summary>
     /// BackgroundReplicator moves the background once camera position passes its bounds,
     /// replicating it for an endless scroll effect.
+    /// <remarks>Code by Emily.</remarks>
     /// </summary>
     public class BackgroundReplicator : MonoBehaviour
     {

@@ -5,7 +5,7 @@ namespace Player
 {
     /// <summary>
     /// A script containing the information for the player.
-    /// <remarks>Coded by William</remarks>
+    /// <remarks>Coded by William.</remarks>
     /// </summary>
     public class PlayerController : MonoBehaviour
     {

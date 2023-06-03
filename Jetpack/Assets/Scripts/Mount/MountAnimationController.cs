@@ -5,6 +5,7 @@ namespace Mount
 {
     /// <summary>
     /// A class used solely for mount animation movement.
+    /// <remarks>Coded by Roxanne.</remarks>
     /// </summary>
     public class MountAnimationController : MonoBehaviour
     {
@@ -37,7 +38,7 @@ namespace Mount
              * Walk animation will only play when player is detected touching the ground, so
              * we check if player is touching ground and set the appropriate animation conditions.
             */
-            this._anim.SetBool(Walking, this._parentController.GetGroundState());
+            this._anim.SetBool(Walking, this._parentController.IsGrounded());
         }
     }
 }
