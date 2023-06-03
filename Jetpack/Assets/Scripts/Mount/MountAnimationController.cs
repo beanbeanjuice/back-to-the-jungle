@@ -5,6 +5,7 @@ namespace Mount
 {
     /// <summary>
     /// A class used solely for mount animation movement.
+    /// <remarks>Coded by Roxanne.</remarks>
     /// </summary>
     public class MountAnimationController : MonoBehaviour
     {

@@ -4,7 +4,7 @@ namespace Player
 {
     /// <summary>
     /// A class used solely for player movement.
-    /// <remarks>Coded by William</remarks>
+    /// <remarks>Coded by William.</remarks>
     /// </summary>
     public class PlayerMovementController : MonoBehaviour
     {
@@ -98,7 +98,7 @@ namespace Player
         /// <summary>
         /// Getter to get ground state to update mount animation in MountAnimationController.
         /// </summary>
-        /// <remarks>Coded by Roxanne and William</remarks>
+        /// <remarks>Coded by Roxanne and William.</remarks>
         /// <returns>A boolean indicator of if player is touching ground.</returns>
         public bool IsGrounded()
         {

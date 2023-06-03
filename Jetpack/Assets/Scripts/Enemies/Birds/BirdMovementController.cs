@@ -4,7 +4,7 @@ namespace Enemies.Birds
 {
     /// <summary>
     /// A class used for moving the birds on the scene.
-    /// <remarks>Coded by William</remarks>
+    /// <remarks>Coded by William.</remarks>
     /// </summary>
     public class BirdMovementController : MonoBehaviour
     {
