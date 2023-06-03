@@ -6,6 +6,7 @@ namespace Player
     /// <summary>
     /// A class used solely for collisions with enemies/game objects
     /// other than the floor.
+    /// <remarks>Coded by William</remarks>
     /// </summary>
     public class PlayerCollisionController : MonoBehaviour
     {
@@ -28,7 +29,13 @@ namespace Player
                     Destroy(other.gameObject);
                     break;
                 case "Bird":
+                    // TODO: Play bird collision audio.
                     // TODO: Implement death/game over.
+                    Destroy(other.gameObject);
+                    break;
+                case "Vine":
+                    // TODO: Play vine collision audio.
+                    // TODO: Implement death/game over. It is possible to combine Bird and Vine in code depending on implementation.
                     Destroy(other.gameObject);
                     break;
             }

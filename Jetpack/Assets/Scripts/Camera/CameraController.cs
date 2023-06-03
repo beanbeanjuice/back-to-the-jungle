@@ -4,6 +4,7 @@ namespace Camera
 {
     /// <summary>
     /// A class used to control the player camera.
+    /// <remarks>Coded by William</remarks>
     /// </summary>
     public class CameraController : MonoBehaviour
     {

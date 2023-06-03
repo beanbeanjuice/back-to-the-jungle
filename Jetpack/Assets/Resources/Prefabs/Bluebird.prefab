@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2259050892205997890}
   - component: {fileID: 8176539208965186494}
   - component: {fileID: 4437630746868257011}
+  - component: {fileID: -1409639592484604934}
   m_Layer: 0
   m_Name: Bluebird
   m_TagString: Bird
@@ -152,3 +153,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9462174, y: 1.6157849}
   m_EdgeRadius: 0
+--- !u!114 &-1409639592484604934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555091740891162461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8255a9ff6d6d36c45bf7741d9357b4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xVelocity: -5
