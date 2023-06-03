@@ -1,9 +1,9 @@
 using UnityEngine;
 
-    /// <summary>
-    /// Looping Ground. This class is used for generating and spawning ground in.
-    /// <remarks>Coded by Gisselle.</remarks>
-    /// </summary>
+/// <summary>
+/// Looping Ground. This class is used for generating and spawning ground in.
+/// <remarks>Coded by Gisselle.</remarks>
+/// </summary>
 public class LoopingGround : MonoBehaviour
 {
     [SerializeField] public GameObject currentGround;
