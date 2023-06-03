@@ -4,7 +4,7 @@ namespace Player
 {
     /// <summary>
     /// A class used solely for player movement.
-    /// <remarks>Coded by William</remarks>
+    /// <remarks>Coded by William.</remarks>
     /// </summary>
     public class PlayerMovementController : MonoBehaviour
     {
@@ -13,14 +13,16 @@ namespace Player
         [SerializeField] private float jumpVelocity;
         [SerializeField] private float groundJumpVelocity;
         [SerializeField] private float maxYValue;
+        [SerializeField] private LayerMask walkingGround;
 
         private Rigidbody2D _rb;
-        private bool _touchingGround;
+        private BoxCollider2D _collider;
         private bool _touchingCeiling;
 
         private void Start()
         {
             this._rb = GetComponent<Rigidbody2D>();
+            this._collider = GetComponent<BoxCollider2D>();
         }
 
         private void Update()
@@ -47,7 +49,7 @@ namespace Player
                  * button, then we want to keep their position at the top of the screen. If
                  * we do not do this, there will be some minor jumping that occurs.
                  */
-                if (this._touchingGround)
+                if (IsGrounded())
                     this._rb.velocity = new Vector2(0, this.groundJumpVelocity);
                 else if (this._touchingCeiling)
                     RemoveUpwardsVelocity(this.transform.position);
@@ -93,24 +95,27 @@ namespace Player
             this._rb.velocity = new Vector2(0, 0);
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            if (other.collider.CompareTag("Ground")) this._touchingGround = true;
-        }
-
-        private void OnCollisionExit2D(Collision2D other)
-        {
-            if (other.collider.CompareTag("Ground")) this._touchingGround = false;
-        }
-
         /// <summary>
         /// Getter to get ground state to update mount animation in MountAnimationController.
         /// </summary>
+        /// <remarks>Coded by Roxanne and William.</remarks>
         /// <returns>A boolean indicator of if player is touching ground.</returns>
-        public bool GetGroundState()
+        public bool IsGrounded()
         {
-            return this._touchingGround;
+            /*
+             * This essentially creates another box collider of the
+             * same size, located at the same place, moves it down by 0.1f units
+             * and checks if it is colliding with the ground.
+             */
+            Bounds boxBound = this._collider.bounds;
+            return Physics2D.BoxCast(
+                boxBound.center,
+                boxBound.size,
+                0f,
+                Vector2.down,
+                .1f,
+                this.walkingGround
+                );
         }
-
     }
 }
