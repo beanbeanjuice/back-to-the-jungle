@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8602620443964523707}
   - component: {fileID: 3601165878865959720}
   - component: {fileID: 4446769466230887751}
+  - component: {fileID: 7633322731726085292}
   m_Layer: 0
   m_Name: Pinkbird
   m_TagString: Bird
@@ -152,3 +153,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9776093, y: 1.6157849}
   m_EdgeRadius: 0
+--- !u!114 &7633322731726085292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4341766320418088803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8255a9ff6d6d36c45bf7741d9357b4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xVelocity: -5
