@@ -6054,6 +6054,10 @@ PrefabInstance:
       value: endGameAS
       objectReference: {fileID: 0}
     - target: {fileID: 8065548967924377220, guid: 91c36b3547edc45f3a33d49201465ec6, type: 3}
+      propertyPath: m_Volume
+      value: 0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065548967924377220, guid: 91c36b3547edc45f3a33d49201465ec6, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
