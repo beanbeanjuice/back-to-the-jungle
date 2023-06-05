@@ -669,8 +669,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2008970820}
   - {fileID: 1825492334}
+  - {fileID: 2008970820}
   - {fileID: 675800338}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -691,7 +691,6 @@ GameObject:
   - component: {fileID: 675800338}
   - component: {fileID: 675800340}
   - component: {fileID: 675800339}
-  - component: {fileID: 675800341}
   m_Layer: 5
   m_Name: DistanceScore
   m_TagString: Untagged
@@ -816,20 +815,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675800337}
   m_CullTransparentMesh: 1
---- !u!114 &675800341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675800337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9574dc5acbf01e74da24b52d8c805e69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1975473068}
-  distanceScore: {fileID: 675800339}
 --- !u!1 &988426353
 GameObject:
   m_ObjectHideFlags: 0
@@ -6607,6 +6592,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1975473074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975473065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9574dc5acbf01e74da24b52d8c805e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1975473068}
+  distanceScore: {fileID: 675800339}
 --- !u!1 &2008970819
 GameObject:
   m_ObjectHideFlags: 0
@@ -6667,8 +6666,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fcca071535b6cb4438b402d203fac193, type: 2}
+  m_sharedMaterial: {fileID: 123821556539850264, guid: fcca071535b6cb4438b402d203fac193, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6692,8 +6691,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
