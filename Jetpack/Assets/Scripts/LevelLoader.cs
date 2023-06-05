@@ -10,9 +10,10 @@ public class LevelLoader : MonoBehaviour
 {
     [SerializeField] private Animator transition;
     [SerializeField] private float crossFadeTransitionTime = 1.0f;
+    private readonly static int Start = Animator.StringToHash("Start");
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         // TODO: In production, remove this and replace with UI buttons.
         if (Input.GetKey("a"))
@@ -25,7 +26,7 @@ public class LevelLoader : MonoBehaviour
     /// <summary>
     /// Call this class to load the gameplay scene.
     /// </summary>
-    public void LoadGameScene()
+    public void LoadGameScene()  // TODO: Change to private if not used in production.
     {
         StartCoroutine(LoadLevel("Gameplay", this.crossFadeTransitionTime));
     }
@@ -33,7 +34,7 @@ public class LevelLoader : MonoBehaviour
     /// <summary>
     /// Call this class to load the dummy scene.
     /// </summary>
-    public void LoadDummyScene()
+    public void LoadDummyScene()  // TODO: Change to private if not used in production.
     {
         StartCoroutine(LoadLevel("Dummy Scene 1", this.crossFadeTransitionTime));
     }
@@ -47,7 +48,7 @@ public class LevelLoader : MonoBehaviour
     private IEnumerator LoadLevel(string sceneName, float transitionTime)
     {
         // Play animation.
-        this.transition.SetTrigger("Start");
+        this.transition.SetTrigger(Start);
 
         // Wait
         yield return new WaitForSeconds(transitionTime);
