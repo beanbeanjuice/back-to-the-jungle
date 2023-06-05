@@ -39,10 +39,14 @@ The audio for the fish collection was chosen because it was the first thing that
 ---
 
 ## June 2, 2023
-* Despite my meticulous creating of the GitHub issues, some of my team mates had never had experience with creating PRs and using the `issues` function on GitHub, and hence I have completely removed it. We will not have to worry a lot more about what work can be worked on, and what won't cause a merge conflict.
+* Despite my meticulous creating of the GitHub issues, some of my team mates had never had experience with creating PRs and using the `issues` function on GitHub, and hence I have completely removed it. I think we can work more effectively this way, but will have to be a bit more mindful about the quality of code we are committing to the codebase.
 * I created collision detections with birds.
 * I created the bird movement controller. Some more can be done here, but I think that is up to the Game Logic team, or for a separate GitHub issue.
 * I created collision detections with vines.
 * There was an error due to how `LoopingGround.cs` was setup that would cause the player to switch to a `Gliding` state when the ground is moved. This has now been fixed, and the `PlayerMovementController` now uses a `Physics2D.BoxCast` to check if it is touching the ground.
 
 ---
+
+## June 5, 2023
+* Moved a string lookup in `LevelLoader.cs` to a hash. It should be more efficient this way.
+* Helped resolve a merge conflict due to `Gameplay.unity`. UI for the `Gameplay` scene is now working!

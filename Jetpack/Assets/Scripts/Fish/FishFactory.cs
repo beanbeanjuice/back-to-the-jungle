@@ -22,8 +22,8 @@ namespace Fish
         [SerializeField] private float minDelay;
         [SerializeField] private float maxDelay;
         [SerializeField] private FishPatterns fishPatterns;
-        private int _numPatterns;
 
+        private int _numPatterns;
         private float _delay;
         private float _delayTimer;
 
@@ -94,7 +94,7 @@ namespace Fish
         /// </summary>
         /// <returns>A pseudo-random fish spec.</returns>
         /// <exception cref="InvalidEnumArgumentException">Thrown if the generated enum type is not listed.</exception>
-        public FishSpec GenerateRandomFish()
+        private FishSpec GenerateRandomFish()
         {
             FishType randomType = Helper.GetRandomInteger(0, Enum.GetNames(typeof(FishType)).Length) switch
             {
@@ -117,7 +117,7 @@ namespace Fish
         /// </summary>
         /// <param name="type">A pre-determined fish type.</param>
         /// <returns>A pseudo-random fish spec.</returns>
-        public FishSpec GenerateRandomFish(FishType type)
+        private FishSpec GenerateRandomFish(FishType type)
         {
             float fishX = this.xDistanceFromPlayer + this.player.transform.position.x;
             float fishY = (float)Helper.GetRandomDouble(this.minY, this.maxY);
