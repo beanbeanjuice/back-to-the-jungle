@@ -255,8 +255,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8819095057015350296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab96d9c16ac214f4ca7fce8fc10b9f2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 24b93329b341dc149b5119300f2e6c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
-  dummySceneTransitionTime: 1
+  transition: {fileID: 2886276431946801697}
+  crossFadeTransitionTime: 1
