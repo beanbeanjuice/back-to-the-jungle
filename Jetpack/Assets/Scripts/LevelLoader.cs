@@ -10,6 +10,7 @@ public class LevelLoader : MonoBehaviour
 {
     [SerializeField] private Animator transition;
     [SerializeField] private float crossFadeTransitionTime = 1.0f;
+
     private readonly static int Start = Animator.StringToHash("Start");
 
     // Update is called once per frame
