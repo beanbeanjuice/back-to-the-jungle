@@ -9,21 +9,21 @@ namespace Player
     /// </summary>
     public class Score : MonoBehaviour
     {
-        [SerializeField] private GameObject player;
         [SerializeField] private TextMeshProUGUI distanceScore;
         [SerializeField] private TextMeshProUGUI fishScore;
+
         private PlayerController _playerStats;
 
-        void Start()
+        private void Start()
         {
             this._playerStats = this.gameObject.GetComponent<PlayerController>();
         }
 
-        void Update()
+        private void Update()
         {
             // Updates the UI with distance traveled and fish collected scores.
-            distanceScore.text = _playerStats.GetDistanceRun().ToString("0");
-            fishScore.text = _playerStats.GetScore().ToString("0");
+            this.distanceScore.text = this._playerStats.GetDistanceRun().ToString("0");
+            this.fishScore.text = this._playerStats.GetScore().ToString("0");
         }
     }
 }
