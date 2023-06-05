@@ -1,31 +1,29 @@
 using UnityEngine;
 using TMPro;
 
-/// <summary>
-/// A class used to display the distance traveled and the amount of fish collected.
-/// <remarks>Coded by Westley</remarks>
-/// </summary>
-public class Score : MonoBehaviour
+namespace Player
 {
-    [SerializeField] private Transform player;
-    [SerializeField] private TextMeshProUGUI distanceScore;
-    private float initialPlayerPosition;
-    private float distanceTraveled;
-
-    void Start()
+    /// <summary>
+    /// A script used to display the distance traveled and the amount of fish collected.
+    /// <remarks>Coded by Westley</remarks>
+    /// </summary>
+    public class Score : MonoBehaviour
     {
-        this.initialPlayerPosition = player.position.x;
-    }
+        [SerializeField] private GameObject player;
+        [SerializeField] private TextMeshProUGUI distanceScore;
+        [SerializeField] private TextMeshProUGUI fishScore;
+        private PlayerController _playerStats;
 
-    void UpdateDistanceScore()
-    {
-        // Calculate the distance traveled and update the UI element.
-        distanceTraveled = player.position.x - initialPlayerPosition;
-        distanceScore.text = distanceTraveled.ToString("0");
-    }
+        void Start()
+        {
+            this._playerStats = this.gameObject.GetComponent<PlayerController>();
+        }
 
-    void Update()
-    {
-        UpdateDistanceScore();
+        void Update()
+        {
+            // Updates the UI with distance traveled and fish collected scores.
+            distanceScore.text = _playerStats.GetDistanceRun().ToString("0");
+            fishScore.text = _playerStats.GetScore().ToString("0");
+        }
     }
 }
