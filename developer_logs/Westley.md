@@ -8,3 +8,7 @@
 * Created StartMenu and StartScreen scenes in Unity.
 * Buttons were added to the menu, but requires code for functionality.
 * The Unity interface for UI work took some time to get used to, but work should flow more smoothly now.
+
+## June 5, 2023
+* Created Gameplay Scene/UI in Unity.
+* Score.cs script created and updates the UI elements with the current distance traveled and fish collected.
