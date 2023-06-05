@@ -4,7 +4,7 @@ namespace Fish.Patterns
 {
     /// <summary>
     /// This class essentially holds an array of offsets.
-    /// <remarks>Coded by William</remarks>
+    /// <remarks>Coded by William.</remarks>
     /// </summary>
     [CreateAssetMenu]
     public class FishPattern : ScriptableObject

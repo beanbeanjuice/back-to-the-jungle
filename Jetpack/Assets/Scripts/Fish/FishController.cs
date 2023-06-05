@@ -4,7 +4,7 @@ namespace Fish
 {
     /// <summary>
     /// Controls the type and attributes of the fish object.
-    /// <remarks>Coded by William</remarks>
+    /// <remarks>Coded by William.</remarks>
     /// </summary>
     public class FishController : MonoBehaviour
     {

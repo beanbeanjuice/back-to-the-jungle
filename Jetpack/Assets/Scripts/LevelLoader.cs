@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 /// <summary>
 /// A class used to animate the transitions between scenes.
-/// <remarks>Coded by William</remarks>
+/// <remarks>Coded by William.</remarks>
 /// </summary>
 public class LevelLoader : MonoBehaviour
 {
