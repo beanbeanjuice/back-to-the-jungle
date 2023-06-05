@@ -12,3 +12,5 @@
 ## June 5, 2023
 * Created Gameplay Scene/UI in Unity.
 * Score.cs script created and updates the UI elements with the current distance traveled and fish collected.
+* Created EndScreenUI in the Gameplay Scene.
+* Updated PlayerCollisionController to update the distance display on EndScreenUI

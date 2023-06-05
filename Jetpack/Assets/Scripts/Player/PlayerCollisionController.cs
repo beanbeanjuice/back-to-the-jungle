@@ -1,5 +1,6 @@
 using Fish;
 using UnityEngine;
+using TMPro;
 
 namespace Player
 {
@@ -11,6 +12,7 @@ namespace Player
     public class PlayerCollisionController : MonoBehaviour
     {
         [SerializeField] private AudioSource collectionSoundEffect;
+        [SerializeField] private TextMeshProUGUI endDistanceTraveled;
 
         private PlayerController _pc;
 
@@ -31,11 +33,13 @@ namespace Player
                 case "Bird":
                     // TODO: Play bird collision audio.
                     // TODO: Implement death/game over.
+                    this.endDistanceTraveled.text = this._pc.GetDistanceRun().ToString("0");
                     Destroy(other.gameObject);
                     break;
                 case "Vine":
                     // TODO: Play vine collision audio.
                     // TODO: Implement death/game over. It is possible to combine Bird and Vine in code depending on implementation.
+                    this.endDistanceTraveled.text = this._pc.GetDistanceRun().ToString("0");
                     Destroy(other.gameObject);
                     break;
             }
