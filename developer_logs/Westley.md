@@ -17,3 +17,4 @@
 
 ## June 6, 2023
 * Small bug with a colored hue on the StartScreen and StartMenu fixed.
+* Created PauseScreenUI which was added to the Gameplay scene. The buttons are not functional.
