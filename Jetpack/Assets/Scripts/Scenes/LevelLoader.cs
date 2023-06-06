@@ -15,13 +15,6 @@ namespace Scenes
 
         private readonly static int Start = Animator.StringToHash("Start");
 
-        // Update is called once per frame
-        private void Update()
-        {
-            if(Input.GetKeyDown(KeyCode.Return))
-                LoadStartMenuScene();
-        }
-
         /// <summary>
         /// Call this class to load the Gameplay scene.
         /// </summary>
@@ -39,11 +32,11 @@ namespace Scenes
         }
 
         /*
-     * This is a private class, used to load any scene based on a
-     * specified transition time, using the given animation.
-     * This should work with any animation, any scene, given that
-     * the proper functions are specified above.
-     */
+         * This is a private class, used to load any scene based on a
+         * specified transition time, using the given animation.
+         * This should work with any animation, any scene, given that
+         * the proper functions are specified above.
+         */
         private IEnumerator LoadLevel(string sceneName, float transitionTime)
         {
             // Play animation.

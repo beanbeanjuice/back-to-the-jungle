@@ -3,6 +3,11 @@ using UnityEngine;
 
 namespace Scenes
 {
+    /// <summary>
+    /// A class that adds an artificial delay
+    /// before switching scenes.
+    /// <remarks>Coded by William.</remarks>
+    /// </summary>
     public abstract class LoadDelay : MonoBehaviour
     {
         [SerializeField] private GameObject levelLoader;
@@ -23,6 +28,10 @@ namespace Scenes
             Logic();
         }
 
+        /// <summary>
+        /// A function that contains the actual logic for what happens
+        /// when the timer is over.
+        /// </summary>
         protected virtual void Logic() { }
     }
 }
