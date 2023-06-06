@@ -14,3 +14,6 @@
 * Score.cs script created and updates the UI elements with the current distance traveled and fish collected.
 * Created EndScreenUI in the Gameplay Scene.
 * Updated PlayerCollisionController to update the distance display on EndScreenUI
+
+## June 6, 2023
+* Small bug with a colored hue on the StartScreen and StartMenu fixed.
