@@ -16,8 +16,8 @@ public class LevelLoader : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // TODO: In production, remove this and replace with UI buttons.
-        if (Input.GetKeyDown("space"))
+        
+        if(Input.GetKeyDown(KeyCode.Return))
             LoadStartMenuScene();
     }
 
