@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public class test : MonoBehaviour
 {
     [SerializeField] private Animator transition;
     [SerializeField] private string sceneName;
@@ -24,13 +24,12 @@ public class SceneLoader : MonoBehaviour
     {
         // Play animation.
         this.transition.SetTrigger(Start);
-
         if(timeElapsed > delayTime)
         {
             SceneManager.LoadScene(sceneName);
         }
     }
-    
+
     public void ClickLoad(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
