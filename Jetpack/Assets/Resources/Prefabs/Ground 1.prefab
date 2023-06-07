@@ -2255,7 +2255,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -908148793
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.13476562, y: 0.75, z: 0}
@@ -2349,4 +2349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4b4cbf4f87294a03b1769d213007a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundPrefabs: {fileID: 0}
+  currentGround: {fileID: 0}
+  nextGround: {fileID: 0}
+  grid: {fileID: 0}
+  spawnDistance: 0
+  player: {fileID: 0}
