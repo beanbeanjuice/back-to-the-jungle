@@ -35,9 +35,10 @@ public class VineFactory : MonoBehaviour
 
     private void PrepareVine(int vineNum)
     {
+        
         GameObject vine = Instantiate(this.vinePrefabs[vineNum], transform);
         this._lastSpawnLocation += this.threshold;
-        
+
         float positionY = 0.0f;
         int randInt = Random.Range(0,1);
 
