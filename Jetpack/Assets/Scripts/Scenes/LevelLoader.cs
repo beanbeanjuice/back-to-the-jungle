@@ -31,6 +31,14 @@ namespace Scenes
             StartCoroutine(LoadLevel("StartMenu", this.crossFadeTransitionTime));
         }
 
+        /// <summary>
+        /// Call this class to load SettingsMenu scene.
+        /// </summary>
+        public void LoadSettingsMenuScene()  // TODO: Change to private if not used in production.
+        {
+            StartCoroutine(LoadLevel("SettingsMenu", this.crossFadeTransitionTime));
+        }
+
         /*
          * This is a private class, used to load any scene based on a
          * specified transition time, using the given animation.
