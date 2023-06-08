@@ -1,9 +1,9 @@
 using UnityEngine;
 
-    /// <summary>
-    /// Looping Ground. This class is used for generating and spawning ground in.
-    /// <remarks>Coded by Gisselle.</remarks>
-    /// </summary>
+/// <summary>
+/// Looping Ground. This class is used for generating and spawning ground in.
+/// <remarks>Coded by Gisselle.</remarks>
+/// </summary>
 public class LoopingGround : MonoBehaviour
 {
     [SerializeField] public GameObject currentGround;
@@ -28,7 +28,8 @@ public class LoopingGround : MonoBehaviour
     }
     private void SwitchGround()
     {
-        // Switch between grounds here. If we are on the GameObject currentGround prepare the GameObject nextGround to move forward
+        // Switch between grounds here. If we are on the GameObject 
+        // currentGround prepare the GameObject nextGround to move forward
         if (this._onCurrent)
         {
             // Dimensions used here are from sprites used in game.
