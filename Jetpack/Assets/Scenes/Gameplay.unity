@@ -160,7 +160,7 @@ MonoBehaviour:
   maxY: 4.5
   minDelay: 5
   maxDelay: 15
-  fishPatterns: {fileID: 11400000, guid: f81b928ca2d5c7446bd29621dc776a4b, type: 2}
+  numFishTypes: 10
 --- !u!4 &26040797
 Transform:
   m_ObjectHideFlags: 0
@@ -7769,8 +7769,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 3
   acceleration: 0.025
-  jumpVelocity: 7
-  groundJumpVelocity: 3
+  flyForce: 75
+  jumpForce: 3
   maxYValue: 4.5
   walkingGround:
     serializedVersion: 2

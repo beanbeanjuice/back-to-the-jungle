@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using Fish.Patterns;
 using UnityEngine;
 
 namespace Fish
@@ -21,15 +20,18 @@ namespace Fish
         [SerializeField] private float maxY;
         [SerializeField] private float minDelay;
         [SerializeField] private float maxDelay;
-        [SerializeField] private FishPatterns fishPatterns;
+        [SerializeField] private int numFishTypes = 9;
 
+        private FishFileReader _ffr;
         private int _numPatterns;
         private float _delay;
         private float _delayTimer;
 
         private void Awake()
         {
-            this._numPatterns = this.fishPatterns.GetPatterns().Length;
+            this._ffr = new FishFileReader(this.numFishTypes);
+            this._ffr.Initialize();
+            this._numPatterns = this._ffr.GetPatterns().Length;
         }
 
         /// <summary>
@@ -38,7 +40,7 @@ namespace Fish
         /// <param name="initialFishSpec">The given fish spec.</param>
         private void Build(FishSpec initialFishSpec)
         {
-            FishPattern pattern = this.fishPatterns.GetPatterns()[Helper.GetRandomInteger(0, this._numPatterns)];
+            FishPattern pattern = this._ffr.GetPatterns()[Helper.GetRandomInteger(0, this._numPatterns)];
 
             // Spawn all of the fish specs into the scene.
             foreach (FishSpec fishSpec in PopulateFishSpecs(initialFishSpec, pattern))
@@ -66,7 +68,8 @@ namespace Fish
             Vector3 initialLocation = initialSpec.GetLocation();
             fishes.Add(initialSpec);
 
-            for (int i = 0; i < pattern.GetFishCount(); i++)
+            // Skip the 0th index. Already done above.
+            for (int i = 1; i < pattern.GetFishCount(); i++)
             {
                 FishSpec spec = GenerateRandomFish();
                 spec.SetLocation(initialLocation + (Vector3)pattern.GetLocationOffsets()[i]);
