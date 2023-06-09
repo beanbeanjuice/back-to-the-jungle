@@ -16,6 +16,14 @@ namespace Scenes
         private readonly static int Start = Animator.StringToHash("Start");
 
         /// <summary>
+        /// Call this class to load the GameStartCutscene scene.
+        /// </summary>
+        public void LoadCutScene()  // TODO: Change to private if not used in production.
+        {
+            StartCoroutine(LoadLevel("GameStartCutscene", this.crossFadeTransitionTime));
+        }
+
+        /// <summary>
         /// Call this class to load the Gameplay scene.
         /// </summary>
         public void LoadGameScene()  // TODO: Change to private if not used in production.

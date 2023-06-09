@@ -1159,7 +1159,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1051506717}
         m_TargetAssemblyTypeName: Scenes.LevelLoader, Assembly-CSharp
-        m_MethodName: LoadGameScene
+        m_MethodName: LoadCutScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
