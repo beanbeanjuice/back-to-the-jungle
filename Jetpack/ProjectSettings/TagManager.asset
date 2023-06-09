@@ -48,6 +48,9 @@ TagManager:
   - name: Floor
     uniqueID: 3386818503
     locked: 0
+  - name: Portal
+    uniqueID: 4269255895
+    locked: 0
   - name: Player
     uniqueID: 1398519567
     locked: 0
