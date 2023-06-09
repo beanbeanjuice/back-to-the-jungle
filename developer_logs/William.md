@@ -1,6 +1,6 @@
 # Log File
 
-William: [![wakatime](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle.svg)](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle)
+[![wakatime](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle.svg)](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle)
 
 ---
 
@@ -50,3 +50,10 @@ The audio for the fish collection was chosen because it was the first thing that
 ## June 5, 2023
 * Moved a string lookup in `LevelLoader.cs` to a hash. It should be more efficient this way.
 * Helped resolve a merge conflict due to `Gameplay.unity`. UI for the `Gameplay` scene is now working!
+* There was a bug in the UI that caused it to look faded and not transition properly. I got it working.
+
+---
+
+## June 8, 2023
+* Moved player movement to `FixedUpdate()` instead of `Update()`. I did not notice before, but because the game ran at such a high FPS on *my* machine, I did not see any errors aside from the boost being fast. Running it on my Mac, which ran at a lower FPS, I figured out that having movement physics in `Update()` was not the way to go.
+Now, I learned that ALL physics-related things should go in `FixedUpdate()` even if normal movement should go in `Update()`. This is possibly due to the fact that our game is an infinite side-scroller instead of a normal 2D game with movement in both axis.
