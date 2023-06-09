@@ -86,15 +86,8 @@ namespace Player
              * If the player is touching the ceiling, we want there to be no "upwards" inertia
              * or force. Therefore, the upwards velocity should be 0.
              */
-            if (position.y >= this.maxYValue)
-            {
-                RemoveUpwardsVelocity(position);
-                this._touchingCeiling = true;
-            }
-            else
-            {
-                this._touchingCeiling = false;
-            }
+            this._touchingCeiling = (position.y >= this.maxYValue);
+            if (this._touchingCeiling) RemoveUpwardsVelocity(position);
         }
 
         private void RemoveUpwardsVelocity(Vector3 position)
