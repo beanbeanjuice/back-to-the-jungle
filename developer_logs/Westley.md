@@ -19,3 +19,6 @@
 * Small bug with a colored hue on the StartScreen and StartMenu fixed.
 * Created PauseScreenUI which was added to the Gameplay scene. The buttons are not functional.
 * Created SettingsMenu Scene along with AudioSettings.cs that allows the player to adjust Master, SFX, music mixer volumes. 
+
+## June 8, 2023
+* Added how-to-play scene to give the player a sense of how to play the game. The scene is open for more updates, especially to polish it up. 
