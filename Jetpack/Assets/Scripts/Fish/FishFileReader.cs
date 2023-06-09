@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
+using Fish.Patterns;
 using OfficeOpenXml;
-using OfficeOpenXml.Style;
 using UnityEngine;
 
 namespace Fish
@@ -13,7 +13,8 @@ namespace Fish
         private const string BLACK = "#FF0D0D0D";
         private int _sheets;
 
-        public string value;
+        public FishPattern2 pattern;
+
         public FishFileReader(int sheets)
         {
             this._sheets = sheets;
@@ -27,7 +28,7 @@ namespace Fish
 
                 for (int i = 0; i < this._sheets; i++)
                 {
-                    ReadSheet(package, i);
+                    ReadSheet(package, 6);  // Change to i
                 }
 
                 package.Dispose();  // Closes the workbook.
@@ -52,10 +53,14 @@ namespace Fish
             Debug.Log($"({startX}, {startY})");  // TODO: Remove in production.
             Debug.Log($"({endX}, {endY})");
 
-            bool[,] occupiedCells = new bool[Math.Abs(endX - startX) + 1, Math.Abs(endY - startY) + 1];
+            int occupiedCellsXLength = Math.Abs(endX - startX) + 1;
+            int occupiedCellsYLength = Math.Abs(endY - startY) + 1;
+
+            bool[,] occupiedCells = new bool[occupiedCellsXLength, occupiedCellsYLength];
 
             int zeroX = 0;
             int zeroY = 0;
+            int count = 0;
 
             int x0 = 0;  // X position of occupied cells.
             for (int x = startX; x <= endX; x++, x0++)
@@ -70,6 +75,7 @@ namespace Fish
                     if (hexColor.Equals(BLACK) || hexColor.Equals(RED))
                     {
                         occupiedCells[x0, y0] = true;
+                        count++;
                     }
 
                     if (hexColor.Equals(RED))
@@ -80,7 +86,39 @@ namespace Fish
                 }
             }
 
+            this.pattern = ConvertToPattern(occupiedCells, occupiedCellsXLength, occupiedCellsYLength, zeroX, zeroY, count);
+
             Debug.Log($"Zero: ({zeroX}, {zeroY})");
+            Debug.Log(this.pattern.GetFishCount());
+        }
+
+        private FishPattern2 ConvertToPattern(bool[,] occupiedCells, int xLength, int yLength, int zeroX, int zeroY, int count)
+        {
+            Vector2[] offsets = new Vector2[count];
+            int i = 0;
+
+            // Set (0,0).
+            offsets[i++] = new Vector2(0, 0);
+            occupiedCells[zeroX, zeroY] = false;
+
+            // Set other fish.
+            for (int x = 0; x < xLength; x++)
+            {
+                for (int y = 0; y < yLength; y++)
+                {
+                    if (occupiedCells[x, y])
+                    {
+                        int relativeX = x - zeroX;
+                        int relativeY = zeroY - y;
+
+                        offsets[i++] = new Vector2(relativeX, relativeY);
+                    }
+                }
+            }
+
+            FishPattern2 pattern = new FishPattern2();
+            pattern.SetOffsets(offsets);
+            return pattern;
         }
 
         private void ConvertPosition(string position, ref int x, ref int y)

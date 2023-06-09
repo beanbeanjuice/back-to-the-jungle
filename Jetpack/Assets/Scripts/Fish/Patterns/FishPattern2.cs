@@ -6,10 +6,9 @@ namespace Fish.Patterns
     /// This class essentially holds an array of offsets.
     /// <remarks>Coded by William.</remarks>
     /// </summary>
-    [CreateAssetMenu]
-    public class FishPattern : ScriptableObject
+    public class FishPattern2
     {
-        [SerializeField] private Vector2[] offsets;
+        private Vector2[] offsets;
 
         /// <summary>
         /// Gets the amount of fish in this pattern.
