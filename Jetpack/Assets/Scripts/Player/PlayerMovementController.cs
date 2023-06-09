@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Player
@@ -46,7 +45,7 @@ namespace Player
 
         private void CheckInput()
         {
-            if (Input.GetButton("Jump"))
+            if (Input.GetButton("Jump"))  // TODO: Invert this in production if only use.
             {
                 /*
                  * If the player is touching the ground, we want to add some sort of force
