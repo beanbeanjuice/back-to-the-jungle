@@ -63,3 +63,4 @@ Now, I learned that ALL physics-related things should go in `FixedUpdate()` even
 ## June 9, 2023
 * I took the professors advice and made a "Microsoft Excel" to "Unity Object" translator for the fish patterns. It is now *much* easier to update and add patterns to the game. This was a very enjoyable, yet very difficult, process. I had used similar wrappers in Java, but it was difficult getting it working in Unity. It seems Unity has a lot of incompatibilities...
 Nonetheless, I figured it out, and it is now working, ~~hopefully~~, flawlessly. The only file that needs to be edited is the `Assets/StreamingAssets/fish_patterns.xlsx` file.
+Overall, I learned a lot about [Nuget](https://www.nuget.org/). It seems to be very similar to [Maven](https://mvnrepository.com/) which I am very familiar with.
