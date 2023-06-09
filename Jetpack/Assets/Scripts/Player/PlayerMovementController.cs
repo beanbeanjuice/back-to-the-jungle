@@ -8,11 +8,11 @@ namespace Player
     /// </summary>
     public class PlayerMovementController : MonoBehaviour
     {
-        [SerializeField] private float velocity;
-        [SerializeField] private float acceleration;
-        [SerializeField] private float jumpVelocity;
-        [SerializeField] private float groundJumpVelocity;
-        [SerializeField] private float maxYValue;
+        [SerializeField] private float velocity = 3.0f;
+        [SerializeField] private float acceleration = 0.025f;
+        [SerializeField] private float flyForce = 75.0f;
+        [SerializeField] private float jumpForce = 3.0f;
+        [SerializeField] private float maxYValue = 4.5f;
         [SerializeField] private LayerMask walkingGround;
 
         private Rigidbody2D _rb;
@@ -27,17 +27,25 @@ namespace Player
 
         private void Update()
         {
-            CheckInput();
             CeilingCheck();
-            SetPlayerXVelocity();
 
             // Cancels the rotation of the sprite.
             this.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
+        /*
+         * Runs at a fixed time. This is needed because, depending on
+         * hardware, could cause the player to fly really quickly.
+         */
+        private void FixedUpdate()
+        {
+            CheckInput();
+            SetPlayerXVelocity();
+        }
+
         private void CheckInput()
         {
-            if (Input.GetButton("Jump"))
+            if (Input.GetButton("Jump"))  // TODO: Invert this in production if only use.
             {
                 /*
                  * If the player is touching the ground, we want to add some sort of force
@@ -50,11 +58,11 @@ namespace Player
                  * we do not do this, there will be some minor jumping that occurs.
                  */
                 if (IsGrounded())
-                    this._rb.velocity = new Vector2(0, this.groundJumpVelocity);
+                    this._rb.velocity = new Vector2(0, this.jumpForce);
                 else if (this._touchingCeiling)
                     RemoveUpwardsVelocity(this.transform.position);
                 else
-                    this._rb.AddForce(new Vector2(0, this.jumpVelocity), ForceMode2D.Impulse);
+                    this._rb.AddForce(new Vector2(0, this.flyForce), ForceMode2D.Impulse);
             }
         }
 
@@ -78,15 +86,8 @@ namespace Player
              * If the player is touching the ceiling, we want there to be no "upwards" inertia
              * or force. Therefore, the upwards velocity should be 0.
              */
-            if (position.y >= this.maxYValue)
-            {
-                RemoveUpwardsVelocity(position);
-                this._touchingCeiling = true;
-            }
-            else
-            {
-                this._touchingCeiling = false;
-            }
+            this._touchingCeiling = (position.y >= this.maxYValue);
+            if (this._touchingCeiling) RemoveUpwardsVelocity(position);
         }
 
         private void RemoveUpwardsVelocity(Vector3 position)
