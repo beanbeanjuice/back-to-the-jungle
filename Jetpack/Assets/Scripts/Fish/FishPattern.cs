@@ -28,6 +28,10 @@ namespace Fish
             return this._offsets;
         }
 
+        /// <summary>
+        /// Set the fish offsets.
+        /// </summary>
+        /// <param name="newOffsets">The new fish offsets to set to.</param>
         public void SetOffsets(Vector2[] newOffsets)
         {
             this._offsets = newOffsets;

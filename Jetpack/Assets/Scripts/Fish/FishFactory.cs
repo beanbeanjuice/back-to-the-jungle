@@ -30,7 +30,7 @@ namespace Fish
         private void Awake()
         {
             this._ffr = new FishFileReader(this.numFishTypes);
-            this._ffr.ReadPatterns();
+            this._ffr.Initialize();
             this._numPatterns = this._ffr.GetPatterns().Length;
         }
 

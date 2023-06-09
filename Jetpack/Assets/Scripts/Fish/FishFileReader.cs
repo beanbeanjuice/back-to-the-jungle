@@ -5,39 +5,61 @@ using UnityEngine;
 
 namespace Fish
 {
+    /// <summary>
+    /// A class used to read a excel file and convert it into fish patterns.
+    /// <para></para>
+    /// <a href="https://www.epplussoftware.com/">EPPlus Excel Documentation</a>
+    /// <remarks>Coded by William.</remarks>
+    /// </summary>
     public class FishFileReader
     {
         private const string FILE_NAME = "Assets/Resources/fish_patterns.xlsx";
         private const string RED = "#FFFF0000";
         private const string BLACK = "#FF0D0D0D";
 
-        private int _sheets;
-        private FishPattern[] _patterns;
+        private readonly int _sheets;
+        private readonly FishPattern[] _patterns;
+        private bool _isInitialized;
 
+        /// <summary>
+        /// Create a new fish file reader.
+        /// </summary>
+        /// <param name="sheets">The number of pattern sheets in the excel file.</param>
         public FishFileReader(int sheets)
         {
             this._sheets = sheets;
             this._patterns = new FishPattern[sheets];
         }
 
+        /// <summary>
+        /// Get the fish patterns stored in memory.
+        /// </summary>
+        /// <returns>A primitive array of fish patterns.</returns>
+        /// <exception cref="NullReferenceException">Thrown if the fish patterns have not been initialized in memory.</exception>
         public FishPattern[] GetPatterns()
         {
+            if (!this._isInitialized) throw new NullReferenceException("Fish patterns have not been initialized.");
+
             return this._patterns;
         }
 
-        public void ReadPatterns()
+        /// <summary>
+        /// Initializes the patterns in memory. Required on startup.
+        /// </summary>
+        public void Initialize()
         {
-            using (ExcelPackage package = new ExcelPackage(new FileInfo(FILE_NAME)))
-            {
-                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            // Open the excel file.
+            using ExcelPackage package = new ExcelPackage(new FileInfo(FILE_NAME));
 
-                for (int i = 0; i < this._sheets; i++)
-                {
-                    this._patterns[i] = ReadSheet(package, i);  // Change to i
-                }
+            // Set license to non-commercial. Needed for more workbooks, plus this is academic use.
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-                package.Dispose();  // Closes the workbook.
-            }
+            // Go through every worksheet in the workbook.
+            for (int i = 0; i < this._sheets; i++) this._patterns[i] = ReadSheet(package, i);
+
+            // Close the excel workbook when completed.
+            package.Dispose();
+            this._isInitialized = true;
         }
 
         private FishPattern ReadSheet(ExcelPackage package, int sheetNumber)
@@ -52,6 +74,10 @@ namespace Fish
             int endX = 0;
             int endY = 0;
 
+            /*
+             * Use reference variables to set both
+             * the X and Y positions at the same time.
+             */
             ConvertPosition(initialPosition, ref startX, ref startY);
             ConvertPosition(finalPosition, ref endX, ref endY);
 
@@ -70,6 +96,7 @@ namespace Fish
                 int y0 = 0;  // Y position of occupied cells.
                 for (int y = startY; y >= endY; y--, y0++)
                 {
+                    // Hex color of current cell.
                     string hexColor = GetCellHex(sheet, x, y);
 
                     occupiedCells[x0, y0] = false;  // Initial set.
@@ -80,11 +107,11 @@ namespace Fish
                         count++;
                     }
 
-                    if (hexColor.Equals(RED))
-                    {
-                        zeroX = x0;
-                        zeroY = y0;
-                    }
+                    // If the cell color is red, then it is the relative (0,0) cell.
+                    if (!hexColor.Equals(RED)) continue;
+
+                    zeroX = x0;
+                    zeroY = y0;
                 }
             }
 
@@ -96,8 +123,10 @@ namespace Fish
             Vector2[] offsets = new Vector2[count];
             int i = 0;
 
-            // Set (0,0).
+            // Set (0,0) fish. Relative coordinates.
             offsets[i++] = new Vector2(0, 0);
+
+            // Reset the (0,0) fish so that it is not counted twice.
             occupiedCells[zeroX, zeroY] = false;
 
             // Set other fish.
@@ -105,13 +134,16 @@ namespace Fish
             {
                 for (int y = 0; y < yLength; y++)
                 {
-                    if (occupiedCells[x, y])
-                    {
-                        int relativeX = x - zeroX;
-                        int relativeY = y - zeroY;
+                    if (!occupiedCells[x, y]) continue;
 
-                        offsets[i++] = new Vector2(relativeX, relativeY);
-                    }
+                    /*
+                     * Since we are working with relative coordinates, we need
+                     * to "move" the other values relative toward the RED box (aka 0,0).
+                     */
+                    int relativeX = x - zeroX;
+                    int relativeY = y - zeroY;
+
+                    offsets[i++] = new Vector2(relativeX, relativeY);
                 }
             }
 
@@ -122,7 +154,7 @@ namespace Fish
 
         private void ConvertPosition(string position, ref int x, ref int y)
         {
-            x = position[0] - 'A' + 1;
+            x = position[0] - 'A' + 1;  // +1 is needed to avoid errors.
             y = position[1] - '0';
         }
 
@@ -135,7 +167,5 @@ namespace Fish
         {
             return sheet.Cells[y, x].Style.Fill.BackgroundColor.LookupColor();
         }
-
-
     }
 }
