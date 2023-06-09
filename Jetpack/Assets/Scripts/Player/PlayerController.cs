@@ -1,4 +1,5 @@
-﻿using Fish;
+﻿using System.IO;
+using Fish;
 using UnityEngine;
 
 namespace Player
@@ -16,6 +17,9 @@ namespace Player
         private void Start()
         {
             this._startX = this.transform.position.x;
+            FishFileReader fishFileReader = new FishFileReader(1);
+            fishFileReader.ReadPatterns();
+            Debug.Log(fishFileReader.value);
         }
 
         private void Update()
