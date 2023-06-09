@@ -19,7 +19,7 @@ namespace Player
             this._startX = this.transform.position.x;
             FishFileReader fishFileReader = new FishFileReader(1);
             fishFileReader.ReadPatterns();
-            Debug.Log(fishFileReader.value);
+            //Debug.Log(fishFileReader.value);
         }
 
         private void Update()
