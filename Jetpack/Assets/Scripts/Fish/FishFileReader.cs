@@ -13,7 +13,7 @@ namespace Fish
     /// </summary>
     public class FishFileReader
     {
-        private const string FILE_NAME = "Assets/Resources/fish_patterns.xlsx";
+        private const string FILE_NAME = "/fish_patterns.xlsx";
         private const string RED = "#FFFF0000";
         private const string BLACK = "#FF0D0D0D";
 
@@ -49,7 +49,7 @@ namespace Fish
         public void Initialize()
         {
             // Open the excel file.
-            using ExcelPackage package = new ExcelPackage(new FileInfo(FILE_NAME));
+            using ExcelPackage package = new ExcelPackage(new FileInfo(Application.streamingAssetsPath + FILE_NAME));
 
             // Set license to non-commercial. Needed for more workbooks, plus this is academic use.
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
