@@ -23,3 +23,7 @@
 
 * Created animations with these sprites, one for flying when there is user input to accelerate upwards, one for gliding when there is no user input for gliding downwards, one short landing animation, and one walking animation.
 As for these animations, I created `MountAnimationController.cs` to change the conditionals of whether the player (attached to the mount) was in the air or on the ground in order to animate the respective animations, only on the Mount object itself.
+
+---
+## June 7, 2023
+* Created new parallax background sprites with 5 different layers.
