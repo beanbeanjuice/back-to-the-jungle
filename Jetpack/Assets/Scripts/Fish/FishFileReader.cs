@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using Fish.Patterns;
 using OfficeOpenXml;
 using UnityEngine;
 
@@ -11,13 +10,19 @@ namespace Fish
         private const string FILE_NAME = "Assets/Resources/fish_patterns.xlsx";
         private const string RED = "#FFFF0000";
         private const string BLACK = "#FF0D0D0D";
-        private int _sheets;
 
-        public FishPattern2 pattern;
+        private int _sheets;
+        private FishPattern[] _patterns;
 
         public FishFileReader(int sheets)
         {
             this._sheets = sheets;
+            this._patterns = new FishPattern[sheets];
+        }
+
+        public FishPattern[] GetPatterns()
+        {
+            return this._patterns;
         }
 
         public void ReadPatterns()
@@ -28,14 +33,14 @@ namespace Fish
 
                 for (int i = 0; i < this._sheets; i++)
                 {
-                    ReadSheet(package, 6);  // Change to i
+                    this._patterns[i] = ReadSheet(package, i);  // Change to i
                 }
 
                 package.Dispose();  // Closes the workbook.
             }
         }
 
-        private void ReadSheet(ExcelPackage package, int sheetNumber)
+        private FishPattern ReadSheet(ExcelPackage package, int sheetNumber)
         {
             ExcelWorksheet sheet = package.Workbook.Worksheets[sheetNumber];
 
@@ -49,9 +54,6 @@ namespace Fish
 
             ConvertPosition(initialPosition, ref startX, ref startY);
             ConvertPosition(finalPosition, ref endX, ref endY);
-
-            Debug.Log($"({startX}, {startY})");  // TODO: Remove in production.
-            Debug.Log($"({endX}, {endY})");
 
             int occupiedCellsXLength = Math.Abs(endX - startX) + 1;
             int occupiedCellsYLength = Math.Abs(endY - startY) + 1;
@@ -86,13 +88,10 @@ namespace Fish
                 }
             }
 
-            this.pattern = ConvertToPattern(occupiedCells, occupiedCellsXLength, occupiedCellsYLength, zeroX, zeroY, count);
-
-            Debug.Log($"Zero: ({zeroX}, {zeroY})");
-            Debug.Log(this.pattern.GetFishCount());
+            return ConvertToPattern(occupiedCells, occupiedCellsXLength, occupiedCellsYLength, zeroX, zeroY, count);
         }
 
-        private FishPattern2 ConvertToPattern(bool[,] occupiedCells, int xLength, int yLength, int zeroX, int zeroY, int count)
+        private FishPattern ConvertToPattern(bool[,] occupiedCells, int xLength, int yLength, int zeroX, int zeroY, int count)
         {
             Vector2[] offsets = new Vector2[count];
             int i = 0;
@@ -109,14 +108,14 @@ namespace Fish
                     if (occupiedCells[x, y])
                     {
                         int relativeX = x - zeroX;
-                        int relativeY = zeroY - y;
+                        int relativeY = y - zeroY;
 
                         offsets[i++] = new Vector2(relativeX, relativeY);
                     }
                 }
             }
 
-            FishPattern2 pattern = new FishPattern2();
+            FishPattern pattern = new FishPattern();
             pattern.SetOffsets(offsets);
             return pattern;
         }

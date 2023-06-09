@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 
-namespace Fish.Patterns
+namespace Fish
 {
     /// <summary>
     /// This class essentially holds an array of offsets.
     /// <remarks>Coded by William.</remarks>
     /// </summary>
-    [CreateAssetMenu]
-    public class FishPattern : ScriptableObject
+    public class FishPattern
     {
-        [SerializeField] private Vector2[] offsets;
+        private Vector2[] _offsets;
 
         /// <summary>
         /// Gets the amount of fish in this pattern.
@@ -17,7 +16,7 @@ namespace Fish.Patterns
         /// <returns>The fish amount.</returns>
         public int GetFishCount()
         {
-            return this.offsets.Length;
+            return this._offsets.Length;
         }
 
         /// <summary>
@@ -26,12 +25,12 @@ namespace Fish.Patterns
         /// <returns>A list of offsets.</returns>
         public Vector2[] GetLocationOffsets()
         {
-            return this.offsets;
+            return this._offsets;
         }
 
         public void SetOffsets(Vector2[] newOffsets)
         {
-            this.offsets = newOffsets;
+            this._offsets = newOffsets;
         }
     }
 }
