@@ -48,7 +48,7 @@ namespace Fish
         /// </summary>
         public void Initialize()
         {
-            // Open the excel file.
+            // Open the excel file. Located in StreamingAssets folder.
             using ExcelPackage package = new ExcelPackage(new FileInfo(Application.streamingAssetsPath + FILE_NAME));
 
             // Set license to non-commercial. Needed for more workbooks, plus this is academic use.
