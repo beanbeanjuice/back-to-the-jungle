@@ -31,3 +31,4 @@
 * Added button SFX.
 * Added new gameplay BGM.
 * Added new fish collection SFX.
+* Updated StartMenu with a quit button to make it easier to close the game in the build version.
