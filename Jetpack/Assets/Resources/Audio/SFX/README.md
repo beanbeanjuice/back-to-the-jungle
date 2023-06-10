@@ -6,6 +6,8 @@
 
 [Pufferfish eats carrot (full video) - Nixanator](https://youtu.be/axiGV09C85A)
 
+[Nom Noise - TheDragonSpark](https://freesound.org/people/TheDragonsSpark/sounds/543386/)
+
 ## Player Collection
 
 [New Super Marios U Death soundeffect](https://youtu.be/b4HLnX8AvDE)
