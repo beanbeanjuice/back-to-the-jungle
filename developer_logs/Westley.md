@@ -22,3 +22,12 @@
 
 ## June 8, 2023
 * Added how-to-play scene to give the player a sense of how to play the game. The scene is open for more updates, especially to polish it up. 
+
+## June 9, 2023
+* Updated UI to scale to screen size.
+
+## June 10, 2023
+* Further screen scale updates to UI.
+* Added button SFX.
+* Added new gameplay BGM.
+* Added new fish collection SFX.
