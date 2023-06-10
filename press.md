@@ -36,12 +36,12 @@
 
 | Developer   | Role              | Sub Role                   | Time Coding                | Developer Log       |
 | ----------- | ----------------- | -------------------------- | -------------------------- | ------------------- |
-| *William*   | Movement/Physics  | Producer/Press Kit/Trailer | ![wakatime][william-badge] | [Log](william-log)  |
-| *Emily*     | Input             | Game Feel                  | N/A                        | [Log](emily-log)    |
-| *Sheda*     | Animation/Visuals | Narrative Design           | N/A                        | [Log](sheda-log)    |
-| *Westley*   | User Interface    | Audio                      | N/A                        | [Log](westley-log)  |
-| *Gisselle*  | Game Logic        | Gameplay Testing           | N/A                        | [Log](gisselle-log) |
-| *Roxanne*   | Animation/Visuals | Game Feel                  | N/A                        | [Log](roxanne-log)  |
+| *William*   | Movement/Physics  | Producer/Press Kit/Trailer | ![wakatime][william-badge] | [Log][william-log]  |
+| *Emily*     | Input             | Game Feel                  | N/A                        | [Log][emily-log]    |
+| *Sheda*     | Animation/Visuals | Narrative Design           | N/A                        | [Log][sheda-log]    |
+| *Westley*   | User Interface    | Audio                      | N/A                        | [Log][westley-log]  |
+| *Gisselle*  | Game Logic        | Gameplay Testing           | N/A                        | [Log][gisselle-log] |
+| *Roxanne*   | Animation/Visuals | Game Feel                  | N/A                        | [Log][roxanne-log]  |
 
 *DESCRIPTION HERE*
 
