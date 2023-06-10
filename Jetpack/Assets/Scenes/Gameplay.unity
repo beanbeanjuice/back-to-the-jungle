@@ -585,10 +585,10 @@ AudioSource:
   m_GameObject: {fileID: 579233436}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c0fcb3c733d530d4a935ebef3561c585, type: 3}
+  OutputAudioMixerGroup: {fileID: 8053868184752407489, guid: 6a9d4bcb2eb798641bccb931cfb2bd00, type: 2}
+  m_audioClip: {fileID: 8300000, guid: a3c9a760a18cfff4fa0551170f023afa, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.509
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -7769,8 +7769,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 3
   acceleration: 0.025
-  jumpVelocity: 7
-  groundJumpVelocity: 3
+  flyForce: 75
+  jumpForce: 3
   maxYValue: 4.5
   walkingGround:
     serializedVersion: 2
@@ -7810,7 +7810,7 @@ AudioSource:
   m_GameObject: {fileID: 1975473065}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -4382550548193246655, guid: 6a9d4bcb2eb798641bccb931cfb2bd00, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4b5fcefbbfbe8df4989d6174796ab32a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.288
