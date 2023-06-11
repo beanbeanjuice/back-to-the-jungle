@@ -21,7 +21,7 @@ public class VineFactory : MonoBehaviour
     {
         this._lastSpawnLocation = this.player.transform.position.x + this.threshold;
     }
-    
+
     private void Update()
     {
         int vineNum = Random.Range(0, 4);
@@ -35,12 +35,12 @@ public class VineFactory : MonoBehaviour
 
     private void PrepareVine(int vineNum)
     {
-        
+
         GameObject vine = Instantiate(this.vinePrefabs[vineNum], transform);
         this._lastSpawnLocation += this.threshold;
 
         float positionY = 0.0f;
-        int randInt = Random.Range(0,1);
+        int randInt = Random.Range(0, 1);
 
         // Choose either 0.35 or 0.50 based on the random number
         if (randInt < this.maxScale)
