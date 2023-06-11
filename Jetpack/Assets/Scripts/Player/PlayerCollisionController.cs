@@ -39,6 +39,7 @@ namespace Player
                 case "Vine":
                     // TODO: Play vine collision audio.
                     // TODO: Implement death/game over. It is possible to combine Bird and Vine in code depending on implementation.
+                    FindObjectOfType<PauseMenu>().EndGame();
                     this.endDistanceTraveled.text = this._pc.GetDistanceRun().ToString("0");
                     break;
             }
