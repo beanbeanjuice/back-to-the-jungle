@@ -16,4 +16,11 @@
 
 [Rock drop, rock foley - Rock drop, rock foley](https://freesound.org/people/SoundGuy1billione/sounds/666673/)
 
+## Animation Cutscene
+[Khủng Long 32 - SieuAmThanh](https://freesound.org/people/SieuAmThanh/sounds/640636/)
+
+[Alarm 0 - SieuAmThanh](https://freesound.org/people/SieuAmThanh/sounds/397787/)
+
+[Portal_Idle.wav - Portal_Idle.wav](https://freesound.org/people/couchHero/sounds/168910/)
+
 ---
