@@ -11,17 +11,23 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Resume();
-        }
-        else
-        {
-            Pause();
+            Debug.Log("PRESSED!");
+            if (GamePaused)
+            {
+                Resume();
+                Debug.Log("resume");
+            }
+            else
+            {
+                Pause();
+                Debug.Log("pause");
+            }
         }
     }
 
-    private void Resume()
+    public void Resume()
     {
-        pauseScreenUI.SetActive(true);
+        pauseScreenUI.SetActive(false);
         Time.timeScale = 1f;
         GamePaused = false;
     }
