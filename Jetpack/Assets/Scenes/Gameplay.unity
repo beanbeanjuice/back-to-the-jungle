@@ -214,7 +214,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warningPrefab: {fileID: 7990149399020999219, guid: df1138db47e2541f8a9c41bfab2d0892, type: 3}
-  birdPrefab: {fileID: 1555091740891162461, guid: 8972483fd2c28f8479b260f307ba2f94, type: 3}
+  blueBirdPrefab: {fileID: 1555091740891162461, guid: 8972483fd2c28f8479b260f307ba2f94, type: 3}
+  pinkBirdPrefab: {fileID: 4341766320418088803, guid: 07566b7b2b767e74dacac3bb57ccc6fe, type: 3}
   player: {fileID: 1975473065}
   cooldown: 10
   distanceBeforeLevelChange: 50

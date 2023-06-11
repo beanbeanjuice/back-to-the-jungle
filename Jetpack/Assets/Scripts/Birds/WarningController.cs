@@ -11,6 +11,7 @@ public class WarningController : MonoBehaviour
     private float _lastYPos;
     private float _warningTimer;
     private bool _isLocked;
+    // private float _spawnRadius = 2.0f;
 
     private void Awake()
     {
@@ -28,7 +29,6 @@ public class WarningController : MonoBehaviour
         }
         else
         {
-
             this._isLocked = true;
             this._lastYPos = this.gameObject.transform.position.y;
             this.gameObject.transform.position = this.GetWarningPosition();
@@ -45,7 +45,9 @@ public class WarningController : MonoBehaviour
         else
         {
             yPos = this._player.transform.position.y;
-        }  
+            // yPos = Random.insideUnitCircle.normalized * this._spawnRadius;
+        }
+
         float zPos = this._player.transform.position.z;
         Vector3 warningPos = new Vector3(xPos, yPos, zPos);
         return warningPos;
