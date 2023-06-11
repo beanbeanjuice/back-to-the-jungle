@@ -29,13 +29,15 @@
 ## June 10, 2023
 * Further screen scale updates to UI.
 * Added button SFX.
-* Added new gameplay BGM.
+* * I found a free sound clip of a rock falling, then isolated parts of that sound to create the two different button click SFX.
+* Added new gameplay BGM. 
+* * With the help of the art team, we found the music and the nature ambience. I then learned how to use Audacity to mix the sounds together to create our new BGM.
 * Added new fish collection SFX.
 * Updated StartMenu with a quit button to make it easier to close the game in the build version.
 
 ## June 11, 2023
 * Redid the UI+audio update from June 10 due to merge conflict issues.
-* Added sound to the starting animation.
+* Added sound to the starting animation. I found three free sounds online: portal idle, alarm, and dinosaur roar. Then I mixed these sounds together in Audacity to fit the runtime of the animation.
 * Wrote script to enable pausing and game over screen.
 * Added menu music.
 * Added functionality to the quit button.
