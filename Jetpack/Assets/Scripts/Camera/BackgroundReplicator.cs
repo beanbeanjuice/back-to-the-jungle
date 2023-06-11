@@ -24,7 +24,6 @@ namespace Camera
         {
             float temp = cam.transform.position.x * (1 - parallax);
             float dist = cam.transform.position.x * parallax;
-            
             transform.position = new Vector3(_startPosition + dist, transform.position.y, transform.position.z);
 
             // If camera position exceeds bounds, add background.
