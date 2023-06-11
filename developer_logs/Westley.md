@@ -21,4 +21,21 @@
 * Created SettingsMenu Scene along with AudioSettings.cs that allows the player to adjust Master, SFX, music mixer volumes. 
 
 ## June 8, 2023
-* Added how-to-play scene to give the player a sense of how to play the game. The scene is open for more updates, especially to polish it up. 
+* Added how-to-play scene to give the player a sense of how to play the game. The scene is open for more updates, especially to polish it up.
+
+## June 9, 2023
+* Updated UI to scale to screen size.
+
+## June 10, 2023
+* Further screen scale updates to UI.
+* Added button SFX.
+* Added new gameplay BGM.
+* Added new fish collection SFX.
+* Updated StartMenu with a quit button to make it easier to close the game in the build version.
+
+## June 11, 2023
+* Redid the UI+audio update from June 10 due to merge conflict issues.
+* Added sound to the starting animation.
+* Wrote script to enable pausing and game over screen.
+* Added menu music.
+* Added functionality to the quit button.
