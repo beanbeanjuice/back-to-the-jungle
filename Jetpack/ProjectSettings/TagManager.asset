@@ -8,6 +8,7 @@ TagManager:
   - Fish
   - Vine
   - Bird
+  - UI
   layers:
   - Default
   - TransparentFX
