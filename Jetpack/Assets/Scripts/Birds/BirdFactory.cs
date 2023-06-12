@@ -18,7 +18,7 @@ public class BirdFactory : MonoBehaviour
     private float _lastSpawnLocation;
     private float _frequency;
     private float _frequencyTimer;
-    private float _secondsBetweenBirds = 1.5f;
+    private float _secondsBetweenBirds = 3.3f;
     private float _minFrequency = 10.0f;
     private float _maxFrequency = 20.0f;
     private int _maxPossibleBirds = 7;

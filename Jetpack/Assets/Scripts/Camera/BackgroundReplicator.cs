@@ -10,6 +10,7 @@ namespace Camera
     public class BackgroundReplicator : MonoBehaviour
     {
         [SerializeField] private GameObject cam;
+        [SerializeField] private float parallax;
         private float _length;
         private float _startPosition;
 
@@ -21,11 +22,13 @@ namespace Camera
 
         private void Update()
         {
-            float temp = cam.transform.position.x;
-            transform.position = new Vector3(_startPosition, transform.position.y, transform.position.z);
+            float temp = cam.transform.position.x * (1 - parallax);
+            float buffer = 5.0f;
+            float dist = cam.transform.position.x * parallax;
+            transform.position = new Vector3(_startPosition + dist, transform.position.y, transform.position.z);
 
             // If camera position exceeds bounds, add background.
-            if (temp > this._startPosition + this._length)
+            if (temp + buffer > this._startPosition + this._length)
                 this._startPosition += this._length;
         }
     }

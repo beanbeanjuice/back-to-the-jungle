@@ -18,7 +18,7 @@ public class AudioSettings : MonoBehaviour
     {
         mixer.SetFloat("SFXVolume", volume);
     }
-    
+
     public void SetMusicVolume(float volume)
     {
         mixer.SetFloat("MusicVolume", volume);

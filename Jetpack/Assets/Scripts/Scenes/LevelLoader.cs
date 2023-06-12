@@ -16,6 +16,14 @@ namespace Scenes
         private readonly static int Start = Animator.StringToHash("Start");
 
         /// <summary>
+        /// Call this class to load the GameStartCutscene scene.
+        /// </summary>
+        public void LoadCutScene()  // TODO: Change to private if not used in production.
+        {
+            StartCoroutine(LoadLevel("GameStartCutscene", this.crossFadeTransitionTime));
+        }
+
+        /// <summary>
         /// Call this class to load the Gameplay scene.
         /// </summary>
         public void LoadGameScene()  // TODO: Change to private if not used in production.
@@ -30,6 +38,14 @@ namespace Scenes
         {
             StartCoroutine(LoadLevel("StartMenu", this.crossFadeTransitionTime));
         }
+        
+        /// <summary>
+        /// Call this class to load ShopMenu scene.
+        /// </summary>
+        public void LoadShopMenuScene()  // TODO: Change to private if not used in production.
+        {
+            StartCoroutine(LoadLevel("ShopMenu", this.crossFadeTransitionTime));
+        }
 
         /// <summary>
         /// Call this class to load SettingsMenu scene.
@@ -37,6 +53,22 @@ namespace Scenes
         public void LoadSettingsMenuScene()  // TODO: Change to private if not used in production.
         {
             StartCoroutine(LoadLevel("SettingsMenu", this.crossFadeTransitionTime));
+        }
+
+        /// <summary>
+        /// Call this class to load HowToPlayScene scene.
+        /// </summary>
+        public void LoadHowToPlayScene()  // TODO: Change to private if not used in production.
+        {
+            StartCoroutine(LoadLevel("HowToPlayScene", this.crossFadeTransitionTime));
+        }
+
+        /// <summary>
+        /// Call this to quit the game.
+        /// </summary>
+        public void QuitGame()
+        {
+            Application.Quit();
         }
 
         /*
