@@ -145,5 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   fishBindings: {fileID: 11400000, guid: 659e8d9db3bc5de4aae49bf066290d8f, type: 2}
-  deletionTime: 15
-  collectedSoundEffect: {fileID: 0}
+  deletionTime: 12

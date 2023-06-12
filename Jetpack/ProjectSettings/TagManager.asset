@@ -9,6 +9,7 @@ TagManager:
   - Vine
   - Bird
   - UI
+  - BirdWarning
   layers:
   - Default
   - TransparentFX

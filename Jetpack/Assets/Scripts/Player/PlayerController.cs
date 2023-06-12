@@ -37,7 +37,6 @@ namespace Player
         /// </summary>
         public void UpdateScore(FishType type)
         {
-            Debug.Log($"Type: {type}");  // TODO: Remove in production.
             this._score++;
         }
         /// <summary>
