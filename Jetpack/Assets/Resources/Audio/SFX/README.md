@@ -21,6 +21,9 @@
 
 [Alarm 0 - SieuAmThanh](https://freesound.org/people/SieuAmThanh/sounds/397787/)
 
-[Portal_Idle.wav - Portal_Idle.wav](https://freesound.org/people/couchHero/sounds/168910/)
+[Portal_Idle.wav - couchHero](https://freesound.org/people/couchHero/sounds/168910/)
+
+## Wing Flap
+[Wing Flap 1.wav - _stubb](https://freesound.org/people/_stubb/sounds/389634/)
 
 ---
