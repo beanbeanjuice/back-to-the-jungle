@@ -29,4 +29,11 @@
 ## Vine
 [vine stretch 2.wav - Halleck](https://freesound.org/people/Halleck/sounds/121725/)
 
+## Bird SFX
+[bird_flapping_7.wav - Clusman](https://freesound.org/people/Clusman/sounds/543115/)
+
+[150209 Trevor Webb Bird Squawk.wav - Bleachbear](https://freesound.org/people/Bleachbear/sounds/327015/)
+
+[budgie_chirp1.WAV - much_username](https://freesound.org/people/much_username/sounds/620381/)
+
 ---
