@@ -13,6 +13,7 @@ namespace Player
     {
         [SerializeField] private AudioSource collectionSoundEffect;
         [SerializeField] private AudioSource vineSFX;
+        [SerializeField] private AudioSource crashSFX;
         [SerializeField] private TextMeshProUGUI endDistanceTraveled;
 
         private PlayerController _pc;
@@ -32,7 +33,7 @@ namespace Player
                     Destroy(other.gameObject);
                     break;
                 case "Bird":
-                    // TODO: Play bird collision audio.
+                    this.crashSFX.Play();
                     this.endDistanceTraveled.text = this._pc.GetDistanceRun().ToString("0");
                     FindObjectOfType<GameplayManager>().EndGame();
                     Destroy(other.gameObject);
