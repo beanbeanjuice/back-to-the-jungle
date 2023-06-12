@@ -165,6 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb6fe59e6cff456da635d0b399902d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBeforeDelete: 5
+  secondsBeforeDelete: 3
   xOffset: 8
-  xVelocity: -20
+  xVelocity: -18

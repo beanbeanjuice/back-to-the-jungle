@@ -18,11 +18,10 @@ public class BirdFactory : MonoBehaviour
     private float _lastSpawnLocation;
     private float _frequency;
     private float _frequencyTimer;
-    private float _secondsBetweenBirds = 1.0f;
-    private float _secondsBeforeLaunch = 1.5f;
+    private float _secondsBetweenBirds = 1.5f;
     private float _minFrequency = 10.0f;
     private float _maxFrequency = 20.0f;
-    private int _maxPossibleBirds = 4;
+    private int _maxPossibleBirds = 7;
     private int _minPossibleBirds = 1;
     private int _possibleBirds = 1;
     private int _numOfBirds;
@@ -70,20 +69,16 @@ public class BirdFactory : MonoBehaviour
             instantiated. We need to get the variable secondsBeforeLock in WarningController
             and call an invoke method to wait for certain amount of seconds before we
             obtain the correct y position
-            
-            If we have one bird, we're going to implement a locking system and the bird is going
-            to lock onto Barry
-
-            If we have more than one, we're going to give each bird a different random position
         */
         if (this.player.transform.position.x / this.distanceBeforeLevelChange >= 1 )
         {
             if (this._possibleBirds != this._maxPossibleBirds) this._possibleBirds += 1;
             this._numOfBirds = Random.Range(this._minPossibleBirds, this._possibleBirds);
+
         }
-        StartCoroutine(this.DelayBetweenBirds(this._secondsBetweenBirds));
+        StartCoroutine(this.GenerateWarningsAndBirds(this._secondsBetweenBirds));
     }
-    private IEnumerator DelayBetweenBirds(float waitTime)
+    private IEnumerator GenerateWarningsAndBirds(float waitTime)
     {
         for (int i = 0; i < this._numOfBirds; i++)
         {
@@ -95,21 +90,19 @@ public class BirdFactory : MonoBehaviour
     {
         GameObject warning = Instantiate(this.warningPrefab);
         float secondsBeforeLock = warning.GetComponent<WarningController>().GetSecondsBeforeLocking();
-        StartCoroutine(this.WaitAndGetYPosition(secondsBeforeLock, warning));
+        StartCoroutine(this.WaitAndSpawnBird(secondsBeforeLock, warning));
         warning.GetComponent<WarningController>().DestroyWarning();
     }
-    private IEnumerator WaitAndGetYPosition(float waitTime, GameObject warning)
+    private IEnumerator WaitAndSpawnBird(float waitTime, GameObject warning)
     {
         yield return new WaitForSeconds(waitTime);
         this._lastSpawnLocation = warning.GetComponent<WarningController>().GetLastYPosition();
-        yield return new WaitForSeconds(this._secondsBeforeLaunch);
-        this._typeBird = Random.Range(0, 1);
+        this._typeBird = Random.Range(0, 2);
         this.SpawnBird();
     }
     private void SpawnBird()
     {
         GameObject bird;
-        Debug.Log(this._typeBird);
         switch (this._typeBird)
         {
             case 0:
