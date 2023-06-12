@@ -892,7 +892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2852ded3760b4bd49819a61c75049f26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameScreenUI: {fileID: 621468270}
+  gameScreenUI: {fileID: 0}
   pauseScreenUI: {fileID: 1337319727}
   endScreenUI: {fileID: 1927703532}
 --- !u!4 &553645468
