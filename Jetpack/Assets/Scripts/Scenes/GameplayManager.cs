@@ -1,7 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class used to navigate to pause and end UI.
+/// Base code from "PAUSE MENU in Unity" - Brackeys.
+/// <remarks>Coded by Westley.</remarks>
+/// </summary>
 public class GameplayManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameScreenUI;
