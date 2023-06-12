@@ -23,11 +23,12 @@ namespace Camera
         private void Update()
         {
             float temp = cam.transform.position.x * (1 - parallax);
+            float buffer = 5.0f;
             float dist = cam.transform.position.x * parallax;
             transform.position = new Vector3(_startPosition + dist, transform.position.y, transform.position.z);
 
             // If camera position exceeds bounds, add background.
-            if (temp > this._startPosition + this._length)
+            if (temp + buffer > this._startPosition + this._length)
                 this._startPosition += this._length;
         }
     }
