@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6197149993235383719}
   - component: {fileID: 4879181794153232173}
   - component: {fileID: 2364992957480600998}
-  - component: {fileID: 6032708972273581633}
   m_Layer: 0
   m_Name: Ground 1
   m_TagString: Ground
@@ -2255,7 +2254,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -908148793
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.13476562, y: 0.75, z: 0}
@@ -2337,20 +2336,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 103.05491, y: 1.9070125}
   m_EdgeRadius: 0
---- !u!114 &6032708972273581633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4200704048477226158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4b4cbf4f87294a03b1769d213007a8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentGround: {fileID: 0}
-  nextGround: {fileID: 0}
-  grid: {fileID: 0}
-  spawnDistance: 0
-  player: {fileID: 0}

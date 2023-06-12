@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
 using OfficeOpenXml;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace Fish
 {
@@ -13,7 +15,7 @@ namespace Fish
     /// </summary>
     public class FishFileReader
     {
-        private const string FILE_NAME = "/fish_patterns.xlsx";
+        private const string FILE_NAME = "fish_patterns.xlsx";
         private const string RED = "#FFFF0000";
         private const string BLACK = "#FF0D0D0D";
 
@@ -48,8 +50,15 @@ namespace Fish
         /// </summary>
         public void Initialize()
         {
+            string filepath = Path.Join(Application.streamingAssetsPath, FILE_NAME);
+            UnityWebRequest request = UnityWebRequest.Get(filepath);
+            request.SendWebRequest();
+
+            while (!request.isDone) { }
+            byte[] file = request.downloadHandler.data;
+
             // Open the excel file. Located in StreamingAssets folder.
-            using ExcelPackage package = new ExcelPackage(new FileInfo(Application.streamingAssetsPath + FILE_NAME));
+            using ExcelPackage package = new ExcelPackage(new MemoryStream(file));
 
             // Set license to non-commercial. Needed for more workbooks, plus this is academic use.
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
