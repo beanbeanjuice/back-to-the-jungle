@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+public class GameplayManager : MonoBehaviour
 {
+    [SerializeField] private GameObject gameScreenUI;
     [SerializeField] private GameObject pauseScreenUI;
     [SerializeField] private GameObject endScreenUI;
     public static bool GamePaused = false;
@@ -39,6 +40,7 @@ public class PauseMenu : MonoBehaviour
 
     public void EndGame()
     {
+        gameScreenUI.SetActive(false);
         endScreenUI.SetActive(true);
         Time.timeScale = 0f;
         GamePaused = true;

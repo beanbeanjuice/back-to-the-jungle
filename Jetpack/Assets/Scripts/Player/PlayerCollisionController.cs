@@ -32,14 +32,13 @@ namespace Player
                     break;
                 case "Bird":
                     // TODO: Play bird collision audio.
-                    // TODO: Implement death/game over.
                     this.endDistanceTraveled.text = this._pc.GetDistanceRun().ToString("0");
+                    FindObjectOfType<GameplayManager>().EndGame();
                     Destroy(other.gameObject);
                     break;
                 case "Vine":
                     // TODO: Play vine collision audio.
-                    // TODO: Implement death/game over. It is possible to combine Bird and Vine in code depending on implementation.
-                    FindObjectOfType<PauseMenu>().EndGame();
+                    FindObjectOfType<GameplayManager>().EndGame();
                     this.endDistanceTraveled.text = this._pc.GetDistanceRun().ToString("0");
                     break;
             }
