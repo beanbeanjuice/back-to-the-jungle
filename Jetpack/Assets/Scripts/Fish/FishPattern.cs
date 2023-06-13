@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Fish
 {
@@ -6,9 +7,10 @@ namespace Fish
     /// This class essentially holds an array of offsets.
     /// <remarks>Coded by William.</remarks>
     /// </summary>
+    [Serializable]
     public class FishPattern
     {
-        private Vector2[] _offsets;
+        [SerializeField] private Vector2[] offsets;
 
         /// <summary>
         /// Gets the amount of fish in this pattern.
@@ -16,7 +18,7 @@ namespace Fish
         /// <returns>The fish amount.</returns>
         public int GetFishCount()
         {
-            return this._offsets.Length;
+            return this.offsets.Length;
         }
 
         /// <summary>
@@ -25,7 +27,7 @@ namespace Fish
         /// <returns>A list of offsets.</returns>
         public Vector2[] GetLocationOffsets()
         {
-            return this._offsets;
+            return this.offsets;
         }
 
         /// <summary>
@@ -34,7 +36,7 @@ namespace Fish
         /// <param name="newOffsets">The new fish offsets to set to.</param>
         public void SetOffsets(Vector2[] newOffsets)
         {
-            this._offsets = newOffsets;
+            this.offsets = newOffsets;
         }
     }
 }

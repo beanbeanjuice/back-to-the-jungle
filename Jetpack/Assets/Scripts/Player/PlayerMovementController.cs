@@ -14,7 +14,6 @@ namespace Player
         [SerializeField] private float jumpForce = 3.0f;
         [SerializeField] private float maxYValue = 4.5f;
         [SerializeField] private LayerMask walkingGround;
-
         private Rigidbody2D _rb;
         private BoxCollider2D _collider;
         private bool _touchingCeiling;

@@ -1,6 +1,6 @@
 # Log File
 
-[![wakatime](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle.svg)](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle)
+[![wakatime](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle.svg)](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle) + [![wakatime](https://wakatime.com/badge/github/beanbeanjuice/back-to-the-jungle.svg)](https://wakatime.com/badge/github/beanbeanjuice/back-to-the-jungle)
 
 ---
 
@@ -67,7 +67,20 @@ Overall, I learned a lot about [Nuget](https://www.nuget.org/). It seems to be v
 
 ---
 
+## June 12, 2023
+* There was an error when exporting the game as `WebGL` that would cause the fish to not spawn.
+  * I determined this was from the `WebGL` version of the game not reading the `fish_patterns.xlsx` file properly. However, upon further research I found out that `WebGL` actually cannot run `System.IO` operations. At first I was upset, but now know that is a security risk.
+  * To fix the issue then, I would need to move the `fish_patterns.xlsx` to the `Assets/Resources` folder on Unity. However, this presented another issue; Unity cannot directly read `.xlsx` files. Simple right? No. `Resources.Load()` can't even load the binary/bytes of the `.xlsx` file.
+  * To fix *that* issue, I needed to somehow load the `.xlsx` file as a `TextAsset`. However, this *again* presented another issue. You can't modify the bytes of a `TextAsset`, and since `WebGL` can't run `System.IO` operations, I can't set the bytes of the `TextAsset` when I instantiate it.
+  * Then, to fix *that* issue I needed to make my own custom `TextAsset` class called `CustomTextAsset`. However, this once again presented *another* new issue.
+  * The way **EPPLUS** (The Excel Handler) worked with `byte` data and `streams` meant that it DID use `System.IO`. So I had to find a whole new way to add patterns. I did not want to go back to my old way because I think the Excel way is very intuitive. So, what I did was I made it so that any time the Excel file is "reimported" it will automatically create a `.asset` file with the new patterns. That way, the patterns are compiled into the game, and no `I/O` is needed.
+  * Overall, this was a very complicated way to fix it just to add support for `WebGL`. The code, however, is clean, and error-free. ~~Hopefully~~. 😔
+  * This way is much better as well because this is a one-time cost prior to compile-time. Therefore, less load for the player's machine.
+
+---
+
 ## June 13, 2023
 * I finished up the trailer and press-kit today. I honestly think they look pretty good.
 
 ---
+
