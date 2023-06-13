@@ -1,7 +1,7 @@
 # Back to the Jungle
 
 <p align="center">
-  <img src="../Jetpack/Assets/Resources/UI/Start%20(MainMenu)/logo_backToTheJungle.png" />
+  <img src="../Jetpack/Assets/Resources/UI/Start%20(MainMenu)/logo_backToTheJungle.png"/>
 </p>
 
 ---
@@ -19,6 +19,13 @@
 
 ---
 
+## TRAILER
+
+[![][trailer-image]][trailer-link]
+> Click the image above to view the trailer! Alternatively, you can click [this][trailer-link] link.
+
+---
+
 ## AWESOME IMAGES!
 
 #### COLLECT FISH
@@ -28,7 +35,7 @@
 ![Dodge Vines][dodge-vines-image]
 
 #### EVADE BIRDS
-> GIF here.
+![Evade Birds][evade-birds-image]
 
 #### GET AS FAR AS YOU CAN
 ![Run Far][run-far-image]
@@ -53,7 +60,7 @@ This is where the game will greet you once you have loaded it up!
 This is where some of the audio settings will be. If the background music becomes annoying after playing for hours, this is where you would change it!
 
 #### Shop
-> Image here.
+![Shop][shop-image]
 
 Still a work in progress, but this is what the ability and item shop would look like! We tried to make it **gacha** inspired.
 
@@ -95,7 +102,7 @@ Still a work in progress, but this is what the ability and item shop would look 
 
 | Developer   | Role              | Sub Role                   | Time Coding                | Developer Log       |
 | ----------- | ----------------- | -------------------------- | -------------------------- | ------------------- |
-| *William*   | Movement/Physics  | Producer/Press Kit/Trailer | ![wakatime][william-badge] | [Log][william-log]  |
+| *William*   | Movement/Physics  | Producer/Press Kit/Trailer | ![william-badge-1] + ![william-badge-2] | [Log][william-log]  |
 | *Emily*     | Input             | Game Feel                  | N/A                        | [Log][emily-log]    |
 | *Sheda*     | Animation/Visuals | Narrative Design           | N/A                        | [Log][sheda-log]    |
 | *Westley*   | User Interface    | Audio                      | N/A                        | [Log][westley-log]  |
@@ -103,13 +110,18 @@ Still a work in progress, but this is what the ability and item shop would look 
 | *Roxanne*   | Animation/Visuals | Game Feel                  | N/A                        | [Log][roxanne-log]  |
 
 <!-- LINKS/IMAGES -->
-[collect-fish-image]: collect_fish.gif
-[dodge-vines-image]: dodge_vines.gif
-[run-far-image]: run_far.gif
+[trailer-link]: https://youtu.be/_5Re1wy7m1A
+[trailer-image]: https://img.youtube.com/vi/_5Re1wy7m1A/maxresdefault.jpg
 
-[gameplay-image]: gameplay.gif
-[start-image]: start.gif
-[settings-image]: settings.png
+[collect-fish-image]: images/collect_fish.gif
+[dodge-vines-image]: images/dodge_vines.gif
+[evade-birds-image]: images/evade_birds.gif
+[run-far-image]: images/run_far.gif
+
+[gameplay-image]: images/gameplay.gif
+[start-image]: images/start.gif
+[settings-image]: images/settings.png
+[shop-image]: images/shop.gif
 
 [gary-image]: https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/6811fd9e7127fe1.png
 [gary-link]: https://pixelartmaker.com/art/6811fd9e7127fe1
@@ -135,7 +147,8 @@ Still a work in progress, but this is what the ability and item shop would look 
 [time-machine-image]: https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/48890ee8a13e3f6.png
 [time-machine-link]: https://pixelartmaker.com/art/48890ee8a13e3f6
 
-[william-badge]: https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle.svg?style=for-the-badge
+[william-badge-1]: https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle.svg
+[william-badge-2]: https://wakatime.com/badge/github/beanbeanjuice/back-to-the-jungle.svg
 [william-log]: ../developer_logs/William.md
 [emily-log]: ../developer_logs/Emily.md
 [sheda-log]: ../developer_logs/Sheda.md
