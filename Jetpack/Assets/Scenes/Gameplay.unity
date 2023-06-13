@@ -9192,7 +9192,7 @@ Rigidbody2D:
   m_Mass: 80
   m_LinearDrag: 1.2
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -9329,8 +9329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e58980eb46e2af43a87b76d64492aef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 3
-  acceleration: 0.025
+  velocity: 5
+  acceleration: 0.05
   flyForce: 75
   jumpForce: 3
   maxYValue: 4.5
