@@ -38,7 +38,7 @@ namespace Scenes
         {
             StartCoroutine(LoadLevel("StartMenu", this.crossFadeTransitionTime));
         }
-        
+
         /// <summary>
         /// Call this class to load ShopMenu scene.
         /// </summary>

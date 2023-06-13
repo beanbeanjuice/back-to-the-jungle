@@ -1,65 +1,53 @@
 ﻿using System;
 using System.IO;
+using Fish;
 using OfficeOpenXml;
+using Resources.Patterns.Fish;
+using UnityEditor;
 using UnityEngine;
 
-namespace Fish
+namespace Editor
 {
     /// <summary>
     /// A class used to read a excel file and convert it into fish patterns.
     /// <para></para>
     /// <a href="https://www.epplussoftware.com/">EPPlus Excel Documentation</a>
+    /// <a href="https://docs.unity3d.com/ScriptReference/AssetDatabase.CreateAsset.html">Asset Database</a>
     /// <remarks>Coded by William.</remarks>
     /// </summary>
     public class FishFileReader
     {
-        private const string FILE_NAME = "/fish_patterns.xlsx";
         private const string RED = "#FFFF0000";
         private const string BLACK = "#FF0D0D0D";
 
-        private readonly int _sheets;
-        private readonly FishPattern[] _patterns;
-        private bool _isInitialized;
-
-        /// <summary>
-        /// Create a new fish file reader.
-        /// </summary>
-        /// <param name="sheets">The number of pattern sheets in the excel file.</param>
-        public FishFileReader(int sheets)
-        {
-            this._sheets = sheets;
-            this._patterns = new FishPattern[sheets];
-        }
-
-        /// <summary>
-        /// Get the fish patterns stored in memory.
-        /// </summary>
-        /// <returns>A primitive array of fish patterns.</returns>
-        /// <exception cref="NullReferenceException">Thrown if the fish patterns have not been initialized in memory.</exception>
-        public FishPattern[] GetPatterns()
-        {
-            if (!this._isInitialized) throw new NullReferenceException("Fish patterns have not been initialized.");
-
-            return this._patterns;
-        }
+        private int _sheets;
+        private FishPattern[] _patterns;
 
         /// <summary>
         /// Initializes the patterns in memory. Required on startup.
         /// </summary>
-        public void Initialize()
+        public void Initialize(CustomTextAsset file)
         {
-            // Open the excel file. Located in StreamingAssets folder.
-            using ExcelPackage package = new ExcelPackage(new FileInfo(Application.streamingAssetsPath + FILE_NAME));
+            if (null == file) throw new NullReferenceException("Fish patterns file is missing...");
 
             // Set license to non-commercial. Needed for more workbooks, plus this is academic use.
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-            // Go through every worksheet in the workbook.
+            // Open the excel file. Located in StreamingAssets folder.
+            using ExcelPackage package = new ExcelPackage();
+            package.Load(new MemoryStream(file.bytes));
+
+            this._sheets = package.Workbook.Worksheets.Count;
+            this._patterns = new FishPattern[this._sheets];
+
             for (int i = 0; i < this._sheets; i++) this._patterns[i] = ReadSheet(package, i);
 
             // Close the excel workbook when completed.
             package.Dispose();
-            this._isInitialized = true;
+
+            // Create the asset.
+            FishPatternsAsset fishPatternsAsset = FishPatternsAsset.CreatePatterns(this._patterns);
+            AssetDatabase.CreateAsset(fishPatternsAsset, "Assets/Resources/Patterns/Fish/fish_patterns_asset.asset");
         }
 
         private FishPattern ReadSheet(ExcelPackage package, int sheetNumber)
