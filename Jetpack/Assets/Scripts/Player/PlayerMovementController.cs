@@ -14,8 +14,6 @@ namespace Player
         [SerializeField] private float jumpForce = 3.0f;
         [SerializeField] private float maxYValue = 4.5f;
         [SerializeField] private LayerMask walkingGround;
-        [SerializeField] private AudioSource wingFlap;
-
         private Rigidbody2D _rb;
         private BoxCollider2D _collider;
         private bool _touchingCeiling;
@@ -29,9 +27,6 @@ namespace Player
         private void Update()
         {
             CeilingCheck();
-
-            // Uses GetButtonDown to ensure SFX is not spammed.
-            if (Input.GetButtonDown("Jump")) this.wingFlap.Play();
 
             // Cancels the rotation of the sprite.
             this.transform.rotation = Quaternion.Euler(0, 0, 0);

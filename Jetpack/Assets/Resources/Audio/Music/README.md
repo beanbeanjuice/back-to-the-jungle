@@ -3,7 +3,6 @@
 ---
 
 ## In-Game Music
-[Atomic Amnesia MMX by 3kliksphilip](https://youtu.be/LP4Ojrrp7AQ)
 
 [Clown](https://www.chosic.com/download-audio/53609/) by Sakura Girl | https://soundcloud.com/sakuragirl_official
 Music promoted by https://www.chosic.com/free-music/all/

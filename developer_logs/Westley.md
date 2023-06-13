@@ -37,7 +37,17 @@
 
 ## June 11, 2023
 * Redid the UI+audio update from June 10 due to merge conflict issues.
-* Added sound to the starting animation. I found three free sounds online: portal idle, alarm, and dinosaur roar. Then I mixed these sounds together in Audacity to fit the runtime of the animation.
+* Added sound to the starting animation. 
+* * I found three free sounds online: portal idle, alarm, and dinosaur roar. Then I mixed these sounds together in Audacity to fit the runtime of the animation.
 * Wrote script to enable pausing and game over screen.
 * Added menu music.
 * Added functionality to the quit button.
+* Created GameplayManager.cs
+* * Navigates the different UI of the Gameplay scene: GameplayUI, EndScreenUI, and PauseScreenUI.
+* Added MountFlying SFX, Vine hit SFX.
+* Added bird enemy SFX.
+* * I isolated certain parts of 3 different sound clips to create the SFX used in the game. 
+
+## June 11, 2023
+* Added walking SFX.
+* Implemented PlayerAudioManager that plays the correct SFX (wing flaps or walking) depending on player movement.
