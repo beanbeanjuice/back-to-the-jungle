@@ -20,6 +20,7 @@ namespace Fish
         [SerializeField] private float maxY;
         [SerializeField] private float minDelay;
         [SerializeField] private float maxDelay;
+        [SerializeField] private float spacingScale = 1.0f;
 
         private FishPatternsAsset _fishPatterns;
         private int _numPatterns;
@@ -73,7 +74,7 @@ namespace Fish
             for (int i = 1; i < pattern.GetFishCount(); i++)
             {
                 FishSpec spec = GenerateRandomFish();
-                spec.SetLocation(initialLocation + (Vector3)pattern.GetLocationOffsets()[i]);
+                spec.SetLocation(initialLocation + ((Vector3)pattern.GetLocationOffsets()[i] * this.spacingScale));
                 fishes.Add(spec);
             }
 
