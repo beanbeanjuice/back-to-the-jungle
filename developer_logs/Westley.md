@@ -47,3 +47,7 @@
 * Added MountFlying SFX, Vine hit SFX.
 * Added bird enemy SFX.
 * * I isolated certain parts of 3 different sound clips to create the SFX used in the game. 
+
+## June 11, 2023
+* Added walking SFX.
+* Implemented PlayerAudioManager that plays the correct SFX (wing flaps or walking) depending on player movement.

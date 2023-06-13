@@ -4,13 +4,7 @@
 
 ## Fish Collection
 
-[Pufferfish eats carrot (full video) - Nixanator](https://youtu.be/axiGV09C85A)
-
 [Nom Noise - Nom Noise](https://freesound.org/people/TheDragonsSpark/sounds/543386/)
-
-## Player Collection
-
-[New Super Marios U Death soundeffect](https://youtu.be/b4HLnX8AvDE)
 
 ## Buttons
 
@@ -25,6 +19,9 @@
 
 ## Wing Flap
 [Wing Flap 1.wav - _stubb](https://freesound.org/people/_stubb/sounds/389634/)
+
+## Walking
+[Free Walking fast on Dirt Sound Effect [Foley]](https://www.youtube.com/watch?v=AUKgAqB4Ysg)
 
 ## Vine
 [vine stretch 2.wav - Halleck](https://freesound.org/people/Halleck/sounds/121725/)
