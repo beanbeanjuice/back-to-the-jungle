@@ -1,13 +1,12 @@
 using System;
 using System.IO;
-using Fish;
 using Resources.Patterns.Fish;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.AssetImporters;
 
-namespace Editor {
-
+namespace Editor
+{
     /// <summary>
     /// Imports any Microsoft Excel files as an asset. By default, Unity cannot Resource.Load() the "xlsx" file
     /// extension. Therefore, we need to create and attach an asset to it that Unity can read.
@@ -43,6 +42,6 @@ namespace Editor {
     internal class ExcelImporterEditor : AssetImporterEditor
     {
         protected override bool needsApplyRevert => false;
-        public override void OnInspectorGUI(){ }
+        public override void OnInspectorGUI() { }
     }
 }

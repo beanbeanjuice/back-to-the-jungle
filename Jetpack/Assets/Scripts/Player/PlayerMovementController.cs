@@ -29,12 +29,9 @@ namespace Player
         private void Update()
         {
             CeilingCheck();
-            
+
             // Uses GetButtonDown to ensure SFX is not spammed.
-            if (Input.GetButtonDown("Jump"))
-            {
-                wingFlap.Play();
-            }
+            if (Input.GetButtonDown("Jump")) this.wingFlap.Play();
 
             // Cancels the rotation of the sprite.
             this.transform.rotation = Quaternion.Euler(0, 0, 0);
