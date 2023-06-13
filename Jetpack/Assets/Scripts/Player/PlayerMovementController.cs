@@ -96,9 +96,9 @@ namespace Player
              * If the player mangages to reach velocity 18, we want to stop accelerating
              * so that the player maintains this speed and does go any faster.
              */
-             if(this.velocity >= 18.0f)
+             if(this.velocity >= 15.0f)
              {
-                this.velocity = 18.0f;
+                this.velocity = 15.0f;
                 this.acceleration = 0.0f;
              }
         }
