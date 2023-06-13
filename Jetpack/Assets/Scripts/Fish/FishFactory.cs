@@ -22,16 +22,17 @@ namespace Fish
         [SerializeField] private float maxDelay;
         [SerializeField] private int numFishTypes = 9;
 
-        private FishFileReader _ffr;
+        //private FishFileReader _ffr;
+        //private int _numPatterns;
+        private FishPatternsAsset _fishPatterns;
         private int _numPatterns;
         private float _delay;
         private float _delayTimer;
 
         private void Awake()
         {
-            this._ffr = new FishFileReader(this.numFishTypes);
-            this._ffr.Initialize();
-            this._numPatterns = this._ffr.GetPatterns().Length;
+            this._fishPatterns = Resources.Load("fish_patterns_asset") as FishPatternsAsset;
+            this._numPatterns = this._fishPatterns.fishPatterns.Length;
         }
 
         /// <summary>
@@ -40,7 +41,7 @@ namespace Fish
         /// <param name="initialFishSpec">The given fish spec.</param>
         private void Build(FishSpec initialFishSpec)
         {
-            FishPattern pattern = this._ffr.GetPatterns()[Helper.GetRandomInteger(0, this._numPatterns)];
+            FishPattern pattern = this._fishPatterns.fishPatterns[Helper.GetRandomInteger(0, this._numPatterns)];
 
             // Spawn all of the fish specs into the scene.
             foreach (FishSpec fishSpec in PopulateFishSpecs(initialFishSpec, pattern))
