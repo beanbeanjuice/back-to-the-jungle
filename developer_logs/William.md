@@ -1,6 +1,6 @@
 # Log File
 
-[![wakatime](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle.svg)](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle)
+[![wakatime](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle.svg)](https://wakatime.com/badge/github/beanbeanjuice/ecs189L-back-to-the-jungle) + [![wakatime](https://wakatime.com/badge/github/beanbeanjuice/back-to-the-jungle.svg)](https://wakatime.com/badge/github/beanbeanjuice/back-to-the-jungle)
 
 ---
 
