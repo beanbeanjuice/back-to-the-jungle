@@ -20,10 +20,7 @@ namespace Fish
         [SerializeField] private float maxY;
         [SerializeField] private float minDelay;
         [SerializeField] private float maxDelay;
-        [SerializeField] private int numFishTypes = 9;
 
-        //private FishFileReader _ffr;
-        //private int _numPatterns;
         private FishPatternsAsset _fishPatterns;
         private int _numPatterns;
         private float _delay;
@@ -31,7 +28,10 @@ namespace Fish
 
         private void Awake()
         {
-            this._fishPatterns = Resources.Load("fish_patterns_asset") as FishPatternsAsset;
+            this._fishPatterns = UnityEngine.Resources.Load("Patterns/Fish/fish_patterns_asset") as FishPatternsAsset;
+
+            if (null == this._fishPatterns) throw new NullReferenceException("Fish patterns is null...");
+
             this._numPatterns = this._fishPatterns.fishPatterns.Length;
         }
 

@@ -1,10 +1,10 @@
 using System;
 using System.IO;
 using Fish;
+using Resources.Patterns.Fish;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.AssetImporters;
-using UnityEngine;
 
 namespace Editor {
 
@@ -33,6 +33,7 @@ namespace Editor {
             ctx.AddObjectToAsset("excel", asset);
             ctx.SetMainObject(asset);
 
+            // Create the asset in Unity.
             FishFileReader fileReader = new FishFileReader();
             fileReader.Initialize(asset);
         }
