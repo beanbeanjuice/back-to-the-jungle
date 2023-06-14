@@ -113,6 +113,10 @@ By using these templates, it made it easier to view, at a glance, exactly what t
 
 Overall, it was my first time working in a group setting like this for a project of this size. I had originally worked on my own project [cafeBot](https://www.github.com/beanbeanjuice/cafeBot) which implements everything I have already stated above. It helps me in my own workflow, which is why I used it for this project as well.
 
+##### Extra Additions
+
+Additionally, I also created a section called [**Notable Completions Outside of Role**](#notable-completions-outside-of-role) [here](#notable-completions-outside-of-role) which highlights some of our completions that were not part of our assigned roles.
+
 ### Audio
 
 **List your assets including their sources and licenses.**
@@ -167,3 +171,43 @@ I wanted to include a link to the "developer diaries" that some of us wrote for 
 ### Game Feel
 
 **Document what you added to and how you tweaked your game to improve its game feel.**
+
+---
+
+## Notable Completions Outside of Role
+
+### Member: [William][william-github]
+I worked on quite a few small things throughout the project. All of my minor and major contributions can be found on my [developer log](./developer_logs/William.md), but the one that took up the bulk of my time was everything to do with the `fish` which is the main currency of our game. This includes [FishFactory.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Scripts/Fish/FishFactory.cs), [FishBindings.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Scripts/Fish/FishBindings.cs), [FishController.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Scripts/Fish/FishController.cs), [FishPattern.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Scripts/Fish/FishPattern.cs), [FishSpec.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Scripts/Fish/FishSpec.cs), and [FishType.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Scripts/Fish/FishType.cs).
+
+Specifically, it took me a very long time to implement the fish in a way that would allow easy modification, easy patterns, and to get it to work with WebGL. The way the fish would spawn was instead of creating prefabs for each of the individual fish, any member of my team could just create a pattern, and that would automatically start spawning that pattern in the game. For example, there is a "BEAN" pattern or a heart-shaped pattern.
+
+My struggle when first implementing the fish started on [this](./developer_logs/William.md#may-30-2023) developer log. It was "easy" to make patterns of fish, but what an artist or developer would have to do, was create the pattern in Microsoft Excel, then translate that pattern into relative XY coordinates for the game. This is easy, but *very* tedious, especially if the pattern of fish you are trying to spawn has 30+ fish.
+
+To fix the tediousness, the professor suggested I added a way to translate Microsoft Excel sheet data automatically. At first, I did not want to do this as I had experience doing this before, and knew it was tedious, but I gave in because it was annoying the way you had to add the XY coordinates of the fish each individually. My struggles are highlighted in [this](./developer_logs/William.md#june-9-2023) developer log.
+
+However, in the [next](./developer_logs/William.md#june-12-2023) developer log right after that, we discovered some errors when trying to export into a WebGL game. Turns out, WebGL does **not** support `System.IO` interactions. I thought I would have to scrap the Excel idea entirely, or at least not export into `WebGL`. However, I had an epiphany and decided to figure out a way to complete it. This is all explained in the developer log.
+
+To complete my objectives, I needed to add a few [Editor Scripts](https://learn.unity.com/tutorial/editor-scripting). The [ExcelImporter.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Editor/ExcelImporter.cs), and [FishFileReader.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Editor/FishFileReader.cs) are scripts for the editor that allow the automatic import and conversion of the [fish_patterns.xlsx]() file into a readable Unity object. I added instructions [here](https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Resources/Patterns/Fish/How%20to%20Add%20Fish%20Patterns.md) for how to actually add new fish patterns. It is as simple as drawing it out in the excel sheet, saving the file, then re-importing the excel sheet.
+
+Again, my process is mostly explained in my developer log, located [here](./developer_logs/William.md).
+
+##### Fish Bindings Asset Menu
+https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Scripts/Fish/FishBindings.cs#L6-L53
+
+By creating an asset menu, it's easy to choose which fish sprites are allowed to be used. I took inspiration from the asset menu from **Exercise #3**.
+
+##### Fish Patterns Asset
+https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Editor/ExcelImporter.cs#L10-L46
+
+https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Scripts/Fish/FishPatternsAsset.cs#L5-L28
+
+Since Unity cannot read the binaries of an Excel sheet from `Resources.Load()`, I had to get creative. I "faked" it upon import, by converting the binaries to a readable format for Unity using an editor script. This allows easy edit-ability while also being directly compiled into the game. Therefore, no `System.IO` is needed for the compiled game. This is a bit of a work-around, but I honestly think this is a good way to do it. No overhead is needed for the person running the game, only for us developers when compiling.
+
+##### Excel File Reader
+https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Editor/FishFileReader.cs#L11-L158
+
+I had to learn a lot for this portion; downloading external binaries into Unity and how to use said binaries. I ended up using `NuGET` which made the process somewhat simple, but definitely not painless. There does not seem to be a lot of tutorials/user-created documentation on `EPPLUS`, which is the library I used for reading Excel files, so I had to read from documentation directly.
+
+A lot of functions like [ConvertPosition](https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Editor/FishFileReader.cs#L143-L147), [ReadSheetValue](https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Editor/FishFileReader.cs#L149-L152), and [GetCellHex](https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Editor/FishFileReader.cs#L154-L157), simply exist to make the code more readable. Excel doesn't always start from index = 0. Most of the code is commented and self-explanatory.
+
+Overall, if there was only one thing I could show from this project, it would be my work on spawning the fish in. It was a lot of work, a lot of debugging, but ultimately I am very satisfied with how it turned out.
