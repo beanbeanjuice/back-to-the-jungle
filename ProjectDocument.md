@@ -128,7 +128,7 @@ Something to note; by convention, movement is usually in `Update()`. However, be
 
 Overall, even though it was pretty easy, it was still a learning experience. In class, there was a lot of theory about how the game is supposed to *feel*, and by utilizing what I learned in class, there's a lot more to a game than just "add upwards boost" or "stop adding upwards boost" but instead, all of the small details that add up to a whole. Had I not added the upwards velocity removal when touching the ceiling, the player would feel sluggish and off.
 
-## Animation and Visuals
+## Animation and Visuals - [Roxanne](https://github.com/roxanneruan) and [Sheda](https://github.com/Sheda-Shehadeh)
 #
 **List your assets including their sources and licenses.**
 
