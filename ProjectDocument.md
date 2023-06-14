@@ -220,7 +220,7 @@ https://creativecommons.org/licenses/by/3.0/
 #### Implementation
 I primarily used Unity's AudioSource feature. AudioSource can be added to any game object and its function Play() can be easily called by Unity's UI buttons and via C# scripts. In conjunction with my main role of UI, I created AudioSettings.cs that controlled mixers: the parent Master and children SFX & Music. This meant that each AudioSource was linked to the appropriate mixer and is able to be modified by the player via a settings menu.
 
-[AudioSettings.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/8bb728df650bd7d09a3bb0bc5edb7168f06e9318/Jetpack/Assets/Scripts/AudioSettings.cs)
+https://github.com/beanbeanjuice/back-to-the-jungle/blob/8bb728df650bd7d09a3bb0bc5edb7168f06e9318/Jetpack/Assets/Scripts/AudioSettings.cs
 
 #### Sound Style
 For SFX, I wanted realistic sounds, but also something satisfying for the player to listen to. For instance, I looked through multiple sound clips of rocks and then isolating certain parts I liked in Audactiy, an audio mixing program, to create responsive sounds for the button clicks. 
