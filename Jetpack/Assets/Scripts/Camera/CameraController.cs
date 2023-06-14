@@ -2,12 +2,16 @@ using UnityEngine;
 
 namespace Camera
 {
+    /// <summary>
+    /// A class used to control the player camera.
+    /// <remarks>Coded by William.</remarks>
+    /// </summary>
     public class CameraController : MonoBehaviour
     {
         [SerializeField] private GameObject player;
         [SerializeField] private float xOffset;
 
-        void LateUpdate()
+        private void LateUpdate()
         {
             Vector2 playerPosition = this.player.transform.position;
             Vector3 cameraPosition = this.transform.position;
