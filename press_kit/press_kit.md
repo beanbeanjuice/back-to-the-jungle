@@ -6,7 +6,7 @@
 
 ---
 
-> Reach for the skies and embrace the adrenaline-fueled rush of endless flight in Back to The Jungle! Back to The Jungle is an exhilarating endless runner game that takes players on a high-flying adventure through a vibrant and action-packed world. Fly through a pre-historic jungle, dodging primitive threats and evading the wildlife! Strap in, take flight, and embark on an adrenaline-fueled journey like no other!
+> Reach for the skies and embrace the adrenaline-fueled rush of endless flight in Back to The Jungle! Back to The Jungle is an exhilarating endless runner game that takes players on a high-flying adventure through a vibrant and action-packed world. Fly through a pre-historic jungle, dodging primitive threats and evading the wildlife! Strap in, *literally*, take flight, and embark on an adrenaline-fueled journey like no other!
 
 **Price**: $0.00 😔  
 **Supported Platforms**: Windows, MacOS, Linux
@@ -15,7 +15,7 @@
 
 ## WHY RUN?
 
-> Gary was taking his normal afternoon walk when he heard a loud screeching. This screeching, however, was not human... He followed the screeching to a lab where he found a dinosaur. Being a wildlife activist, he broke into the lab and stole the dinosaur. While evading the scientists, he went through a time machine leading him into the past! He now has to try to find a way out while evading man-eating plants and large birds that are out to get him.
+> Welcome **Back to The Jungle**! In a world where rogue scientists have time traveled and stolen a dinosaur from his home, your mission is to stop them. Rogue scientists have found a way to travel back in time. Return the dinosaur to his home- but watch out! There are vines and birds who really don't want you in their jungle. If they get you, you'll be returned to the rogue scientists' lab and you'll have failed your mission. Good luck vigilantes! Time is not on your side.
 
 ---
 
