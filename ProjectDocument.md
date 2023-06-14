@@ -171,6 +171,8 @@ From the [issue history](https://github.com/beanbeanjuice/back-to-the-jungle/iss
 #### Timeline
 As producer, I also created a [Gantt Chart](https://docs.google.com/spreadsheets/d/1daxQZKiFalyhVolWCPxCEILbFaG9LCLo/edit?usp=sharing&ouid=112531617366563364567&rtpof=true&sd=true) for everyone to use at their discretion. By adding things in here, in addition to the GitHub issues, we were able to keep track of all the things we have done/completed.
 
+***Note**: Team members, for the most part, were responsible for filling in their own timeline dates. Anything missing is up the the team member who's role is listed.*
+
 #### GitHub Usage
 As stated before, we utilized many of GitHub's features such as `tags`, `issues`, and `pull requests`. This allowed us to keep track of what does what, whether it is a `BUG`, `FEATURE`, or `IMPROVEMENT` as well as which role that specific issue belonged to. As for our [pull request history](https://github.com/beanbeanjuice/back-to-the-jungle/pulls?q=is%3Apr+is%3Aclosed), the original intention was to disallow merging until at least 2 other members of the team had reviewed and approved the code. Not only would this have prevented merge conflicts and issues later one, but would have made the code easier to read. Again, we chose to forego this toward the middle as it was causing slowdown, but also caused a lot of issues regarding code readability later on.
 
