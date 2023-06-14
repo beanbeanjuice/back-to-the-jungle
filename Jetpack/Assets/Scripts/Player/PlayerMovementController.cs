@@ -8,8 +8,8 @@ namespace Player
     /// </summary>
     public class PlayerMovementController : MonoBehaviour
     {
-        [SerializeField] private float velocity = 3.0f;
-        [SerializeField] private float acceleration = 0.025f;
+        [SerializeField] private float velocity = 5.0f;
+        [SerializeField] private float acceleration = 0.04f;
         [SerializeField] private float flyForce = 75.0f;
         [SerializeField] private float jumpForce = 3.0f;
         [SerializeField] private float maxYValue = 4.5f;
@@ -27,6 +27,7 @@ namespace Player
         private void Update()
         {
             CeilingCheck();
+            VelocityCheck();
 
             // Cancels the rotation of the sprite.
             this.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -87,6 +88,19 @@ namespace Player
              */
             this._touchingCeiling = (position.y >= this.maxYValue);
             if (this._touchingCeiling) RemoveUpwardsVelocity(position);
+        }
+
+        private void VelocityCheck()
+        {
+            /* 
+             * If the player mangages to reach velocity 18, we want to stop accelerating
+             * so that the player maintains this speed and does go any faster.
+             */
+             if(this.velocity >= 15.0f)
+             {
+                this.velocity = 15.0f;
+                this.acceleration = 0.0f;
+             }
         }
 
         private void RemoveUpwardsVelocity(Vector3 position)
