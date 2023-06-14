@@ -11,12 +11,12 @@ public class PlayerAudioManager : MonoBehaviour
     [SerializeField] private AudioSource wingFlap;
     private PlayerMovementController _parentController;
     private bool _isWalkingSFX = false;
-    
+
     void Start()
     {
         this._parentController = GameObject.FindWithTag("Player").GetComponent<PlayerMovementController>();
     }
-    
+
     private void Update()
     {
         // Uses GetButtonDown to ensure SFX is not spammed.
@@ -33,7 +33,7 @@ public class PlayerAudioManager : MonoBehaviour
         }
         else
         {
-            StopWalkingSFX(); 
+            StopWalkingSFX();
         }
     }
 
