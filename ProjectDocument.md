@@ -194,9 +194,16 @@ Essentially, what I included in the press-kit were more specific versions of thi
 
 I wanted to include a link to the "developer diaries" that some of us wrote for each of our roles, which are linked at the bottom of the press-kit. They are essentially what we are thinking during development, stuff we fixed, and how we fixed it.
 
-### Game Feel
+### Game Feel - Roxanne and Emily
 
 **Document what you added to and how you tweaked your game to improve its game feel.**
+
+### Roxanne
+*Outlined Vines* - After initial vine creation and testing, we noticed that the vines were hard to see since the outline was so thin. This is both art / game feel, so I decided to just re-outline the vines in a bright yellow / orange outline, so it pops more against the background and therefore makes it easier for players to see on the screen. [Outlined vine sprites alongside old vine sprites](https://github.com/beanbeanjuice/back-to-the-jungle/tree/63c077999c498923c09c3afa2d781ce7266e025a/Jetpack/Assets/Resources/Sprites/Vines)
+
+*Increase player acceleration* - After gameplay testing and opinions from other group members, I decided to increase the player starting velocity from 3 to 5, and acceleration from 0.025 to 0.05. The increase in starting player velocity is to ensure that the game does not feel like it is dragging on for too long before getting "fast and exciting." The increase in acceleration also ensures this, as well as upping the player difficulty as the player now increases in speed more quickly which can become more difficult the longer the player is alive. I have also implemented a max velocity system in the PlayerMovementController.cs, so once the player reaches the max velocity of 15, the acceleration is set to 0 and player velocity is kept constant. This ensures that the player does not go hyperspeed. [Max Velocity System in PlayerMovementController.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/63c077999c498923c09c3afa2d781ce7266e025a/Jetpack/Assets/Scripts/Player/PlayerMovementController.cs#L93-L104)
+
+### Emily
 
 ---
 
