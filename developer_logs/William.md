@@ -76,3 +76,11 @@ Overall, I learned a lot about [Nuget](https://www.nuget.org/). It seems to be v
   * The way **EPPLUS** (The Excel Handler) worked with `byte` data and `streams` meant that it DID use `System.IO`. So I had to find a whole new way to add patterns. I did not want to go back to my old way because I think the Excel way is very intuitive. So, what I did was I made it so that any time the Excel file is "reimported" it will automatically create a `.asset` file with the new patterns. That way, the patterns are compiled into the game, and no `I/O` is needed.
   * Overall, this was a very complicated way to fix it just to add support for `WebGL`. The code, however, is clean, and error-free. ~~Hopefully~~. 😔
   * This way is much better as well because this is a one-time cost prior to compile-time. Therefore, less load for the player's machine.
+
+---
+
+## June 13, 2023
+* I finished up the trailer and press-kit today. I honestly think they look pretty good.
+
+---
+
