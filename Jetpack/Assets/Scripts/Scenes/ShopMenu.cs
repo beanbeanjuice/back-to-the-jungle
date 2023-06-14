@@ -10,7 +10,7 @@ namespace Scenes
     /// <remarks> Referenced from:
     /// https://www.youtube.com/watch?v=0soGRKtpJuA&ab_channel=TheGameDevShow</remarks>
     /// </summary>
-    public class ShopMenu : MonoBehaviour 
+    public class ShopMenu : MonoBehaviour
     {
         void Start()
         {

@@ -4,7 +4,7 @@ using System.Collections;
 /// <summary>
 /// The bird factory. This class is used for generating
 /// and spawning enemy birds in.
-/// </summary> 
+/// </summary>
 
 public class BirdFactory : MonoBehaviour
 {
@@ -42,7 +42,7 @@ public class BirdFactory : MonoBehaviour
 
             In addition, we will have a delay after each Build so that we can get a
             safety net of at least 10 seconds. This way we don't have birds spawning
-            every ten seconds because of our random range. 
+            every ten seconds because of our random range.
         */
         this._cooldownTimer += Time.deltaTime;
         if (this._cooldownTimer > this.cooldown)
@@ -64,13 +64,13 @@ public class BirdFactory : MonoBehaviour
             Instantiate our warning. We want to obtain the locked position of the warning
             to use for the y position of the bird. But we want to grab the y position, after
             we lock the warning movement.
-            
+
             To do this, we need to know how long to wait after the warning object has been
             instantiated. We need to get the variable secondsBeforeLock in WarningController
             and call an invoke method to wait for certain amount of seconds before we
             obtain the correct y position
         */
-        if (this.player.transform.position.x / this.distanceBeforeLevelChange >= 1 )
+        if (this.player.transform.position.x / this.distanceBeforeLevelChange >= 1)
         {
             if (this._possibleBirds != this._maxPossibleBirds) this._possibleBirds += 1;
             this._numOfBirds = Random.Range(this._minPossibleBirds, this._possibleBirds);
