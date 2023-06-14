@@ -6,7 +6,7 @@
 
 ## Summary
 
-**A paragraph-length pitch for your game.**
+Welcome Back to The Jungle! In a world where rogue scientists have time traveled and stolen a dinosaur from his home, your mission is to stop them. Rogue scientists have found a way to travel back in time. Return the dinosaur to his home- but watch out! There are vines and birds who really don't want you in their jungle. If they get you, you'll be returned to the rogue scientists' lab and you'll have failed your mission. Good luck vigilantes! Time is not on your side.
 
 ## Gameplay Explanation
 
@@ -130,9 +130,11 @@ Overall, even though it was pretty easy, it was still a learning experience. In 
 
 ## Animation and Visuals - [Roxanne](https://github.com/roxanneruan) and [Sheda](https://github.com/Sheda-Shehadeh)
 #
+
+We decided to do 2D art because the game we were inspired by, Jetpack Joyride, uses a 2D art style. We also thought, given the time constraints, we would be able to produce a better game in 2D. The visuals were inspired by the story narrative and also by Jetpack Joyride. Since our theme is jungly and we're basing the game off Jetpack Joyride, we made our own enemies: "missiles" (birds) and "electric wires" (vines) that fit our theme better. We also had a visual style guide, we made some mock up sketches and things initially, but we also had color palettes and inspiration photos. As for game feel, our art was very specifically following the jungle theme so the whole game would feel more put together. Choosing to have the player ride a dinosaur instead of wear a jetpack is one example of a small decision like that.
+
 **List your assets including their sources and licenses.**
 
-**Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
 ## Input - [Emily](https://github.com/ylylime)
 #
@@ -297,7 +299,10 @@ After collecting responses and observing testers play our game, I want to make t
 
 ### Narrative Design
 
-**Document how the narrative is present in the game via assets, gameplay systems, and gameplay.**
+"Back to the Jungle" is a 2D endless runner game inspired by Jetpack Joyride. Gary, the main character breaks into a lab that has developed a time machine and "steals" a dinosaur. The goal is to return to dinosaur to his time period before the scientists catch up to you. If you fail to return the dinosaur, you and the dinosaur are teleporated back to the lab.
+
+A lot of the assets in the game, the jungle theme/background, the birds (missiles: flying enemies), vines (electric wire: vertical enemies), trees (background), egg in the shop, etc. were created based on the narrative. Also the cut scene is Gary running out of a lab with the dinosaur into a portal. Originally, the game was super similar to Jetpack Joyride, except there was time travel. Originally, the character stole a time-machine and jetpack from the lab and was running from scientists. But we decided this was too similar to Jetpack Joyride and not as fun, so we decided to spice things up. Gary is actually a hero rescuing the stolen dinosaur. He's returning the dinosaur home so the scientists can't do anymore experiments on him.
+
 
 ### Press Kit and Trailer - [William][william-github]
 
