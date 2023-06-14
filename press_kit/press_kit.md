@@ -9,7 +9,7 @@
 > Reach for the skies and embrace the adrenaline-fueled rush of endless flight in Back to The Jungle! Back to The Jungle is an exhilarating endless runner game that takes players on a high-flying adventure through a vibrant and action-packed world. Fly through a pre-historic jungle, dodging primitive threats and evading the wildlife! Strap in, *literally*, take flight, and embark on an adrenaline-fueled journey like no other!
 
 **Price**: $0.00 😔  
-**Supported Platforms**: Windows, MacOS, Linux
+**Supported Platforms**: Windows, macOS, Linux
 
 ---
 
