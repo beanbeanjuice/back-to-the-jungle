@@ -16,6 +16,34 @@
 
 ---
 
+## Quick Access
+<details>
+  <summary>Main Roles</summary>
+
+  <li><a href="#user-interface">User Interface</a></li>
+  <li><a href="#movement-and-physics---william">Movement and Physics</a></li>
+  <li><a href="#animation-and-visuals">Animation and Visuals</a></li>
+  <li><a href="#input">Input</a></li>
+  <li><a href="#game-logic">Game Logic</a></li>
+</details>
+<details>
+  <summary>Sub Roles</summary>
+
+  <li><a href="#producer---william">Producer</a></li>
+  <li><a href="#audio">Audio</a></li>
+  <li><a href="#gameplay-testing">Gameplay Testing</a></li>
+  <li><a href="#narrative-design">Narrative Design</a></li>
+  <li><a href="#press-kit-and-trailer---william">Press-Kit and Trailer</a></li>
+  <li><a href="#game-feel">Game Feel</a></li>
+</details>
+<details>
+  <summary>Notable Completions Outside of Role</summary>
+
+  <li><a href="#member-william">William</a></li>
+</details>
+
+---
+
 ## Main Roles
 
 Your goal is to relate the work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.
@@ -34,7 +62,7 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 **Describe your user interface and how it relates to gameplay. This can be done via the template.**
 
-### Movement/Physics - [William][william-github]
+### Movement and Physics - [William][william-github]
 
 [william-github]: https://www.github.com/beanbeanjuice
 [movement-script]: https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Scripts/Player/PlayerMovementController.cs
