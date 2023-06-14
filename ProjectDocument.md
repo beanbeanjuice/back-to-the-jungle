@@ -155,6 +155,56 @@ Assets:
   - [Block letter chart](https://www.dreamstime.com/stock-illustration-pixel-art-alphabet-letters-games-design-image53868874) used as a reference for all the words/block letters.
   - [Tablet](https://www.freepik.com/premium-vector/stone-buttons-pixel-art-set-interface-rock-bar-collection-cobblestone-panel-8-bit-sprite_33848880.htm) used as a reference for the stone tablet and for some buttons (like the back button).
 
+  Our game and Jetpack Joyride side by side:
+<p align="center">
+  <img src="/github_images/Art_Images/Game_Screenshots/Jetpack-Joyride.png"/>
+</p>
+
+<p align="center">
+  <img src="/github_images/Art_Images/Game_Screenshots/Back-To-The-Jungle2.png"/>
+</p>
+
+Lab cutscene:
+<p align="center">
+  <img src="/github_images/Art_Images/Lab_Cutscene/CutScene.png"/>
+</p>
+
+Sprite sheet examples:
+Unfortunately Sheda did not have time to complete the death animation, but the sprite sheet exists for it!
+
+Egg:
+<p align="center">
+  <img src="/github_images/Art_Images/EggSpriteSheet.png"/>
+</p>
+
+Dino Death:
+<p align="center">
+  <img src="/github_images/Art_Images/DizzyDino.png"/>
+</p>
+
+Dino Flying:
+<p align="center">
+  <img src="/github_images/Art_Images/Dino/Flying/pterodactyl_0.png"/>
+</p>
+<p align="center">
+  <img src="/github_images/Art_Images/Dino/Flying/pterodactyl_1.png"/>
+</p>
+<p align="center">
+  <img src="/github_images/Art_Images/Dino/Flying/pterodactyl_2.png"/>
+</p>
+<p align="center">
+  <img src="/github_images/Art_Images/Dino/Flying/pterodactyl_3.png"/>
+</p>
+<p align="center">
+  <img src="/github_images/Art_Images/Dino/Flying/pterodactyl_4.png"/>
+</p>
+
+
+UI art: The main screen:
+<p align="center">
+  <img src="/github_images/Art_Images/Game_Screenshots/Homescreen.png"/>
+</p>
+
 
 ### Input - [Emily](https://github.com/ylylime)
 
@@ -322,11 +372,11 @@ Over the course of our gameplay testing, I had gone to a myriad of peers and fri
 
 After collecting responses and observing testers play our game, I want to make the game faster and more difficult. I would love to add in more vines that come in various shapes and sizes. A friend recommended switching to a hell stage at some point in time, changing the music to something eerie, and perhaps having fake fish that can end the game. This is an idea that I'd love to implement. Overall, it was awesome getting to see my friends and peers play something I worked really hard on. 
 
-### Narrative Design
+### Narrative Design - Sheda
 
 "Back to the Jungle" is a 2D endless runner game inspired by Jetpack Joyride. Gary, the main character breaks into a lab that has developed a time machine and "steals" a dinosaur. The goal is to return to dinosaur to his time period before the scientists catch up to you. If you fail to return the dinosaur, you and the dinosaur are teleporated back to the lab.
 
-A lot of the assets in the game, the jungle theme/background, the birds (missiles: flying enemies), vines (electric wire: vertical enemies), trees (background), egg in the shop, etc. were created based on the narrative. Also the cut scene is Gary running out of a lab with the dinosaur into a portal. Originally, the game was super similar to Jetpack Joyride, except there was time travel. Originally, the character stole a time-machine and jetpack from the lab and was running from scientists. But we decided this was too similar to Jetpack Joyride and not as fun, so we decided to spice things up. Gary is actually a hero rescuing the stolen dinosaur. He's returning the dinosaur home so the scientists can't do anymore experiments on him.
+A lot of the assets in the game, the jungle theme/background, the birds (missiles: flying enemies), vines (electric wire: vertical enemies), trees (background), egg in the shop, etc. were created based on the narrative. Also the cut scene is Gary running out of a lab with the dinosaur into a portal. Originally, the game was super similar to Jetpack Joyride, except there was time travel. Originally, the character stole a time-machine and jetpack from the lab and was running from scientists. But we decided this was too similar to Jetpack Joyride and not as fun, so we decided to spice things up. Gary is actually a hero rescuing the stolen dinosaur. He's returning the dinosaur home so the scientists can't do anymore experiments on him. Another example is how, though it was not completed, the intended death animationw was the dino gets dizzy and slowly falls to the bottom of the screen with the player on his back, back into the portal because the player has failed to save the dino so the player must "try" (play) again.
 
 
 ### Press Kit and Trailer - [William][william-github]
