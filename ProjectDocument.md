@@ -58,12 +58,17 @@ Here is an example:
 
 You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
 
-## User Interface
-#
+### User Interface - [Westley](https://github.com/nwestl)
+
 **Describe your user interface and how it relates to gameplay. This can be done via the template.**
 
-## Movement and Physics - [William][william-github]
-#
+Our game has 7 different scenes connected by a LevelLoader script, the coding for this script was delegated to another member. Additionally in our gameplay scene, there are three different UI's: GameplayUI, EndScreenUI, and PauseScreenUI which are handled by the [GameplayManager.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/4e25ce0b368f4d0fa16ddbc44c73377dddeb11ee/Jetpack/Assets/Scripts/Scenes/GameplayManager.cs). The logic in the script is referenced from [Brackeys](https://www.youtube.com/watch?v=JivuXdrIHK0&t=273s). 
+
+When the player first loads up the game, they are greeted by the StartScreen scene which displays the title of our game. This then automatically loads into the StartMenu scene.
+
+
+### Movement and Physics - [William][william-github]
+
 [william-github]: https://www.github.com/beanbeanjuice
 [movement-script]: https://github.com/beanbeanjuice/back-to-the-jungle/blob/b5a6dbdcc7e14b19823f1a3edb895a864107f96e/Jetpack/Assets/Scripts/Player/PlayerMovementController.cs
 
@@ -161,13 +166,83 @@ Overall, it was my first time working in a group setting like this for a project
 
 Additionally, I also created a section called [**Notable Completions Outside of Role**](#notable-completions-outside-of-role) [here](#notable-completions-outside-of-role) which highlights some of our completions that were not part of our assigned roles.
 
-### Audio
+### Audio - [Westley](https://github.com/nwestl)
+___
 
-**List your assets including their sources and licenses.**
+#### Music
 
-**Describe the implementation of your audio system.**
+---
 
-**Document the sound style.**
+##### In-Game Music
+
+[Clown](https://www.chosic.com/download-audio/53609/) by Sakura Girl | https://soundcloud.com/sakuragirl_official
+Music promoted by https://www.chosic.com/free-music/all/
+Creative Commons CC BY 3.0
+https://creativecommons.org/licenses/by/3.0/
+* In-game music, BGM.wav, is a mix of clown and the nature sounds listed below.
+
+##### Nature Sounds
+* [Forest wind in the trees by Sound Effects](https://www.chosic.com/download-audio/54551/) | Creative Commons CC0 Public Domain
+
+* [Pure sound of the nightingale song in the forest by Sound Effects](https://www.chosic.com/download-audio/27947/) | Creative Commons CC0 Public Domain 
+
+##### Menu Music
+* [Uplifting Africa by ummbrella](https://pixabay.com/music/upbeat-uplifting-africa-84075/) | [Pixabay Content License](https://pixabay.com/service/terms/)
+
+---
+
+#### SFX
+
+---
+
+##### Fish Collection
+
+* [Nom Noise - Nom Noise](https://freesound.org/people/TheDragonsSpark/sounds/543386/) | Creative Commons CC by 4.0 https://creativecommons.org/licenses/by/4.0/
+
+##### Buttons
+
+* [Rock drop, rock foley - Rock drop, rock foley](https://freesound.org/people/SoundGuy1billione/sounds/666673/) | Creative Commons CC0 Public Domain https://creativecommons.org/publicdomain/zero/1.0/
+* * Took isolated sounds from the clip for button SFX.
+
+##### Animation Cutscene
+* [Khủng Long 32 - SieuAmThanh](https://freesound.org/people/SieuAmThanh/sounds/640636/) | Creative Commons CC0 Public Domain
+
+* [Alarm 0 - SieuAmThanh](https://freesound.org/people/SieuAmThanh/sounds/397787/) | Creative Commons CC0 Public Domain
+
+* [Portal_Idle.wav - couchHero](https://freesound.org/people/couchHero/sounds/168910/) | Creative Commons CC0 Public Domain
+
+##### Wing Flap
+* [Wing Flap 1.wav - _stubb](https://freesound.org/people/_stubb/sounds/389634/) | Creative Commons CC0 Public Domain
+
+##### Walking
+* [Free Walking fast on Dirt Sound Effect [Foley]](https://www.youtube.com/watch?v=AUKgAqB4Ysg)
+
+##### Vine
+* [vine stretch 2.wav - Halleck](https://freesound.org/people/Halleck/sounds/121725/) | Creative Commons CC by 4.0 https://creativecommons.org/licenses/by/4.0/
+* * Sound was edited to be shorter for use in the game.
+
+##### Bird SFX
+* [bird_flapping_7.wav - Clusman](https://freesound.org/people/Clusman/sounds/543115/) | Creative Commons CC0 Public Domain
+
+* [150209 Trevor Webb Bird Squawk.wav - Bleachbear](https://freesound.org/people/Bleachbear/sounds/327015/) | Creative Commons CC By-NC 3.0 https://creativecommons.org/licenses/by-nc/3.0/
+* * Isolated one bird cry to be used as a bird crash SFX.
+
+* [budgie_chirp1.WAV - much_username](https://freesound.org/people/much_username/sounds/620381/) | Creative Commons CC0 Public Domain
+
+---
+
+#### Implementation
+I primarily used Unity's AudioSource feature. AudioSource can be added to any game object and its function Play() can be easily called by Unity's UI buttons and via C# scripts. In conjunction with my main role of UI, I created [AudioSettings.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/8bb728df650bd7d09a3bb0bc5edb7168f06e9318/Jetpack/Assets/Scripts/AudioSettings.cs) that controlled mixers: the parent Master and children SFX & Music. This meant that each AudioSource was linked to the appropriate mixer and is able to be modified by the player via a settings menu.
+
+#### Sound Style
+For SFX, I wanted realistic sounds, but also something satisfying for the player to listen to. For instance, I looked through multiple sound clips of rocks and then isolating certain parts I liked in Audactiy, an audio mixing program, to create responsive sounds for the button clicks. 
+
+For the music, I want to give special thanks to the Art and Animation team who helped me look through possible tracks for the BGM. They are the ones who found the song and nature sounds for the BGM, then I mixed it together to make it loop seamlessly. This was done to ensure that the song does not just end and build up again while playing as I feel like that would ruin the immersion / gameplay experience. 
+
+Our approach to looking for music was to find something that reminded us of the jungle. We wanted it to fit the theme of our game and have it upbeat to keep the player interested. Especially for endless games like ours, I believe that the audio should be even more interesting and captivating.
+
+#### Aside
+I enjoyed my subrole as Audio. I did not expect it to be that much work searching the internet for the RIGHT sound clip / effect that I wanted. I even had the chance to mess around with an audio mixer, Audacity. It was a fun experience and gave me insight into how important / intensive handling audio can become.
 
 ### Gameplay Testing - [Gisselle](https://github.com/gpetty002)
 
