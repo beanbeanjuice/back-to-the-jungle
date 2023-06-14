@@ -51,3 +51,6 @@
 ## June 11, 2023
 * Added walking SFX.
 * Implemented PlayerAudioManager that plays the correct SFX (wing flaps or walking) depending on player movement.
+
+## June 12, 2023
+* Reformat shop menu UI.
