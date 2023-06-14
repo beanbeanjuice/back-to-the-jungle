@@ -90,6 +90,9 @@ namespace Player
             if (this._touchingCeiling) RemoveUpwardsVelocity(position);
         }
 
+        /// <summary>
+        /// <remarks>Coded by Roxanne.</remarks>
+        /// </summary>
         private void VelocityCheck()
         {
             /*
