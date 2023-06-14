@@ -71,7 +71,7 @@ When the player first loads up the game, they are greeted by the StartScreen sce
 
 Through the buttons on the StartMenu scene, one can access Gameplay, ShopMenu, SettingsMenu, and HowToPlay scenes with their respective buttons. I also added a Quit button which makes it easier for the user to exit out of the game build.
 
-To update the gameplay UI seen below, I created a script [Score.cs]()
+To update the gameplay UI seen below, I created a script [Score.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/aefae8d1074b882c1bd2b60ad6f2ea91de202639/Jetpack/Assets/Scripts/Player/Score.cs) that uses get methods from the PlayerController to obtain the distance and score values to assign them the the TextMeshPro elements on screen. 
 
 ![Gameplay](github_images/project_document_images/UI/GameplayUI.png)
 
@@ -263,7 +263,7 @@ https://creativecommons.org/licenses/by/3.0/
 #### Implementation
 I primarily used Unity's AudioSource feature. AudioSource can be added to any game object and its function Play() can be easily called by Unity's UI buttons and via C# scripts. In conjunction with my main role of UI, I created [AudioSettings.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/8bb728df650bd7d09a3bb0bc5edb7168f06e9318/Jetpack/Assets/Scripts/AudioSettings.cs) that controlled mixers: the parent Master and children SFX & Music. This meant that each AudioSource was linked to the appropriate mixer and is able to be modified by the player via a settings menu.
 
-For the player's flying and walking SFX, I created [PlayerAudioManager.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/8bb728df650bd7d09a3bb0bc5edb7168f06e9318/Jetpack/Assets/Scripts/Player/PlayerAudioManager.cs). This script uses the IsGrounded() from PlayerController to check if the player is on the ground and then plays walking SFX. For flying, it simply detects when the jump is pressed to play the wing flap SFX.
+For the player's flying and walking SFX, I created [PlayerAudioManager.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/8bb728df650bd7d09a3bb0bc5edb7168f06e9318/Jetpack/Assets/Scripts/Player/PlayerAudioManager.cs). This script uses the IsGrounded() from PlayerMovementController to check if the player is on the ground and then plays walking SFX. For flying, it simply detects when the jump is pressed to play the wing flap SFX.
 
 #### Sound Style
 For SFX, I wanted realistic sounds, but also something satisfying for the player to listen to. For instance, I looked through multiple sound clips of rocks and then isolating certain parts I liked through Audactiy, an audio mixing program, to create responsive sounds for the button clicks. 
