@@ -122,17 +122,26 @@ Something to note; by convention, movement is usually in `Update()`. However, be
 
 Overall, even though it was pretty easy, it was still a learning experience. In class, there was a lot of theory about how the game is supposed to *feel*, and by utilizing what I learned in class, there's a lot more to a game than just "add upwards boost" or "stop adding upwards boost" but instead, all of the small details that add up to a whole. Had I not added the upwards velocity removal when touching the ceiling, the player would feel sluggish and off.
 
-### Animation and Visuals
-
+## Animation and Visuals
+#
 **List your assets including their sources and licenses.**
 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
-### Input
+## Input - [Emily](https://github.com/ylylime)
+#
+Default Input Configuration - Keyboard and Mouse:
 
-**Describe the default input configuration.**
+Jump: Press the Spacebar or left click on mouse to make the avatar jump in order to change their vertical position and overcome obstacles or collect fish.
 
-**Add an entry for each platform or input style your project supports.**
+Pause: Press the Escape key to pause gameplay with the option to resume the game or return to Main Menu.
+
+Menu Navigation: Use the mouse to navigate through menus and click on buttons.
+
+
+Earlier versions of implementing a Scene Changer included a generic script that had a serialized field for the name of the scene to be changed to, but the final version uses the `LevelLoader.cs` script with functions to be linked with specific buttons in the Start Menu that goes to Gameplay, Settings, Shop, and How To Play Scenes accordingly.
+These scenes had to be configured in the Build Settings and have the script and animation attached to be implemented.
+
 
 ### Game Logic - [Gisselle](https://github.com/gpetty002)
 My role in game logic included creating and bug fixing the game's infinite ground, vine and bird system. 
@@ -319,7 +328,18 @@ I wanted to include a link to the "developer diaries" that some of us wrote for 
 *Increase player acceleration* - After gameplay testing and opinions from other group members, I decided to increase the player starting velocity from 3 to 5, and acceleration from 0.025 to 0.05. The increase in starting player velocity is to ensure that the game does not feel like it is dragging on for too long before getting "fast and exciting." The increase in acceleration also ensures this, as well as upping the player difficulty as the player now increases in speed more quickly which can become more difficult the longer the player is alive. I have also implemented a max velocity system in the PlayerMovementController.cs, so once the player reaches the max velocity of 15, the acceleration is set to 0 and player velocity is kept constant. This ensures that the player does not go hyperspeed. [Max Velocity System in PlayerMovementController.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/63c077999c498923c09c3afa2d781ce7266e025a/Jetpack/Assets/Scripts/Player/PlayerMovementController.cs#L93-L104)
 
 ### Emily
+Enhanced Flying Feel and User Experience:
 
+- Leveraged my understanding of game feel to improve the avatar's flying mechanics, optimizing gravity and other parameters for a comfortable gameplay experience.
+- Conducted iterative playtesting and fine-tuning to achieve a responsive and satisfying flying feel that aligns with the principles of game feel covered in the course.
+- Applied knowledge of physics-based movement and player control to enhance the game's playability, making it intuitive and enjoyable for players.
+
+
+Implemented Infinite Scrolling Background and Parallax Effect:
+
+- Developed and integrated `BackgroundReplicator.cs` to create an infinite scrolling background, enhancing the game's visual depth and immersion.
+- Implemented a parallax effect using layering techniques to create a sense of depth and movement in the background, further enhancing the game's aesthetics and game feel.
+- Demonstrated proficiency in visual effects and optimization techniques discussed in class, resulting in an engaging and visually appealing game environment.
 ---
 
 ## Notable Completions Outside of Role
