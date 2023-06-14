@@ -218,14 +218,17 @@ https://creativecommons.org/licenses/by/3.0/
 ---
 
 #### Implementation
-I primarily used Unity's AudioSource feature. AudioSource can be added to any game object and its function Play() can be easily called by Unity's UI buttons and via C# scripts. In conjunction with my main role, I created AudioSettings.cs that controlled mixers: the parent Master and children SFX & Music. This meant that each AudioSource was linked to the appropriate mixer and is able to be modified by the player via a settings menu.
+I primarily used Unity's AudioSource feature. AudioSource can be added to any game object and its function Play() can be easily called by Unity's UI buttons and via C# scripts. In conjunction with my main role of UI, I created AudioSettings.cs that controlled mixers: the parent Master and children SFX & Music. This meant that each AudioSource was linked to the appropriate mixer and is able to be modified by the player via a settings menu.
 
 #### Sound Style
 For SFX, I wanted realistic sounds, but also something satisfying for the player to listen to. For instance, I looked through multiple sound clips of rocks and then isolating certain parts I liked in Audactiy, an audio mixing program, to create responsive sounds for the button clicks. 
 
-For the music, I want to give special thanks to the Art and Animation team who helped me look through possible tracks for the BGM. They are the ones who found the clips for the BGM then I mixed it together to make it loop seamlessly. This was done to ensure that the song does not just end and build up again while playing as I feel like that would ruin the immersiveness / gameplay experience.
+For the music, I want to give special thanks to the Art and Animation team who helped me look through possible tracks for the BGM. They are the ones who found the song and nature sounds for the BGM, then I mixed it together to make it loop seamlessly. This was done to ensure that the song does not just end and build up again while playing as I feel like that would ruin the immersion / gameplay experience. 
 
-Our approach to looking for music was to find something that reminded us of the jungle. We wanted it to fit the theme of our game and have it upbeat to keep the player interested. Especially for endless games like ours, I believe that the audio should be even more interesting and captivating. 
+Our approach to looking for music was to find something that reminded us of the jungle. We wanted it to fit the theme of our game and have it upbeat to keep the player interested. Especially for endless games like ours, I believe that the audio should be even more interesting and captivating.
+
+#### Aside
+I enjoyed my subrole as Audio. I did not expect it to be that much work searching the internet for the RIGHT sound clip / effect that I wanted. I even had the chance to mess around with an audio mixer, Audacity. It was a fun experience and gave me insight into how important / intensive handling audio can become.
 
 ### Gameplay Testing - [Gisselle](https://github.com/gpetty002)
 
