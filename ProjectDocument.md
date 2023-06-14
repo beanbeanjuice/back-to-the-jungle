@@ -10,9 +10,15 @@ Welcome Back to The Jungle! In a world where rogue scientists have time traveled
 
 ## Gameplay Explanation
 
-**In this section, explain how the game should be played. Treat this as a manual within a game. It is encouraged to explain the button mappings and the most optimal gameplay strategy.**
+Your objective is to guide the adventurous character through the treacherous jungle, overcoming obstacles and collecting fishes along the way. See how far you can go and aim for the highest score!
 
-**If you did work that should be factored in to your grade that does not fit easily into the proscribed roles, add it here! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
+Press the Spacebar or left-click the mouse to make the character fly. 
+
+Timing is key! Timing is crucial to clear large gaps and evade obstacles. Master the art of timing your jumps. Precise jumps can help you avoid hazards, leap over obstacles, and collect fishes more effectively.
+
+Watch for Obstacles! Be prepared for various obstacles like vines and birds. Stay focused and react quickly to avoid them. There will be a warning when birds that target your position are ahead, swiftly change your vertical position by ascending or descending to dodge them. 
+
+Remember, practice makes perfect! The more you play, the better you will become at navigating the jungle and achieving high scores. So, dive into the adventure, embrace the thrill, and strive to conquer Back to the Jungle!
 
 ---
 
@@ -116,13 +122,12 @@ Something to note; by convention, movement is usually in `Update()`. However, be
 
 Overall, even though it was pretty easy, it was still a learning experience. In class, there was a lot of theory about how the game is supposed to *feel*, and by utilizing what I learned in class, there's a lot more to a game than just "add upwards boost" or "stop adding upwards boost" but instead, all of the small details that add up to a whole. Had I not added the upwards velocity removal when touching the ceiling, the player would feel sluggish and off.
 
-## Animation and Visuals - [Roxanne](https://github.com/roxanneruan) and [Sheda](https://github.com/Sheda-Shehadeh)
-#
+### Animation and Visuals - [Roxanne](https://github.com/roxanneruan) and [Sheda](https://github.com/Sheda-Shehadeh)
 
 We decided to do 2D art because the game we were inspired by, Jetpack Joyride, uses a 2D art style. We also thought, given the time constraints, we would be able to produce a better game in 2D. The visuals were inspired by the story narrative and also by Jetpack Joyride. Since our theme is jungly and we're basing the game off Jetpack Joyride, we made our own enemies: "missiles" (birds) and "electric wires" (vines) that fit our theme better. We also had a visual style guide, we made some mock up sketches and things initially, but we also had color palettes and inspiration photos. As for game feel, our art was very specifically following the jungle theme so the whole game would feel more put together. Choosing to have the player ride a dinosaur instead of wear a jetpack is one example of a small decision like that.
 
 Assets:
--
+
 - Characters:
   -  [Pterodactyl](https://www.pngkit.com/view/u2y3q8i1a9o0w7y3_pterodactyl-ver-pixel-art-chick/)
       - All other Pterdactly designs edited by art team based on this design
@@ -151,22 +156,27 @@ Assets:
   - [Tablet](https://www.freepik.com/premium-vector/stone-buttons-pixel-art-set-interface-rock-bar-collection-cobblestone-panel-8-bit-sprite_33848880.htm) used as a reference for the stone tablet and for some buttons (like the back button).
 
 
-## Input - [Emily](https://github.com/ylylime)
-#
+### Input - [Emily](https://github.com/ylylime)
+
 Default Input Configuration - Keyboard and Mouse:
 
-Jump: Press the Spacebar or left click on mouse to make the avatar jump in order to change their vertical position and overcome obstacles or collect fish.
+Fly: Press the Spacebar or left click on mouse to make the avatar fly in order to change their vertical position and overcome obstacles or collect fish.
 
 Pause: Press the Escape key to pause gameplay with the option to resume the game or return to Main Menu.
 
 Menu Navigation: Use the mouse to navigate through menus and click on buttons.
 
 
-Earlier versions of implementing a Scene Changer included a generic script that had a serialized field for the name of the scene to be changed to, but the final version uses the `LevelLoader.cs` script with functions to be linked with specific buttons in the Start Menu that goes to Gameplay, Settings, Shop, and How To Play Scenes accordingly.
-These scenes had to be configured in the Build Settings and have the script and animation attached to be implemented.
+Earlier versions of implementing a Scene Changer included a generic script I wrote that had a serialized field for the name of the scene to be changed to, but the final version uses the `LevelLoader.cs` script with functions to be linked with specific buttons in the Start Menu that goes to Gameplay, Settings, Shop, and How To Play Scenes accordingly.
 
+![StartMenu](github_images/project_document_images/UI/StartMenu.png)
 
-### Game Logic - [Gisselle](https://github.com/gpetty002)
+These different scenes had to be configured in the Build Settings and have the script and animation attached in order to be implemented.
+
+Different scenes were loaded by linking the appropriate functions in `LevelLoader.cs` with the corresponding buttons. This ensured smooth and accurate scene transitions based on player input.
+
+## Game Logic - [Gisselle](https://github.com/gpetty002)
+#
 My role in game logic included creating and bug fixing the game's infinite ground, vine and bird system. 
 #### Infinite Ground
 In our [ground script](https://github.com/beanbeanjuice/back-to-the-jungle/blob/63c077999c498923c09c3afa2d781ce7266e025a/Jetpack/Assets/Scripts/LoopingGround.cs), I initially tried to continously spawn ground prefabs and destroy them as the camera would continue, however, this became trying as this meant I'd have to keep track of each prefab being destroyed and this would result in more memory being used. After an OH visit with Josh, I decided to to head in a different direction and stick to only two ground prefabs and switch between them based on the position of the player. I wanted the looping ground to track when to switch the ground based on if the player was within a given threshold from the end.
@@ -307,7 +317,7 @@ Similar to working on the UI, audio did not have much overlap with the content l
 Over the course of our gameplay testing, I had gone to a myriad of peers and friends to collect what their responses were before, during, and after playing our game. I had some testers play on the Mac application on my laptop and I had others play on the site Simmer where we uploaded our WebGL folder. Here's the [Back to the Jungle Simmer version](https://simmer.io/@gpetty002/back-to-the-jungle). There were several reoccuring patterns amongst the testers. Here's what they were...
 - Players loved the music. Several players enjoyed the jungle themed music and even danced to it while playing.
 - Players found the space bar too powerful. Some players found the space bar sensitive and thought the velocity at which our player game object jumps at is too powerful. This caused several players to have to retry over and over again to get the jump correct.
-- Players wanted more of the shop. The first thing testers did when they played was checkout the shop and see what they could buy. There next question was "what do they pay with?"
+- Players wanted more of the shop. The first thing testers did when they played was checkout the shop and see what they could buy. Their next question was "what do they pay with?"
 - Players wanted a higher level of difficulty from the game. After everyone stopped playing, their next response was what to add to make the game harder and more fun.
 
 After collecting responses and observing testers play our game, I want to make the game faster and more difficult. I would love to add in more vines that come in various shapes and sizes. A friend recommended switching to a hell stage at some point in time, changing the music to something eerie, and perhaps having fake fish that can end the game. This is an idea that I'd love to implement. Overall, it was awesome getting to see my friends and peers play something I worked really hard on. 
@@ -352,26 +362,43 @@ I wanted to include a link to the "developer diaries" that some of us wrote for 
 
 ### Game Feel - Roxanne and Emily
 
-**Document what you added to and how you tweaked your game to improve its game feel.**
-
 ### Roxanne
 *Outlined Vines* - After initial vine creation and testing, we noticed that the vines were hard to see since the outline was so thin. This is both art / game feel, so I decided to just re-outline the vines in a bright yellow / orange outline, so it pops more against the background and therefore makes it easier for players to see on the screen. [Outlined vine sprites alongside old vine sprites](https://github.com/beanbeanjuice/back-to-the-jungle/tree/63c077999c498923c09c3afa2d781ce7266e025a/Jetpack/Assets/Resources/Sprites/Vines)
 
 *Increase player acceleration* - After gameplay testing and opinions from other group members, I decided to increase the player starting velocity from 3 to 5, and acceleration from 0.025 to 0.05. The increase in starting player velocity is to ensure that the game does not feel like it is dragging on for too long before getting "fast and exciting." The increase in acceleration also ensures this, as well as upping the player difficulty as the player now increases in speed more quickly which can become more difficult the longer the player is alive. I have also implemented a max velocity system in the PlayerMovementController.cs, so once the player reaches the max velocity of 15, the acceleration is set to 0 and player velocity is kept constant. This ensures that the player does not go hyperspeed. [Max Velocity System in PlayerMovementController.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/63c077999c498923c09c3afa2d781ce7266e025a/Jetpack/Assets/Scripts/Player/PlayerMovementController.cs#L93-L104)
 
 ### Emily
-Enhanced Flying Feel and User Experience:
+*Enhanced Flying Feel and User Experience:*
 
-- Leveraged my understanding of game feel to improve the avatar's flying mechanics, optimizing gravity and other parameters for a comfortable gameplay experience.
-- Conducted iterative playtesting and fine-tuning to achieve a responsive and satisfying flying feel that aligns with the principles of game feel covered in the course.
-- Applied knowledge of physics-based movement and player control to enhance the game's playability, making it intuitive and enjoyable for players.
+Through iterative playtesting and fine-tuning, I implemented a responsive and satisfying flying feel that aligned with the principles of game feel covered in our class.
+
+Drawing upon my understanding of physics-based movement and player control, I worked on the avatar's flight dynamics by optimizing gravity, thrust, and air resistance, to strike the perfect balance between realism and playability. By fine-tuning these aspects, I aimed to create a seamless connection between player input and on-screen action, resulting in a highly intuitive and engaging gameplay experience.
 
 
-Implemented Infinite Scrolling Background and Parallax Effect:
+*Implemented Infinite Scrolling Background and Parallax Effect:*
 
-- Developed and integrated `BackgroundReplicator.cs` to create an infinite scrolling background, enhancing the game's visual depth and immersion.
-- Implemented a parallax effect using layering techniques to create a sense of depth and movement in the background, further enhancing the game's aesthetics and game feel.
-- Demonstrated proficiency in visual effects and optimization techniques discussed in class, resulting in an engaging and visually appealing game environment.
+I developed and integrated `BackgroundReplicator.cs` to create an infinite scrolling background, enhancing the game's visual depth and creating a more immersive experience for players.
+
+The script takes into account the camera's position and the background's measurements so as to ensure that the game's environment never runs out of background visuals by smoothly moving the sides of the background that are out of bounds to be displayed next on the screen. This creates an illusion of an endless backdrop as the player progresses through the game. 
+
+
+In the initial versions, the upcoming background would only be displayed as the camera position reached the ends of the current background. However, it was observed that on certain users' Unity setups, the new background couldn't catch up in time, resulting in a less fluid experience.
+
+![Buffer](github_images/project_document_images/buffer.png)
+ 
+To address this issue, I implemented a solution that introduced a buffer for the new background to kick in before the camera position reaches the end of the current background.
+
+By incorporating this buffer mechanism, the transition between backgrounds became smoother and more consistent across different devices and Unity configurations. Players can now enjoy a seamless and uninterrupted visual experience as they navigate through the captivating jungle environment.
+
+I also implemented a parallax effect using layering techniques to create a sense of depth and movement in the background, further enhancing the game's aesthetics and game feel.
+
+Here's an example of the background before:
+
+![OG](github_images/project_document_images/OG_back.png)
+
+
+
+
 ---
 
 ## Notable Completions Outside of Role
