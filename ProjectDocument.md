@@ -102,9 +102,16 @@ Overall, even though it was pretty easy, it was still a learning experience. In 
 
 **Add an entry for each platform or input style your project supports.**
 
-### Game Logic
+### Game Logic - [Gisselle](https://github.com/gpetty002)
+My role in game logic included creating and bug fixing the game's infinite ground, vine and bird system. 
+#### Infinite Ground
+In our [ground script](https://github.com/beanbeanjuice/back-to-the-jungle/blob/63c077999c498923c09c3afa2d781ce7266e025a/Jetpack/Assets/Scripts/LoopingGround.cs), I initially tried to continously spawn ground prefabs and destroy them as the camera would continue, however, this became trying as this meant I'd have to keep track of each prefab being destroyed and this would result in more memory being used. After an OH visit with Josh, I decided to to head in a different direction and stick to only two ground prefabs and switch between them based on the position of the player. I wanted the looping ground to track when to switch the ground based on if the player was within a given threshold from the end.
+#### Vine System
+In [vine factory](https://github.com/beanbeanjuice/back-to-the-jungle/blob/63c077999c498923c09c3afa2d781ce7266e025a/Jetpack/Assets/Scripts/Vines/VineFactory.cs), I kept it relatively simple because I was still becoming familiar with Unity and C#. We wanted the vines to be completely randomized like in Jetpack Joyride, so I decided to randomly choose between the five vine prefabs. One vine would spawn within a certain distance from the player, if the player had passed the specified threshold. After, I decided to choose between the scale size of 0.5 and 0.3 and randomly choose either one to fix the screen requirements and so our player could still have a viable path to run/fly through if the vine was too big. This came with the restraint of where vines shouldn't be placed like above the camera and below. I also had them destroy ten seconds after on screen.
+#### Bird System
+In [bird factory](https://github.com/beanbeanjuice/back-to-the-jungle/blob/63c077999c498923c09c3afa2d781ce7266e025a/Jetpack/Assets/Scripts/Birds/BirdFactory.cs), I'd package together the warning and the bird in a method called Build that would be called every ten seconds plus the randomized seconds that were chosen between the numbers 10 and 20. This way there was at least a cushion of ten seconds that the player was guaranteed before receiving another bird. The complexity in my code drastically shifted after developing the vine system. I even suggested to Westley, Sheda, and Roxanne about possibily randomly picking between our blue and pink bird, then making the latter ridiculously faster. (The pink bird idea did end up getting included). For the birds, I began messing with Coroutines and IEnumerators to ensure that the bird locking sytem was accurate. For this, I developed the design of having a warning spawn and its x position be reliant on the camera's x position and the its y position on the player's y position but only for a certain amount of seconds. After our warning locked, we'd take the warning's y position and use this for our bird's y position. In addition, as the player would go further along in the game the possibility of more birds at a specific time would increase. For both the [warning message](https://github.com/beanbeanjuice/back-to-the-jungle/blob/63c077999c498923c09c3afa2d781ce7266e025a/Jetpack/Assets/Scripts/Birds/WarningController.cs) and [birds](https://github.com/beanbeanjuice/back-to-the-jungle/blob/63c077999c498923c09c3afa2d781ce7266e025a/Jetpack/Assets/Scripts/Birds/BirdController.cs), I created controller scripts that would attach to their given prefabs. This is what allowed the warning to lock onto the player after 3 seconds and what allowed the bird to continously increase its speed given a specific velocity.
 
-**Document what game states and game data you managed and what design patterns you used to complete your task.**
+****
 
 ---
 
@@ -153,11 +160,17 @@ Additionally, I also created a section called [**Notable Completions Outside of 
 
 **Document the sound style.**
 
-### Gameplay Testing
+### Gameplay Testing - [Gisselle](https://github.com/gpetty002)
 
-**Add a link to the full results of your gameplay tests.**
+[Google Form](https://forms.gle/Txp8rhwaV7mVJbkk9)[Google Spreadsheet of Tester's Answers and My Observations](https://docs.google.com/spreadsheets/d/1Kua-mfhT1_AqQnyhtNRKJz-LHiF04q7ND5uxJOs1EHo/edit?resourcekey#gid=1862380455)
 
-**Summarize the key findings from your gameplay tests.**
+Over the course of our gameplay testing, I had gone to a myriad of peers and friends to collect what their responses were before, during, and after playing our game. I had some testers play on the Mac application on my laptop and I had others play on the website Simmer where we uploaded our WebGL folder. Here's the [Back to the Jungle Simmer version](https://simmer.io/@gpetty002/back-to-the-jungle). There were several reoccuring patterns amongst the testers. Here's what they were...
+- Players loved the music. Several players enjoyed the jungle themed music and even danced to it while playing.
+- Players found the space bar too powerful. Some players found the space bar sensitive and thought the velocity at which our player game object jumps at is too powerful. This caused several players to have to retry over and over again to get the jump correct.
+- Players wanted more of the shop. The first thing testers did when they played was checkout the shop and see what they could buy. There next question was "what do they pay with?"
+- Players wanted a higher level of difficulty from the game. After everyone stopped playing, their next response was what to add to make the game harder and more fun.
+
+After collecting responses and observing testers play our game, I want to make the game faster and more difficult. I would love to add in more vines that come in various shapes and sizes. A friend recommended switching to a hell stage at some point in time, changing the music to something eerie, and perhaps having fake fish that can end the game. This is an idea that I'd love to implement. Overall, it was awesome getting to see my friends and peers play something I worked really hard on. 
 
 ### Narrative Design
 
