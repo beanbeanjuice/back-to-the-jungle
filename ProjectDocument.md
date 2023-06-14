@@ -121,7 +121,34 @@ Overall, even though it was pretty easy, it was still a learning experience. In 
 
 We decided to do 2D art because the game we were inspired by, Jetpack Joyride, uses a 2D art style. We also thought, given the time constraints, we would be able to produce a better game in 2D. The visuals were inspired by the story narrative and also by Jetpack Joyride. Since our theme is jungly and we're basing the game off Jetpack Joyride, we made our own enemies: "missiles" (birds) and "electric wires" (vines) that fit our theme better. We also had a visual style guide, we made some mock up sketches and things initially, but we also had color palettes and inspiration photos. As for game feel, our art was very specifically following the jungle theme so the whole game would feel more put together. Choosing to have the player ride a dinosaur instead of wear a jetpack is one example of a small decision like that.
 
-**List your assets including their sources and licenses.**
+Assets:
+-
+- Characters:
+  -  [Pterodactyl](https://www.pngkit.com/view/u2y3q8i1a9o0w7y3_pterodactyl-ver-pixel-art-chick/)
+      - All other Pterdactly designs edited by art team based on this design
+  - [Player (Gary)](https://pixelartmaker.com/art/6811fd9e7127fe1)
+      - All other player designs use this one as a base.
+
+- Background:
+  - [Ground](https://stock.adobe.com/bg/images/pixel-art-jungle-background-detailed-vector-illustration/247017897) taken from this image.
+  - [Trees/Vines/Background](https://www.vectorstock.com/royalty-free-vector/pixel-art-jungle-seamless-background-detailed-vector-23730668) inspired by the linked image.
+
+
+- Enemies:
+  - [Birds](https://www.dreamstime.com/vector-pixel-art-bird-fly-isolated-image105789527#_) reference from this.
+  - [Vines](https://www.pixilart.com/art/pixel-vine-63f8f96334ca616) inspired by the linked vine.
+
+- Other:
+  - [Fish](http://pixelartmaker.com/art/05e4c8db8f38944) used the linked fish, all the other fish are variations of this fish.
+  - [Egg](https://www.pngkit.com/view/u2e6e6y3e6w7t4w7_yoshis-egg-yoshi-egg-pixel-art/) is referenced from this egg
+
+- Cutscene:
+  - [Lab background](https://www.google.com/imgres?imgurl=https://i.pinimg.com/originals/9c/34/6b/9c346bd4c788ed03665f029d123cb4ba.png&tbnid=03tpeyooW_jK0M&vet=1&imgrefurl=https://www.pinterest.com/pin/360569513922546461/&docid=lEjsQDAW_US0WM&w=1000&h=562&itg=1&hl=en-US&source=sh/x/im/3)
+  - [Portal](https://pixelartmaker.com/art/48890ee8a13e3f6)
+
+- UI art:
+  - [Block letter chart](https://www.dreamstime.com/stock-illustration-pixel-art-alphabet-letters-games-design-image53868874) used as a reference for all the words/block letters.
+  - [Tablet](https://www.freepik.com/premium-vector/stone-buttons-pixel-art-set-interface-rock-bar-collection-cobblestone-panel-8-bit-sprite_33848880.htm) used as a reference for the stone tablet and for some buttons (like the back button).
 
 
 ## Input - [Emily](https://github.com/ylylime)
