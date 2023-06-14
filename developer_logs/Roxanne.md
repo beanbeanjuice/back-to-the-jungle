@@ -25,5 +25,21 @@
 As for these animations, I created `MountAnimationController.cs` to change the conditionals of whether the player (attached to the mount) was in the air or on the ground in order to animate the respective animations, only on the Mount object itself.
 
 ---
+## June 3, 2023
+* Created vine sprites on pixelartmaker.com
+
+* Then outlined these sprites in yellow for a better game feel and visual pop to make it easier for player to see and dodge in gameplay.
+
+---
 ## June 7, 2023
 * Created new parallax background sprites with 5 different layers.
+
+---
+## June 9, 2023
+* Added the bird warning flash animation.
+
+* Added the 2 second lab cutscene animation upon very start of game. Used the Timeline and Animation feature in Unity for player and dino animation movement into the portal.
+
+--- 
+## June 13, 2023
+* Increased player acceleration and starting velocity for a better game feel, since we felt the game started out too slow. Code sections were added in `PlayerMovementController.cs` to ensure a max velocity of 15 as the fastest speed the player can reach.

@@ -1,17 +1,16 @@
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// A script used to display the distance traveled and the amount of fish collected.
+/// <remarks>Coded by Westley</remarks>
+/// </summary>
 namespace Player
 {
-    /// <summary>
-    /// A script used to display the distance traveled and the amount of fish collected.
-    /// <remarks>Coded by Westley</remarks>
-    /// </summary>
     public class Score : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI distanceScore;
         [SerializeField] private TextMeshProUGUI fishScore;
-
         private PlayerController _playerStats;
 
         private void Start()

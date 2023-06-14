@@ -27,7 +27,6 @@ public class PlayerAudioManager : MonoBehaviour
         {
             if (!_isWalkingSFX)
             {
-                Debug.Log("groundSFX!");
                 PlayWalkingSFX();
             }
         }
