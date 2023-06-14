@@ -23,6 +23,6 @@ namespace Player
             // Updates the UI with distance traveled and fish collected scores.
             this.distanceScore.text = this._playerStats.GetDistanceRun().ToString("0");
             this.fishScore.text = this._playerStats.GetScore().ToString("0");
-        }    
+        }
     }
 }
