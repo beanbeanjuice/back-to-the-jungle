@@ -60,11 +60,11 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ### User Interface - [Westley](https://github.com/nwestl)
 
-**Describe your user interface and how it relates to gameplay. This can be done via the template.**
-
 Our game has 7 different scenes connected by a LevelLoader script, the coding for this script was delegated to another member. Additionally in our gameplay scene, there are three different UI's: GameplayUI, EndScreenUI, and PauseScreenUI which are handled by the [GameplayManager.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/4e25ce0b368f4d0fa16ddbc44c73377dddeb11ee/Jetpack/Assets/Scripts/Scenes/GameplayManager.cs). The logic in the script is referenced from [Brackeys](https://www.youtube.com/watch?v=JivuXdrIHK0&t=273s). 
 
-When the player first loads up the game, they are greeted by the StartScreen scene which displays the title of our game. This then automatically loads with a crossfade animation into the StartMenu scene. Initially, I had two menu designs. One was inspired by mobile games with the title and menu buttons all in the same scene. The other was inspired by some PC games where the name of the game shows up separately to keep a clean main menu. I opted for the second one as can be seen below.
+When the player first loads up the game, they are greeted by the StartScreen scene which displays the title of our game. This then automatically loads with a crossfade animation into the StartMenu scene. Initially, I had two menu designs. One was inspired by mobile games with the title and menu buttons all in the same scene. The other was inspired by some PC games where the name of the game shows up separately to keep a clean main menu.
+
+I opted for the second one as can be seen below.
 
 ![StartScreen](github_images/project_document_images/UI/StartScreen.png)
 ![StartMenu](github_images/project_document_images/UI/StartMenu.png)
@@ -92,6 +92,12 @@ Once in-game, there are three UIs that the user will be able see: GameplayUI, En
 Throughout the game, I wanted the UI to keep a constant theme and style. I came up with the idea that everything was displayed on top of a stone tablet to line up with the narrative that we went back in time. Since I also did the audio, I made sure that aspects of the UI had sound effects. This was done for the main menu buttons and the yellow triangle button (back button). From what I have seen from other games and have personally experienced, a responsive UI with sfx adds much more to the experience even if it is just navigation. 
 
 The design work for all of the UI was done by me. I then transferred the designs over to the art and animation team to create the sprites. After the sprites are completed, I create the UI inside of Unity.
+
+Here are some early designs that I would send to the art team:
+![intial1](github_images/project_document_images/UI/initial1.png)
+![initial2](github_images/project_document_images/UI/initial2.png)
+
+In relation to the class, UI was completely different and the coding that I did happen to work on was very simple or referenced. The role required mostly looking upon a variety of games for inspiration. 
 
 
 ### Movement and Physics - [William][william-github]
@@ -274,6 +280,8 @@ Our approach to looking for music was to find something that reminded us of the 
 
 #### Aside
 I enjoyed my subrole as Audio. I did not expect it to be that much work searching the internet for the RIGHT sound clip / effect that I wanted. I even had the chance to mess around with an audio mixer, Audacity. It was a fun experience and gave me insight into how important / intensive handling audio can become.
+
+Similar to working on the UI, audio did not have much overlap with the content learned in class. I mostly worked based on experience playing games and watched some videos for inspiration.
 
 ### Gameplay Testing - [Gisselle](https://github.com/gpetty002)
 
