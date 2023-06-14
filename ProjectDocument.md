@@ -62,6 +62,11 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 **Describe your user interface and how it relates to gameplay. This can be done via the template.**
 
+Our game has 7 different scenes connected by a LevelLoader script, the coding for this script was delegated to another member. Additionally in our gameplay scene, there are three different UI's: GameplayUI, EndScreenUI, and PauseScreenUI which are handled by the [GameplayManager.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/4e25ce0b368f4d0fa16ddbc44c73377dddeb11ee/Jetpack/Assets/Scripts/Scenes/GameplayManager.cs). The logic in the script is referenced from [Brackeys](https://www.youtube.com/watch?v=JivuXdrIHK0&t=273s). 
+
+When the player first loads up the game, they are greeted by the StartScreen scene which displays the title of our game. This then automatically loads into the StartMenu scene.
+
+
 ### Movement and Physics - [William][william-github]
 
 [william-github]: https://www.github.com/beanbeanjuice
@@ -218,9 +223,7 @@ https://creativecommons.org/licenses/by/3.0/
 ---
 
 #### Implementation
-I primarily used Unity's AudioSource feature. AudioSource can be added to any game object and its function Play() can be easily called by Unity's UI buttons and via C# scripts. In conjunction with my main role of UI, I created AudioSettings.cs that controlled mixers: the parent Master and children SFX & Music. This meant that each AudioSource was linked to the appropriate mixer and is able to be modified by the player via a settings menu.
-
-https://github.com/beanbeanjuice/back-to-the-jungle/blob/8bb728df650bd7d09a3bb0bc5edb7168f06e9318/Jetpack/Assets/Scripts/AudioSettings.cs
+I primarily used Unity's AudioSource feature. AudioSource can be added to any game object and its function Play() can be easily called by Unity's UI buttons and via C# scripts. In conjunction with my main role of UI, I created [AudioSettings.cs](https://github.com/beanbeanjuice/back-to-the-jungle/blob/8bb728df650bd7d09a3bb0bc5edb7168f06e9318/Jetpack/Assets/Scripts/AudioSettings.cs) that controlled mixers: the parent Master and children SFX & Music. This meant that each AudioSource was linked to the appropriate mixer and is able to be modified by the player via a settings menu.
 
 #### Sound Style
 For SFX, I wanted realistic sounds, but also something satisfying for the player to listen to. For instance, I looked through multiple sound clips of rocks and then isolating certain parts I liked in Audactiy, an audio mixing program, to create responsive sounds for the button clicks. 
