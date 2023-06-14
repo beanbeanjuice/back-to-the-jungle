@@ -152,7 +152,7 @@ Assets:
 
   Our game and Jetpack Joyride side by side:
 <p align="center">
-  <img src="/github_images/Art_Images/Game_Screenshots/Jetpack Joyride.png"/>
+  <img src="/github_images/Art_Images/Game_Screenshots/Jetpack-Joyride.png"/>
 </p>
 
 <p align="center">
