@@ -150,6 +150,34 @@ Assets:
   - [Block letter chart](https://www.dreamstime.com/stock-illustration-pixel-art-alphabet-letters-games-design-image53868874) used as a reference for all the words/block letters.
   - [Tablet](https://www.freepik.com/premium-vector/stone-buttons-pixel-art-set-interface-rock-bar-collection-cobblestone-panel-8-bit-sprite_33848880.htm) used as a reference for the stone tablet and for some buttons (like the back button).
 
+  Our game and Jetpack Joyride side by side:
+<p align="center">
+  <img src="/github_images/Art_Images/Game_Screenshots/Jetpack Joyride.png"/>
+</p>
+
+<p align="center">
+  <img src="/github_images/Art_Images/Game_Screenshots/Back-To-The-Jungle2.png"/>
+</p>
+
+Lab cutscene:
+<p align="center">
+  <img src="/github_images/Art_Images/Lab_Cutscene/CutScene.png"/>
+</p>
+
+Sprite sheet examples:
+Unfortunately Sheda did not have time to complete the death animation, but the sprite sheet exists for it!
+<p align="center">
+  <img src="/github_images/Art_Images/EggSpriteSheet.png"/>
+</p>
+<p align="center">
+  <img src="/github_images/Art_Images/DizzyDino.png"/>
+</p>
+
+UI art: The main screen:
+<p align="center">
+  <img src="/github_images/Art_Images/Game_Screenshots/Homescreen.png"/>
+</p>
+
 
 ## Input - [Emily](https://github.com/ylylime)
 #
